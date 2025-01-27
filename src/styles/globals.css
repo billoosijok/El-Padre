@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #b3d4e2 url(./bg.png);
+    background-position-y: 50vh;
+    background-repeat: repeat-x;
+}
