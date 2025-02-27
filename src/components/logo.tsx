@@ -1,13 +1,19 @@
-export const Logo = ({ size = 150 }) => (
+import "./Logo.css";
+import { IconSvgProps } from "@/types";
+
+export const Logo = ({
+  size = 150,
+  animation,
+  ...props
+}: {
+  animation?: "full" | "simple";
+  size?: number;
+} & IconSvgProps) => (
   <svg
-    className="animated-logo"
+    className={`${animation ? "animated-logo" : ""} ${animation === "full" ? "full" : ""}`}
     height={size}
-    preserveAspectRatio="xMidYMid meet"
-    version="1.0"
     viewBox="0 0 1134 425.249996"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    zoomAndPan="magnify"
+    {...props}
   >
     <defs>
       <g />

@@ -1,0 +1,57 @@
+
+
+@keyframes entrance {
+  0% {
+      transform: scale(5) translateY(30%);
+      filter: blur(20px);
+  }
+  70% {
+      filter: blur(2px);
+  }
+  100% {
+      transform: scale(1) translateY(0%);
+      filter: blur(0px);
+  }
+}
+
+@keyframes flipit {
+  100% {
+      transform: translateY(0px)
+  }
+}
+
+@keyframes putitontop {
+  0% {
+      transform: translateY(-1000px);
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.animated-logo {
+
+  &.full {
+      animation: entrance 0.7s cubic-bezier(1, 0, 0.63, 0.9);
+  }
+  
+  .tasa {
+      transform: rotateX(180deg) translateY(40px);
+      transform-origin: center;
+      animation: flipit 0.5s forwards cubic-bezier(0.79, 0.72, 0, 1.02);
+
+      .kasheek {
+          opacity: 0;
+          animation: putitontop 0.5s 0.2s forwards cubic-bezier(0.97, 0, 0.41, 1.09);
+      }
+  }
+  
+  &.full .tasa {
+      animation-delay: 0.7s;   
+      
+      .kasheek {
+          animation-delay: 0.9s;
+      }
+  }
+}
+

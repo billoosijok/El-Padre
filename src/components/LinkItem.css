@@ -1,0 +1,49 @@
+
+
+.LinkItem {
+  padding: 2em 1em;
+  position: relative;
+  font-family: "Limelight", serif;
+  text-shadow: 1px 1px white;
+  font-size: 2em;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+
+  div {
+    z-index: 1;
+    max-width: 400px;
+    margin: auto;
+    position: relative;
+
+    &::after{
+      content: '\0276F';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      font-size: 30px;
+      transform: translateY(-50%);
+      transition: transform 0.3s;
+    }
+  }
+
+  &:hover div::after {
+    transform: translate(50%, -50%);
+  }
+  
+}

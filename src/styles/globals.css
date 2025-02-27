@@ -1,53 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=League+Spartan:wght@300;400;700&family=Limelight&display=swap');
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  font-size: 4.5em;  
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+}
+
 body {
-    background: #b3d4e2 url(/bg.png);
+    background-color: var(--padre-background);
+    background-image: url(/bg.png);
     background-position-y: 50vh;
     background-repeat: repeat-x;
-}
-
-@keyframes entrance {
-    0% {
-        transform: scale(5);
-        filter: blur(20px);
-    }
-    70% {
-        filter: blur(2px);
-    }
-    100% {
-        transform: scale(1);
-        filter: blur(0px);
-    }
-}
-
-@keyframes flipit {
-    100% {
-        transform: translateY(0px)
-    }
-}
-
-@keyframes putitontop {
-    0% {
-        transform: translateY(-1000px);
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.animated-logo {
-    animation: entrance 0.5s;
-
-    .tasa {
-        transform: rotateX(180deg) translateY(40px);
-        transform-origin: center;
-        animation: flipit 0.5s 0.5s forwards;
-
-        .kasheek {
-            opacity: 0;
-            animation: putitontop 0.5s 0.7s forwards;
-        }
-    }
+    background-attachment: fixed;
 }
