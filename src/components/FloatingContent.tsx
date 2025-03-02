@@ -5,7 +5,7 @@ import "./FloatingContent.css";
 export const FloatingContent = ({
   children,
   // maxClip = 10,
-}: PropsWithChildren<{ maxClip?: number }>) => {
+}: PropsWithChildren<{ maxClip?: number; enterIn?: number }>) => {
   // const scrollAnimation = useSpringValue(0);
 
   // const contentStyles = CLIPPING_ENABLED
@@ -32,5 +32,9 @@ export const FloatingContent = ({
   //   }
   // }, []);
 
-  return <div className="floating-content">{children}</div>;
+  return (
+    <div className="floating-content">
+      <div>{children}</div>
+    </div>
+  );
 };
