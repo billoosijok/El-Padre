@@ -29,13 +29,13 @@ export default function DefaultLayout({
       <header className="flex flex-col items-center gap-4">
         <div
           ref={fixedRef}
-          className={`items-center fixed top-0 z-20 w-full p-6 ${isTouchingTheTop ? "shadow-lg bg-[hsl(var(--padre-background))]" : ""}`}
+          className={`items-center fixed top-0 z-20 w-full px-6 py-4 ${isTouchingTheTop ? "shadow-lg bg-[hsl(var(--padre-background))]" : ""}`}
         >
           <div className="m-auto max-w-screen-lg flex flex-row justify-between">
             <div className="flex-1">
               {(!homeTreatment || isTouchingTheTop) && (
                 <a className="animate-[entrance]" href="/">
-                  <Logo animation="simple" size={50} />
+                  <Logo animation="simple" size={40} />
                 </a>
               )}
             </div>
