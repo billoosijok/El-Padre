@@ -2,10 +2,11 @@ import { ReactNode, useRef } from "react";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
-import { useTranslations } from "@/hooks/useTranslations";
+import { useI18n } from "@/hooks/useTranslations";
 import { FloatingContent } from "@/components/FloatingContent";
 import { useIsTouching } from "@/hooks/useIsTouching";
 import { Logo } from "@/components/Logo";
+import { LanguageSelectorDropdown } from "@/components/LanguageSelector";
 
 export default function DefaultLayout({
   children,
@@ -18,7 +19,7 @@ export default function DefaultLayout({
   contentOffset?: string;
   homeTreatment?: boolean;
 }) {
-  const { goodLabel } = useTranslations();
+  const { goodLabel } = useI18n();
   const fixedRef = useRef(null);
   const targetRef = useRef(null);
   const isTouchingTheTop = useIsTouching(targetRef, fixedRef);
@@ -38,7 +39,8 @@ export default function DefaultLayout({
                 </a>
               )}
             </div>
-            <div className="flex-1 text-right">
+            <div className="flex-1 flex gap-2 flex-row justify-end items-center">
+              <LanguageSelectorDropdown />
               <Button
                 as={Link}
                 className="rounded-2xl"
@@ -46,7 +48,7 @@ export default function DefaultLayout({
                 href="tel:0468324011"
                 variant="bordered"
               >
-                {goodLabel("Réserver")}
+                {goodLabel("reserve")}
               </Button>
             </div>
           </div>
@@ -62,7 +64,7 @@ export default function DefaultLayout({
             <footer className="w-full flex flex-col gap-10 py-20">
               <div className="w-full items-stretch flex gap-4 justify-center ">
                 <div className="flex-1 text-right">
-                  <h3 className="text-2xl">N&apos;hesitez Pas</h3>
+                  <h3 className="text-2xl">{goodLabel("contact")}</h3>
                   <p>
                     <a href="https://maps.app.goo.gl/upvp6fR7qbgHyYpP9">
                       29 Cours de la République, 11100 Narbonne
@@ -75,10 +77,10 @@ export default function DefaultLayout({
                 </div>
                 <div className="divider border-r-small border-gray-500" />
                 <div className="flex-1">
-                  <h3 className="text-2xl">Nos Horaires</h3>
-                  <p>Ouvert j7/7</p>
-                  <p>Ven - Dim : 12H - 2H</p>
-                  <p>Autres Jours : 12H - 15H | 18H - 2H</p>
+                  <h3 className="text-2xl">{goodLabel("nos horaires")}</h3>
+                  <p>{goodLabel("ouvert j7/7")}</p>
+                  <p>{goodLabel("ven - dim")} : 12H - 2H</p>
+                  <p>{goodLabel("autres jours")} : 12H - 15H | 18H - 2H</p>
                 </div>
               </div>
               <Logo size={80} style={{ opacity: 0.5 }} />

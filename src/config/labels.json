@@ -1,5 +1,48 @@
 {
-    "today": {
-        "fr": "Aujourdhui"
+    "reserve": {
+      "fr": "Réservez votre table",
+      "en": "Reserve a table",
+      "es": "Reserva tu mesa"
+    },
+    "contact": {
+        "fr": "Coordonnées",
+        "en": "Location & Contact",
+        "es": "Ubicación y Contacto"
+    },
+    "plats": {
+      "fr": "Plats",
+      "en": "Dishes",
+      "es": "Platos"
+    },
+    "tapas": {
+      "fr": "Tapas",
+      "en": "Tapas",
+      "es": "Tapas"
+    },
+    "menu": {
+      "fr": "Menu",
+      "en": "Menu",
+      "es": "Menú"
+    },
+    "nos horaires": {
+      "fr": "Nos Horaires",
+      "en": "Our Hours",
+      "es": "Nuestros Horarios"
+    },
+    "ouvert j7/7": {
+      "fr": "Ouvert j7/7",
+      "en": "Open 7 days a week",
+      "es": "Abierto 7 días a la semana"
+    },
+    "ven - dim": {
+      "fr": "Ven - Dim",
+      "en": "Fri - Sun",
+      "es": "Vie - Dom"
+    },
+    "autres jours": {
+      "fr": "Autres Jours",
+      "en": "Weekdays",
+      "es": "Otros Días"
     }
-}
+  }
+  

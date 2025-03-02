@@ -24,7 +24,7 @@ module.exports = {
       light: {
         colors: {  // light theme colors
           background: '#d3dadd',
-          primary: "#242d61"
+          primary: "#242d61",
         },
       },
       dark: { // dark theme colors

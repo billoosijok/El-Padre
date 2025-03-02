@@ -1,0 +1,17 @@
+{
+    "fr": {
+        "name": "Français",
+        "subtitle": "",
+        "icon": "france.png"
+    },
+    "es": {
+        "name": "Español",
+        "subtitle": "",
+        "icon": "spain.png"  
+    },
+    "en": {
+        "name": "English",
+        "subtitle": "",
+        "icon": "uk.png"
+    }
+}

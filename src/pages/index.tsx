@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLayoutEffect } from "react";
+import { Fragment, useLayoutEffect } from "react";
 
 import DefaultLayout from "@/layouts/default";
 import {
@@ -12,16 +12,17 @@ import {
 import { LinkItem } from "@/components/LinkItem";
 import { Logo } from "@/components/Logo";
 import { useSessionStorage } from "@/hooks/useSessionStorage";
+import { useI18n } from "@/hooks/useTranslations";
 
 const Links = [
   {
-    name: "Tapas",
+    name: "tapas",
     Icon: TapasMenuIcon,
     to: "/menu/tapas",
     bg: "url(bg-tapas.jpg)",
   },
   {
-    name: "Plats",
+    name: "plats",
     Icon: PlatsMenuIcon,
     to: "menu/plats",
     bg: "url(bg-plats.jpg)",
@@ -37,6 +38,7 @@ const Links = [
 export default function IndexPage() {
   const sessStorage = useSessionStorage();
   const existingSession = sessStorage.get("existing");
+  const { goodLabel } = useI18n();
 
   useLayoutEffect(() => {
     sessStorage.set("existing", "true");
@@ -44,7 +46,6 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout
-      key={location.pathname}
       homeTreatment
       contentOffset="60vh"
       title={
@@ -69,12 +70,12 @@ export default function IndexPage() {
     >
       <div className="flex justify-center flex-col">
         {Links.map((lnk) => (
-          <>
-            {/* @ts-ignore */}
+          <Fragment key={lnk.name}>
+            {/** @ts-ignore */}
             <LinkItem key={lnk.name} {...lnk}>
-              {lnk.name}
+              {goodLabel(lnk.name as any)}
             </LinkItem>
-          </>
+          </Fragment>
         ))}
       </div>
     </DefaultLayout>
