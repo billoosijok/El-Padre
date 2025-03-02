@@ -28,10 +28,10 @@ export const MenuLayout = ({ menu: sections }: { menu: MenuSection[] }) => {
 
         try {
           jsonMenu = await import(
-            `/src/config/menu/${sec.menu}.${language}.json`
+            `../config/menu/${sec.menu}.${language}.json`
           );
         } catch {
-          jsonMenu = await import(`/src/config/menu/${sec.menu}.json`);
+          jsonMenu = await import(`../config/menu/${sec.menu}.json`);
         }
 
         return { ...sec, menu: jsonMenu.default };
