@@ -1,8 +1,8 @@
 {
     "reserve": {
-      "fr": "Réservez votre table",
-      "en": "Reserve a table",
-      "es": "Reserva tu mesa"
+      "fr": "Réservation",
+      "en": "Reservation",
+      "es": "Reserva"
     },
     "contact": {
         "fr": "Coordonnées",
