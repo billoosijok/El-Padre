@@ -33,7 +33,7 @@ export const FloatingContent = ({
   // }, []);
 
   return (
-    <div className="floating-content">
+    <div className="floating-content bg-[hsl(var(--padre-backdrop))]">
       <div>{children}</div>
     </div>
   );

@@ -24,7 +24,7 @@ const RouteWrapper = () => {
 
   const onSelectLanguage = useCallback((lang: SupportedLanguages) => {
     setLanguage(lang);
-    navigate("/menu/tapas");
+    navigate("/");
   }, []);
 
   useEffect(() => {

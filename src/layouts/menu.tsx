@@ -45,7 +45,7 @@ export const MenuLayout = ({ menu: sections }: { menu: MenuSection[] }) => {
 
   return (
     <DefaultLayout title={<h1>{goodLabel("menu")}</h1>}>
-      <div className="max-w-3xl m-auto flex flex-col align-center px-6">
+      <div className="max-w-3xl m-auto flex flex-col align-center px-6 pb-20">
         <Tabs
           fullWidth
           className="sticky top-4 flex justify-center mb-6 px-2"
@@ -69,7 +69,7 @@ export const MenuLayout = ({ menu: sections }: { menu: MenuSection[] }) => {
                 itemClasses={{
                   heading: "px-4 bg-[#efeae7]",
                   title: "font-cardo",
-                  content: "px-4",
+                  content: "px-4 bg-white",
                 }}
                 selectionMode="multiple"
                 variant="bordered"
