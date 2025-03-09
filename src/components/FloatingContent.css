@@ -9,7 +9,10 @@
 
 .floating-content {
     overflow: hidden;
-    background-color: white;
+    background-image: url(/bg.png);
+    background-position-y: 25vh;
+    background-repeat: repeat-x;
+    background-size: 108%;
     min-height: 100vh;
     z-index: 10;
     filter: drop-shadow(-5px 0px 10px rgba(0 0 0 .5));

@@ -23,13 +23,14 @@ module.exports = {
     themes: {
       light: {
         colors: {  // light theme colors
-          background: '#d3dadd',
+          background: '#dad7cd',
+          backdrop: '#d3dadd',
           primary: "#242d61",
         },
       },
       dark: { // dark theme colors
         colors: {
-          background: '#2e2d37'
+          backdrop: '#2e2d37'
         }, 
       },
     }

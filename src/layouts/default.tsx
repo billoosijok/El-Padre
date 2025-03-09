@@ -61,9 +61,9 @@ export default function DefaultLayout({
         <div ref={targetRef} style={{ marginTop: contentOffset }}>
           <FloatingContent maxClip={homeTreatment ? 10 : 5}>
             <main>{children}</main>
-            <footer className="w-full flex flex-col gap-10 py-20">
-              <div className="w-full items-stretch flex gap-4 justify-center ">
-                <div className="flex-1 text-right">
+            <footer className="w-full flex flex-col gap-10 py-20 bg-white/50">
+              <div className="w-full items-stretch flex gap-4 justify-center">
+                <div className="flex-1 text-right text-shadow">
                   <h3 className="text-2xl">{goodLabel("contact")}</h3>
                   <p>
                     <a href="https://maps.app.goo.gl/upvp6fR7qbgHyYpP9">
@@ -76,7 +76,7 @@ export default function DefaultLayout({
                   </p>
                 </div>
                 <div className="divider border-r-small border-gray-500" />
-                <div className="flex-1">
+                <div className="flex-1 text-shadow">
                   <h3 className="text-2xl">{goodLabel("nos horaires")}</h3>
                   <p>{goodLabel("ouvert j7/7")}</p>
                   <p>{goodLabel("ven - dim")} : 12H - 2H</p>
