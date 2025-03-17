@@ -1,0 +1,442 @@
+[
+  {
+    "category": "Cócteles",
+    "items": [
+      {
+        "category": " Signatures",
+        "items": [
+          {
+            "name": "CANCÙN",
+            "price": 10,
+            "description": "Tequila (Milagro), liqueur de pastèque, purée de fraise, jus de citron, eau gazeuse."
+          },
+          {
+            "name": "SANTA CRUZ",
+            "price": 10,
+            "description": "Gordon’s Pink, Saint Germain, purée de framboise, jus de citron, tonic."
+          },
+          {
+            "name": "BOGOTÁ",
+            "price": 10,
+            "description": "Grey Goose, purée de fraise, jus d’ananas, purée de coco."
+          },
+          {
+            "name": "KINGSTON",
+            "price": 10,
+            "description": "Jameson, amaretto, purée de mangue, jus d’orange, jus de citron."
+          },
+          {
+            "name": "RIO DE JANEIRO",
+            "price": 10,
+            "description": "Havana Club 3 ans ambré, purée de coco, jus de mangue, extrait de vanille de Madagascar."
+          }
+        ]
+      },
+      {
+        "category": " Classiques",
+        "items": [
+          {
+            "name": "MOJITO",
+            "price": 9,
+            "description": "Rhum, limonade, sucre de canne, citron vert, menthe."
+          },
+          {
+            "name": "PIÑA COLADA",
+            "price": 9,
+            "description": "Rhum, ananas, coco."
+          },
+          {
+            "name": "DAIQUIRI",
+            "price": 9,
+            "description": "Rhum, citron vert, sucre de canne."
+          },
+          {
+            "name": "SEX ON THE BEACH",
+            "price": 9,
+            "description": "Vodka, crème de pêche, cranberry, ananas."
+          },
+          {
+            "name": "PORNSTAR MARTINI",
+            "price": 9,
+            "description": "Vodka, Passoã, fruit de la passion, vanille, citron vert, shot de prosecco."
+          },
+          {
+            "name": "MOSCOW / JAMAÏCA / LONDON / MEXICO MULE",
+            "price": 9,
+            "description": "Vodka / Rhum / Gin / Tequila, citron vert, ginger beer."
+          },
+          {
+            "name": "LONG ISLAND",
+            "price": 10,
+            "description": "Vodka, gin, rhum, triple sec, tequila, citron vert, coca."
+          },
+          {
+            "name": "COSMOPOLITAN",
+            "price": 9,
+            "description": "Vodka, triple sec, citron vert, cranberry."
+          },
+          {
+            "name": "MARGARITA (SPICY?)",
+            "price": 9,
+            "description": "Tequila, triple sec, citron jaune."
+          },
+          {
+            "name": "ZOMBIE",
+            "price": 10,
+            "description": "Rhum 50%, liqueur d’abricot, citron, ananas, grenadine."
+          },
+          {
+            "name": "CAIPIRINHA",
+            "price": 9,
+            "description": "Cachaça, citron vert, cassonade."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Cervezas",
+    "items": [
+      {
+        "category": "De barril",
+        "items": [
+          {
+            "name": "Blonde",
+            "price": [
+              {
+                "name": "25cl",
+                "value": 3.8
+              },
+              {
+                "name": "50cl",
+                "value": 7.6
+              }
+            ]
+          },
+          {
+            "name": "Blonde d'abbaye",
+            "price": [
+              {
+                "name": "25cl",
+                "value": 4
+              },
+              {
+                "name": "50cl",
+                "value": 8
+              }
+            ]
+          },
+          {
+            "name": "Blanche",
+            "price": [
+              {
+                "name": "25cl",
+                "value": 4
+              },
+              {
+                "name": "50cl",
+                "value": 8
+              }
+            ]
+          },
+          {
+            "name": "IPA",
+            "price": [
+              {
+                "name": "25cl",
+                "value": 4.5
+              },
+              {
+                "name": "50cl",
+                "value": 9
+              }
+            ]
+          },
+          {
+            "name": "Monaco/Panaché",
+            "price": [
+              {
+                "name": "25cl",
+                "value": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Botellas",
+        "items": [
+          {
+            "name": "Bud",
+            "price": 6
+          },
+          {
+            "name": "Corona",
+            "price": 6
+          },
+          {
+            "name": "1664 0%",
+            "price": 6
+          },
+          {
+            "name": "Chouffe",
+            "price": 7
+          },
+          {
+            "name": "Desperados",
+            "price": 6
+          },
+          {
+            "name": "Asahi",
+            "price": 7
+          },
+          {
+            "name": "Brewdog Punk IPA",
+            "price": 7
+          },
+          {
+            "name": "Kasteel Rouge",
+            "price": 7
+          },
+          {
+            "name": "Artisanal (La Gorge Fraîche) Blonde / Ambrée",
+            "price": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Aperitivos y Digestivos",
+    "items": [
+      {
+        "category": "Aperitivos",
+        "items": [
+          {
+            "name": "Kir",
+            "price": 4
+          },
+          {
+            "name": "Kir Royal",
+            "price": 8
+          },
+          {
+            "name": "Martini Bianco / Rosso",
+            "price": 4
+          },
+          {
+            "name": "Ricard",
+            "price": 3.5
+          },
+          {
+            "name": "Aperol Spritz",
+            "price": 8
+          },
+          {
+            "name": "Suze",
+            "price": 4
+          },
+          {
+            "name": "Sangria",
+            "price": 5
+          },
+          {
+            "name": "Campari",
+            "price": 4
+          }
+        ]
+      },
+      {
+        "category": "Digestivos",
+        "items": [
+          {
+            "name": "Bailey’s",
+            "price": 6
+          },
+          {
+            "name": "Get 27",
+            "price": 6
+          },
+          {
+            "name": "Jagermeister",
+            "price": 6
+          },
+          {
+            "name": "Amaretto",
+            "price": 6
+          },
+          {
+            "name": "Cointreau",
+            "price": 6
+          },
+          {
+            "name": "Kahlua",
+            "price": 6
+          },
+          {
+            "name": "Cognac",
+            "price": 9
+          },
+          {
+            "name": "Armagnac",
+            "price": 9
+          },
+          {
+            "name": "Crème de menthe/citron",
+            "price": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Chupitos",
+    "items": [
+      {
+        "name": "B52",
+        "price": 4,
+        "description": "Bailey’s, Cointreau, Kahlua"
+      },
+      {
+        "name": "Tequila PAF",
+        "price": 4,
+        "description": "Tequila, sel, citron vert"
+      },
+      {
+        "name": "Orgasme",
+        "price": 4,
+        "description": "Get 27, Bailey’s, tequila"
+      },
+      {
+        "name": "Colère",
+        "price": 4,
+        "description": "Whiskey, Amaretto"
+      },
+      {
+        "name": "Baby Guinness",
+        "price": 4,
+        "description": "Bailey’s, Kahlua"
+      },
+      {
+        "name": "Kamikaze",
+        "price": 4,
+        "description": "Vodka, Cointreau, jus de citron vert"
+      }
+    ]
+  },
+  {
+    "category": "Licores",
+    "items": [
+      {
+        "category": "Whisky",
+        "items": [
+          {
+            "name": "JACK",
+            "price": 8,
+            "description": "USA - Tennessee Whiskey"
+          },
+          {
+            "name": "WOODFORD RESERVE",
+            "price": 12,
+            "description": "USA - Bourbon"
+          },
+          {
+            "name": "JAMESON",
+            "price": 9,
+            "description": "Irlande - Blended Irish Whiskey"
+          },
+          {
+            "name": "TOTTORI",
+            "price": 11,
+            "description": "Japon - Blended Japanese Whiskey"
+          },
+          {
+            "name": "CHIVAS 12ANS",
+            "price": 12,
+            "description": "Écosse - Single malt scotch"
+          },
+          {
+            "name": "MONKEY SHOULDER",
+            "price": 10,
+            "description": "Écosse - Blended malt scotch"
+          }
+        ]
+      },
+      {
+        "category": "Ginebra",
+        "items": [
+          {
+            "name": "ROKU",
+            "price": 11,
+            "description": "Japon"
+          },
+          {
+            "name": "GORDON’S PINK",
+            "price": 8,
+            "description": "Londres - Gin Aromatisé"
+          },
+          {
+            "name": "BOMBAY SAPHIRE",
+            "price": 10,
+            "description": "Londres - London Dry Gin"
+          },
+          {
+            "name": "HENDRICK’S",
+            "price": 12,
+            "description": "Écosse"
+          }
+        ]
+      },
+      {
+        "category": "Ron",
+        "items": [
+          {
+            "name": "Havana Club 3 ans (Ambré/Blanc)",
+            "price": 8,
+            "description": "Cuba - traditionnel"
+          },
+          {
+            "name": "Havana Club 7 ans - Hors d'âge",
+            "price": 10,
+            "description": "Cuba - traditionnel"
+          },
+          {
+            "name": "Don Papa",
+            "price": 11,
+            "description": "Philippines - traditionnel"
+          },
+          {
+            "name": "Diplomatico",
+            "price": 12,
+            "description": "Vénézuéla - traditionnel"
+          }
+        ]
+      },
+      {
+        "category": "Vodka",
+        "items": [
+          {
+            "name": "Grey Goose",
+            "price": 12,
+            "description": "France"
+          },
+          {
+            "name": "Absolut",
+            "price": 8,
+            "description": "Suède"
+          }
+        ]
+      },
+      {
+        "category": "Tequila",
+        "items": [
+          {
+            "name": "Milagro",
+            "price": 10,
+            "description": "Mexique - 100% Agave"
+          }
+        ]
+      }
+    ]
+  }
+]

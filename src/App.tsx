@@ -14,6 +14,7 @@ import {
   useI18n,
 } from "./hooks/useTranslations";
 import { LanguageSelectorModal } from "./components/LanguageSelector";
+import { MenuBoissons } from "./pages/menu/boissons";
 
 import IndexPage from "@/pages/index";
 
@@ -44,7 +45,7 @@ function App() {
       <Routes>
         <Route element={<RouteWrapper />}>
           <Route key={"/"} element={<IndexPage />} path="/" />
-          {/* <Route element={<MenuBoissons />} path="/menu/boissons/*" /> */}
+          <Route element={<MenuBoissons />} path="/boissons/*" />
           <Route key={"/menu/*"} element={<Menu />} path="/menu/*" />
         </Route>
       </Routes>

@@ -1,22 +1,28 @@
-import boissons from "@/config/menu/boissons.json";
-import { MartiniIcon } from "@/components/icons";
+import { MartiniIcon, WineIcon } from "@/components/icons";
 import { MenuLayout } from "@/layouts/menu";
 
 const sections = [
   {
-    name: "Cocktails",
+    name: "alcool",
     icon: <MartiniIcon />,
-    menu: boissons.cocktails,
+    menu: "alcool",
+    customizations: {
+      menuItemNameFont: "font-league",
+    },
   },
   {
-    name: "Bières",
+    name: "sans alcool",
     icon: <MartiniIcon />,
-    menu: boissons["Bières"],
+    menu: "sans-alcool",
   },
   {
-    name: "Apéritifs & Digestifs",
-    icon: <MartiniIcon />,
-    menu: boissons["Apéritifs & Digestifs"],
+    name: "vin",
+    icon: <WineIcon />,
+    menu: "vin",
+    customizations: {
+      menuItemSubCategoryClasses: "font-glass uppercase text-2xl",
+      menuItemNameClasses: "font-league font-[400] text-lg",
+    },
   },
 ] as const;
 

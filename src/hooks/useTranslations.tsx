@@ -14,7 +14,7 @@ import labels from "@/config/labels.json";
 
 export type SupportedLanguages = keyof typeof supported_languages;
 
-const DEFAULT_LANGUAGE: SupportedLanguages = "fr";
+export const DEFAULT_LANGUAGE: SupportedLanguages = "fr";
 
 interface I18nContextValue {
   language: SupportedLanguages;

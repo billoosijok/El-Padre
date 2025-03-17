@@ -14,6 +14,7 @@ module.exports = {
     fontFamily: {
       league: ["League Spartan", "sans-serif"],
       cardo: ["Cardo", "serif"],
+      glass: ["Glass Antiqua", "serif"]
     },
     extend: {},
   },

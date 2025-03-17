@@ -68,6 +68,7 @@ export const LanguageSelectorModal = ({
                         <img
                           alt="icon"
                           aria-hidden="true"
+                          loading="lazy"
                           src={`/${icon}`}
                           width={"25"}
                         />

@@ -24,6 +24,21 @@
       "en": "Menu",
       "es": "Menú"
     },
+    "sans alcool": {
+      "fr": "Sans Alcool",
+      "en": "Non-Alcoholic",
+      "es": "Sin Alcohol"
+    },
+    "alcool": {
+      "fr": "Alcool",
+      "en": "Alcoholic",
+      "es": "Alcohol"
+    },
+    "vin": {
+      "fr": "Vin & Champagne",
+      "en": "Wine & Champagne",
+      "es": "Vino y Champán"
+    },
     "nos horaires": {
       "fr": "Nos Horaires",
       "en": "Our Hours",
@@ -43,6 +58,11 @@
       "fr": "Autres Jours",
       "en": "Weekdays",
       "es": "Otros Días"
+    },
+    "boissons": {
+      "fr": "Boissons",
+      "en": "Drinks",
+      "es": "Bebidas"
     }
   }
   
