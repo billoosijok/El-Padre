@@ -1,6 +1,6 @@
 [
   {
-    "category": "Platos",
+    "category": "Platos Principales",
     "items": [
       {
         "name": "Entrecot",
@@ -10,7 +10,7 @@
       {
         "name": "Magret de Pato",
         "price": 26,
-        "description": "Cocinado a la plancha, servido con salsa de arándanos y patatas salteadas. Cocción recomendada: al punto."
+        "description": "Cocinado a la plancha, servido con salsa de soja, miel y naranjas, y patatas salteadas. Cocción recomendada: al punto."
       },
       {
         "name": "Filetes de pollo",
@@ -18,9 +18,9 @@
         "description": "A la parrilla, servidos con tomates cherry, patatas salteadas y salsa de champiñones."
       },
       {
-        "name": "Pescado según disponibilidad",
-        "price": 20,
-        "description": "Flambeado, acompañado de un puré de patatas con hierbas y una salsa cremosa de limón."
+        "name": "Dos filetes de pescado",
+        "price": 23,
+        "description": "Lubina o dorada flambeada, servida con puré de patatas con hierbas y una salsa cremosa de limón."
       }
     ]
   },
@@ -30,17 +30,22 @@
       {
         "name": "Hamburguesa El Padre",
         "price": 16,
-        "description": "Carne fresca, bacon, cheddar, pepinillos, salsa burger y cebollas caramelizadas. Servida con patatas fritas."
+        "description": "Carne fresca, bacon, cheddar, tomate, lechuga, pepinillos, salsa burger y cebollas caramelizadas. Servida con patatas fritas."
       },
       {
         "name": "Hamburguesa de pollo empanado casero",
         "price": 15,
-        "description": "Pepinillos, lechuga, cheddar, salsa blanca. Servida con patatas fritas."
-      },
+        "description": "Pepinillos, cheddar, tomate, lechuga, cebolla roja, salsa blanca. Servida con patatas fritas."
+      }
+    ]
+  },
+  {
+    "category": "Menú Infantil",
+    "items": [
       {
         "name": "Menú Infantil",
         "price": 10,
-        "description": "Hamburguesa con patatas fritas y un Capri-Sun."
+        "description": "Hamburguesa servida con patatas fritas o pasta infantil, acompañada de un Capri-Sun."
       }
     ]
   },
@@ -50,7 +55,7 @@
       {
         "name": "Carbonara",
         "price": 14,
-        "description": "Crema, panceta, yema de huevo y virutas de parmesano."
+        "description": "Crema, panceta, yema de huevo y parmesano."
       },
       {
         "name": "Alfredo con pollo",
@@ -60,7 +65,24 @@
       {
         "name": "Arrabiata",
         "price": 13,
-        "description": "Salsa de tomate ligeramente picante hecha en casa y virutas de parmesano."
+        "description": "Salsa de tomate ligeramente picante hecha en casa y parmesano."
+      }
+    ]
+  },
+  {
+    "category": "Guarniciones",
+    "items": [
+      {
+        "name": "Patatas fritas",
+        "price": 3
+      },
+      {
+        "name": "Verduras mediterráneas salteadas",
+        "price": 4
+      },
+      {
+        "name": "Patatas salteadas con hierbas de Provenza",
+        "price": 4
       }
     ]
   },
@@ -70,7 +92,7 @@
       {
         "name": "Ensalada César",
         "price": 15,
-        "description": "Lechuga romana con salsa César, acompañada de pollo en tiras, picatostes de pan con ajo y virutas de parmesano."
+        "description": "Lechuga romana con salsa César, acompañada de pollo en tiras, picatostes de pan con ajo y parmesano."
       },
       {
         "name": "Ensalada El Padre",

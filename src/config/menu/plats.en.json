@@ -1,6 +1,6 @@
 [
   {
-    "category": "Dishes",
+    "category": "Main Dishes",
     "items": [
       {
         "name": "Entrecôte",
@@ -10,7 +10,7 @@
       {
         "name": "Duck Breast",
         "price": 26,
-        "description": "Pan-seared, served with a blueberry sauce and sautéed potatoes. Recommended doneness: medium-rare."
+        "description": "Pan-seared, served with a soy sauce, honey, and orange sauce, and sautéed potatoes. Recommended doneness: medium-rare."
       },
       {
         "name": "Chicken Fillets",
@@ -18,9 +18,9 @@
         "description": "Grilled, served with cherry tomatoes, sautéed potatoes, and a mushroom sauce."
       },
       {
-        "name": "Fish of the Day",
-        "price": 20,
-        "description": "Flambéed, accompanied by herb-infused mashed potatoes and a creamy lemon sauce."
+        "name": "Two Fish Fillets",
+        "price": 23,
+        "description": "Sea bass or sea bream flambéed, served with herb-infused mashed potatoes and a creamy lemon sauce."
       }
     ]
   },
@@ -30,17 +30,22 @@
       {
         "name": "El Padre Burger",
         "price": 16,
-        "description": "Fresh beef patty, bacon, cheddar, pickles, burger sauce, caramelized onions. Served with fries."
+        "description": "Fresh beef patty, bacon, cheddar, tomato, lettuce, pickles, burger sauce, caramelized onions. Served with fries."
       },
       {
         "name": "Homemade Breaded Chicken Burger",
         "price": 15,
-        "description": "Pickles, lettuce, cheddar, white sauce. Served with fries."
-      },
+        "description": "Pickles, cheddar, tomato, lettuce, red onion, white sauce. Served with fries."
+      }
+    ]
+  },
+  {
+    "category": "Kids' Menu",
+    "items": [
       {
         "name": "Kids' Menu",
         "price": 10,
-        "description": "Burger with fries and a Capri-Sun."
+        "description": "Burger served with fries or kids' pasta, accompanied by a Capri-Sun."
       }
     ]
   },
@@ -50,7 +55,7 @@
       {
         "name": "Carbonara",
         "price": 14,
-        "description": "Cream, bacon, egg yolk, and Parmesan shavings."
+        "description": "Cream, bacon, egg yolk, and Parmesan."
       },
       {
         "name": "Chicken Alfredo",
@@ -60,7 +65,24 @@
       {
         "name": "Arrabiata",
         "price": 13,
-        "description": "Lightly spicy homemade tomato sauce, with Parmesan shavings."
+        "description": "Lightly spicy homemade tomato sauce, and Parmesan."
+      }
+    ]
+  },
+  {
+    "category": "Side Dishes",
+    "items": [
+      {
+        "name": "Fries",
+        "price": 3
+      },
+      {
+        "name": "Mediterranean Sautéed Vegetables",
+        "price": 4
+      },
+      {
+        "name": "Herbs de Provence Sautéed Potatoes",
+        "price": 4
       }
     ]
   },
@@ -70,7 +92,7 @@
       {
         "name": "Caesar Salad",
         "price": 15,
-        "description": "Romaine lettuce with Caesar dressing, topped with sliced chicken, garlic croutons, and Parmesan shavings."
+        "description": "Romaine lettuce with Caesar dressing, topped with sliced chicken, garlic croutons, and Parmesan."
       },
       {
         "name": "El Padre Salad",
@@ -105,7 +127,7 @@
       {
         "name": "3-Scoop Ice Cream Cup",
         "price": 8,
-        "description": "Flavors based on the chef’s suggestion."
+        "description": "Flavors based on the chef's suggestion."
       }
     ]
   }

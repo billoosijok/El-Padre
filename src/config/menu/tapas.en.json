@@ -4,15 +4,15 @@
     "items": [
       {
         "name": "Crunchy Fries",
-        "price": 4.5
+        "price": 5
       },
       {
         "name": "Mixed Olives",
-        "price": 5,
+        "price": 3,
         "description": "Marinated with chili, lemon, garlic, and rosemary."
       },
       {
-        "name": "Garlic Bread with Parmesan",
+        "name": "Roman Garlic Bread with Parmesan",
         "price": 8,
         "description": "Toasted bread with garlic butter, topped with Parmesan cheese."
       },
@@ -24,7 +24,7 @@
       {
         "name": "Garlic Mushrooms",
         "price": 8,
-        "description": "Sautéed and simmered in a creamy sauce. Served with bread."
+        "description": "Sautéed and simmered in a creamy sauce."
       },
       {
         "name": "Crispy Potatoes",
@@ -33,7 +33,7 @@
       },
       {
         "name": "Miso-Roasted Broccoli",
-        "price": 8,
+        "price": 7,
         "description": "Enhanced by miso butter and served on a beet purée."
       }
     ]
@@ -74,7 +74,7 @@
       {
         "name": "Spicy Chicken Tenders",
         "price": 9,
-        "description": "Served with sriracha mayo and pickles."
+        "description": "Served with pickles and sriracha mayo."
       },
       {
         "name": "Chicken Skewers",
@@ -84,27 +84,7 @@
     ]
   },
   {
-    "category": "Charcuterie",
-    "items": [
-      {
-        "name": "Bresaola",
-        "price": 10,
-        "description": "Served with pickles, lemon-infused olive oil, and Parmesan shavings."
-      },
-      {
-        "name": "Carpaccio",
-        "price": 9,
-        "description": "Served with capers and Parmesan shavings."
-      },
-      {
-        "name": "Charcuterie Board",
-        "price": 23,
-        "description": "Serrano ham, prosciutto, dry sausage, Iberian chorizo, bresaola, coppa, olives, radish, pickles, cherry tomatoes."
-      }
-    ]
-  },
-  {
-    "category": "Cheese",
+    "category": "Cheese & Charcuterie",
     "items": [
       {
         "name": "Panko-Crusted Goat Cheese",
@@ -114,12 +94,32 @@
       {
         "name": "Baked Camembert",
         "price": 9,
-        "description": "With thyme, honey, and walnuts. Served with bread."
+        "description": "With thyme, honey, and walnuts."
+      },
+      {
+        "name": "Bresaola",
+        "price": 10,
+        "description": "Served with pickles, lemon-infused olive oil, and Parmesan."
+      },
+      {
+        "name": "Carpaccio",
+        "price": 9,
+        "description": "Served with capers and Parmesan."
       },
       {
         "name": "Cheese Board",
         "price": 20,
-        "description": "Goat cheese, Camembert, Roquefort, Comté, olives, radish, pickles, cherry tomatoes."
+        "description": "Goat cheese, sheep's cheese, Roquefort, Comté, olives, radish, pickles, cherry tomatoes."
+      },
+      {
+        "name": "Charcuterie Board",
+        "price": 23,
+        "description": "Serrano ham, prosciutto, dry sausage, Iberian chorizo, bresaola, coppa, olives, radish, pickles, cherry tomatoes."
+      },
+      {
+        "name": "Mixed Cheese & Charcuterie Board",
+        "price": 27,
+        "description": "Our complete selection, combining fine charcuterie and aged cheeses, with their garnishes."
       }
     ]
   }
