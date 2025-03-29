@@ -2,17 +2,17 @@
   {
     "category": "Opciones Vegetarianas",
     "items": [
-      { 
-        "name": "PAPAS FRITAS CRUJIENTES", 
-        "price": 4.5 
+      {
+        "name": "Papas fritas crujientes",
+        "price": 5
       },
       {
-        "name": "ACEITUNAS MIXTAS",
-        "price": 5,
+        "name": "Aceitunas mixtas",
+        "price": 3,
         "description": "Marinadas con pimiento, limón, ajo y romero."
       },
       {
-        "name": "Pan de ajo gratinado con parmesano",
+        "name": "Pan romano de ajo gratinado con parmesano",
         "price": 8,
         "description": "Pan tostado con mantequilla de ajo y gratinado con parmesano."
       },
@@ -22,9 +22,9 @@
         "description": "Salteados y espolvoreados con flor de sal."
       },
       {
-        "name": "CHAMPIÑONES AL AJO",
+        "name": "Champiñones al ajo",
         "price": 8,
-        "description": "Salteados y cocinados a fuego lento en una salsa cremosa. Servidos con pan."
+        "description": "Salteados y cocinados a fuego lento en una salsa cremosa."
       },
       {
         "name": "Papas crujientes",
@@ -33,33 +33,8 @@
       },
       {
         "name": "Brócoli asado al miso",
-        "price": 8,
+        "price": 7,
         "description": "Realzado con mantequilla de miso y servido sobre puré de remolacha."
-      }
-    ]
-  },
-  {
-    "category": "Opciones del Mar",
-    "items": [
-      {
-        "name": "Anchoas y aceitunas",
-        "price": 6,
-        "description": "Servidas con pan tostado."
-      },
-      {
-        "name": "CALAMARES A LA ROMANA",
-        "price": 9,
-        "description": "Servidos con salsa alioli."
-      },
-      {
-        "name": "Gambas con mantequilla de chili-lima",
-        "price": 14,
-        "description": "Servidas con pan tostado."
-      },
-      {
-        "name": "Sardinas fritas",
-        "price": 10,
-        "description": "Ligeramente aderezadas con limón y empanadas."
       }
     ]
   },
@@ -74,7 +49,7 @@
       {
         "name": "Tiras de pollo picantes",
         "price": 9,
-        "description": "Servidas con salsa mayo-sriracha y pepinillos."
+        "description": "Servidas con pepinillos y salsa mayo-sriracha."
       },
       {
         "name": "Brocheta de pollo",
@@ -84,27 +59,7 @@
     ]
   },
   {
-    "category": "Embutidos",
-    "items": [
-      {
-        "name": "Bresaola",
-        "price": 10,
-        "description": "Servida con pepinillos, aceite de oliva con limón y virutas de parmesano."
-      },
-      {
-        "name": "Carpaccio",
-        "price": 9,
-        "description": "Servido con alcaparras y virutas de parmesano."
-      },
-      {
-        "name": "Tabla de embutidos",
-        "price": 23,
-        "description": "Jamón serrano, prosciutto, salchichón, chorizo ibérico, bresaola, coppa, aceitunas, rábano, pepinillos, tomates cherry."
-      }
-    ]
-  },
-  {
-    "category": "Quesos",
+    "category": "Quesos y Embutidos",
     "items": [
       {
         "name": "Queso de cabra empanado en panko",
@@ -114,12 +69,57 @@
       {
         "name": "Camembert al horno",
         "price": 9,
-        "description": "Tomillo, miel y nueces. Servido con pan."
+        "description": "Tomillo, miel y nueces."
+      },
+      {
+        "name": "Bresaola",
+        "price": 10,
+        "description": "Servida con pepinillos, aceite de oliva con limón y parmesano."
+      },
+      {
+        "name": "Carpaccio",
+        "price": 9,
+        "description": "Servido con alcaparras y parmesano."
       },
       {
         "name": "Tabla de quesos",
         "price": 20,
-        "description": "Queso de cabra, Camembert, Roquefort, Comté, aceitunas, rábano, pepinillos, tomates cherry."
+        "description": "Queso de cabra, queso de oveja, Roquefort, Comté, aceitunas, rábano, pepinillos, tomates cherry."
+      },
+      {
+        "name": "Tabla de embutidos",
+        "price": 23,
+        "description": "Jamón serrano, prosciutto, salchichón, chorizo ibérico, bresaola, coppa, aceitunas, rábano, pepinillos, tomates cherry."
+      },
+      {
+        "name": "Tabla mixta de quesos y embutidos",
+        "price": 27,
+        "description": "Nuestra selección completa, combinando embutidos finos y quesos curados, con sus guarniciones."
+      }
+    ]
+  },
+  {
+    "category": "Opciones del Mar",
+    "items": [
+      {
+        "name": "Anchoas y aceitunas",
+        "price": 6,
+        "description": "Servidas con pan tostado."
+      },
+      {
+        "name": "Calamares a la romana",
+        "price": 9,
+        "description": "Servidos con salsa alioli."
+      },
+      {
+        "name": "Gambas con mantequilla de chili-lima",
+        "price": 14,
+        "description": "Servidas con pan tostado."
+      },
+      {
+        "name": "Sardinas fritas",
+        "price": 10,
+        "description": "Ligeramente aderezadas con limón y empanadas."
       }
     ]
   }

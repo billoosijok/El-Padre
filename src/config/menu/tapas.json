@@ -2,46 +2,42 @@
     {
         "category": "Côté Végé",
         "items": [
-          {"name": "CRUNCHY FRITES", "price": 4.5},
-          {"name": "OLIVES MIXTES", "price": 5, "description": "Marinade de piment, citron, ail et romarin."},
-          {"name": "Pain à l'ail gratiné au parmesan", "price": 8, "description": "Pain doré au beurre d’ail et gratiné au parmesan."},
-          {"name": "Pimientos de Padrón", "price": 7, "description": "Poêlés et saupoudrés de fleur de sel."},
-          {"name": "CHAMPIGNONS À L'AIL", "price": 8, "description": "Poêlés et mijotés dans une sauce crémeuse. Servis avec du pain."},
-          {"name": "Pommes de terre croustillantes", "price": 8, "description": "Servies avec de la sauce aïoli."},
-          {"name": "Brocolis rôtis au miso", "price": 8, "description": "Rehaussés par un beurre de miso et servis sur une purée de betterave."}
+            {"name": "Crunchy frites", "price": 5},
+            {"name": "Olives mixtes", "price": 3, "description": "Marinade de piment, citron, ail et romarin."},
+            {"name": "Pain romain à l'ail gratiné au parmesan", "price": 8, "description": "Pain doré au beurre d'ail et gratiné au parmesan."},
+            {"name": "Pimientos de Padrón", "price": 7, "description": "Poêlés et saupoudrés de fleur de sel."},
+            {"name": "Champignons à l'ail", "price": 8, "description": "Poêlés et mijotés dans une sauce crémeuse."},
+            {"name": "Pommes de terre croustillantes", "price": 8, "description": "Servies avec de la sauce aïoli."},
+            {"name": "Brocolis rôtis au miso", "price": 7, "description": "Rehaussés par un beurre de miso et servis sur une purée de betterave."}
         ]
-      },
-      {
-        "category": "Côté Mer",
-        "items": [
-          {"name": "Anchois et olives", "price": 6, "description": "Servis avec du pain grillé."},
-          {"name": "CALAMARS À LA ROMAINE", "price": 9, "description": "Servis avec une sauce aïoli."},
-          {"name": "Gambas au beurre chili-lime", "price": 14, "description": "Servies avec du pain grillé."},
-          {"name": "Fritures de Sardines", "price": 10, "description": "Légèrement citronnées et panées."}
-        ]
-      },
-      {
+    },
+    {
         "category": "Côté Terre",
         "items": [
-          {"name": "Chorizo Catalan", "price": 10, "description": "Chorizo ibérico poêlé et nappé d’un filet de miel de fleur d’oranger."},
-          {"name": "Tenders de poulet épicés", "price": 9, "description": "Servis avec une sauce sriracha mayo et des cornichons."},
-          {"name": "Brochette de poulet", "price": 10, "description": "Marinée aux épices cajun et grillée. Servie avec une salade mixte."}
+            {"name": "Chorizo Catalan", "price": 10, "description": "Chorizo ibérico poêlé et nappé d'un filet de miel de fleur d'oranger."},
+            {"name": "Tenders de poulet épicés", "price": 9, "description": "Servis avec des cornichons et une sauce sriracha mayo."},
+            {"name": "Brochettes de poulet", "price": 10, "description": "Marinées aux épices cajun et grillées. Servies avec une salade mixte."}
         ]
-      },
-  {
-    "category": "Charcuterie",
-    "items": [
-      {"name": "Bresaola", "price": 10, "description": "Servi avec des cornichons, de l’huile d’olive citronnée et des copeaux de parmesan."},
-      {"name": "Carpaccio", "price": 9, "description": "Servi avec ses câpres et copeaux de parmesan."},
-      {"name": "Planche de charcuterie", "price": 23, "description": "Jambon serrano, prosciutto, saucisson sec, chorizo iberico, bresaola, coppa, olives, radis, cornichons, tomates cerise."}
-    ]
-  },
-  {
-    "category": "Fromage",
-    "items": [
-      {"name": "FROMAGE DE CHÈVRE PANÉ AU PANKO", "price": 9, "description": "Sublimé d'une pointe de miel et servi avec sa purée de betterave."},
-      {"name": "Camembert au four", "price": 9, "description": "Thym, miel et noix. Servi avec du pain."},
-      {"name": "Planche de fromage", "price": 20, "description": "Fromage de Chèvre, Camembert, Roquefort, Comté, olives, radis, cornichons, tomates cerise."}
-    ]
-  }
+    },
+    {
+        "category": "Fromage & Charcuterie",
+        "items": [
+            {"name": "Fromage de chèvre pané au panko", "price": 9, "description": "Sublimé d'une pointe de miel et servi avec sa purée de betterave."},
+            {"name": "Camembert au four", "price": 9, "description": "Thym, miel et noix."},
+            {"name": "Bresaola", "price": 10, "description": "Servi avec des cornichons, de l'huile d'olive citronnée et parmesan."},
+            {"name": "Carpaccio", "price": 9, "description": "Servi avec ses câpres et parmesan."},
+            {"name": "Planche de fromage", "price": 20, "description": "Fromage de chèvre, fromage de brebis, Roquefort, Comté, olives, radis, cornichons, tomates cerise."},
+            {"name": "Planche de charcuterie", "price": 23, "description": "Jambon serrano, prosciutto, saucisson sec, chorizo iberico, bresaola, coppa, olives, radis, cornichons, tomates cerise."},
+            {"name": "Planche charcuterie et fromage mixte", "price": 27, "description": "Notre sélection complète, alliant charcuteries fines et fromages affinés, avec leurs garnitures."}
+        ]
+    },
+    {
+        "category": "Côté Mer",
+        "items": [
+            {"name": "Anchois et olives", "price": 6, "description": "Servis avec du pain grillé."},
+            {"name": "Calamars à la romaine", "price": 9, "description": "Servis avec une sauce aïoli."},
+            {"name": "Gambas au beurre chili-lime", "price": 14, "description": "Servies avec du pain grillé."},
+            {"name": "Fritures de Sardines", "price": 10, "description": "Légèrement citronnées et panées."}
+        ]
+    }
 ]
