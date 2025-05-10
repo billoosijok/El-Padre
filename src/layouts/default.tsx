@@ -79,8 +79,7 @@ export default function DefaultLayout({
                 <div className="flex-1 text-shadow">
                   <h3 className="text-2xl">{goodLabel("nos horaires")}</h3>
                   <p>{goodLabel("ouvert j7/7")}</p>
-                  <p>{goodLabel("ven - dim")} : 12H - 2H</p>
-                  <p>{goodLabel("autres jours")} : 12H - 15H | 18H - 2H</p>
+                  <p>12H00 - 2H00</p>
                 </div>
               </div>
               <Logo size={80} style={{ opacity: 0.5 }} />
