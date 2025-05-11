@@ -6,6 +6,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { useCallback, useEffect } from "react";
+import ReactGA from "react-ga4";
 
 import { Menu } from "./pages/menu/menu";
 import {
@@ -18,12 +19,21 @@ import { MenuBoissons } from "./pages/menu/boissons";
 
 import IndexPage from "@/pages/index";
 
+ReactGA.initialize("G-VH1QHTSLEM");
+
 const RouteWrapper = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { setLanguage } = useI18n();
 
   const onSelectLanguage = useCallback((lang: SupportedLanguages) => {
+    ReactGA.event({
+      category: "site interactions",
+      action: "Menu Language Selection",
+      label: lang,
+      value: 1,
+      nonInteraction: false,
+    });
     setLanguage(lang);
     navigate("/");
   }, []);
