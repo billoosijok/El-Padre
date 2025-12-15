@@ -66,26 +66,31 @@ export const MenuLayout = ({ menu: sections }: { menu: MenuSection[] }) => {
 const cachedMenus: { [index: string]: any } = {};
 
 const MenuSection: FC<MenuSection> = ({ menu, name, customizations = {} }) => {
-  const [resolvedMenu, setResolvedMenu] = useState(cachedMenus[menu]);
   const { language } = useI18n();
-  const extension = DEFAULT_LANGUAGE === language ? "" : `.${language}`;
+  const cacheKey = `${menu}.${language}`;
+  const [resolvedMenu, setResolvedMenu] = useState(cachedMenus[cacheKey]);
 
   useEffect(() => {
     (async () => {
-      if (!cachedMenus[menu]) {
-        let module;
-
-        try {
-          module = await import(`../config/menu/${menu}${extension}.json`);
-        } catch {
-          module = await import(`../config/menu/${menu}.json`);
-        }
-
-        cachedMenus[menu] = module.default;
-        setResolvedMenu(cachedMenus[menu]);
+      if (cachedMenus[cacheKey]) {
+        setResolvedMenu(cachedMenus[cacheKey]);
+        return;
       }
+
+      let module;
+      const extension = DEFAULT_LANGUAGE === language ? "" : `.${language}`;
+
+      try {
+        module = await import(`../config/menu/${menu}${extension}.json`);
+      } catch {
+        // Fallback to default language if translation not found
+        module = await import(`../config/menu/${menu}.json`);
+      }
+
+      cachedMenus[cacheKey] = module.default;
+      setResolvedMenu(cachedMenus[cacheKey]);
     })();
-  }, [language, menu]);
+  }, [language, menu, cacheKey]);
 
   return resolvedMenu ? (
     <Accordion
@@ -98,44 +103,59 @@ const MenuSection: FC<MenuSection> = ({ menu, name, customizations = {} }) => {
       selectionMode="multiple"
       variant="bordered"
     >
-      {resolvedMenu?.map(({ category, items }: any, index: number) => (
-        <AccordionItem key={name + category + index} title={category}>
-          <div className="flex flex-col gap-2">
-            {items.map((item: any) => {
-              if (item.category) {
-                return (
-                  <Fragment key={item.category}>
-                    <h5
-                      className={
-                        customizations?.menuItemSubCategoryClasses
-                          ? `${customizations.menuItemSubCategoryClasses}`
-                          : ""
-                      }
-                    >
-                      {item.category}
-                    </h5>
-                    {item.items.map((item: any) => (
-                      <MenuItem
-                        key={item.name}
-                        customizations={customizations}
-                        item={item}
-                      />
-                    ))}
-                  </Fragment>
-                );
-              }
+      {resolvedMenu?.map((section: any, index: number) => {
+        const { category, items, highlight } = section;
+        return (
+          <AccordionItem
+            key={name + category + index}
+            title={category}
+            className={index === 0 ? "rounded-t-xl" : ""}
+            classNames={
+              highlight
+                ? {
+                  heading: "px-4 bg-warning",
+                  content: "px-4 bg-white",
+                }
+                : undefined
+            }
+          >
+            <div className="flex flex-col gap-2">
+              {items.map((item: any) => {
+                if (item.category) {
+                  return (
+                    <Fragment key={item.category}>
+                      <h5
+                        className={
+                          customizations?.menuItemSubCategoryClasses
+                            ? `${customizations.menuItemSubCategoryClasses}`
+                            : ""
+                        }
+                      >
+                        {item.category}
+                      </h5>
+                      {item.items.map((item: any) => (
+                        <MenuItem
+                          key={item.name}
+                          customizations={customizations}
+                          item={item}
+                        />
+                      ))}
+                    </Fragment>
+                  );
+                }
 
-              return (
-                <MenuItem
-                  key={item.name}
-                  customizations={customizations}
-                  item={item}
-                />
-              );
-            })}
-          </div>
-        </AccordionItem>
-      ))}
+                return (
+                  <MenuItem
+                    key={item.name}
+                    customizations={customizations}
+                    item={item}
+                  />
+                );
+              })}
+            </div>
+          </AccordionItem>
+        );
+      })}
     </Accordion>
   ) : (
     <div className="flex justify-center py-12">
@@ -179,17 +199,17 @@ const MenuItemPrice = ({ price }: { price: number | PriceValue[] }) => {
       {typeof price === "number"
         ? price
         : price
-            .sort((a, b) => a.value - b.value)
-            .map((pVal, i) => {
-              const markup = (
-                <span key={pVal.value}>
-                  {shortPriceValueName(pVal.name)}{" "}
-                  {pVal.value.toString().replace(".", ",")}
-                </span>
-              );
+          .sort((a, b) => a.value - b.value)
+          .map((pVal, i) => {
+            const markup = (
+              <span key={pVal.value}>
+                {shortPriceValueName(pVal.name)}{" "}
+                {pVal.value.toString().replace(".", ",")}
+              </span>
+            );
 
-              return i === 0 ? markup : <> | {markup}</>;
-            })}
+            return i === 0 ? markup : <> | {markup}</>;
+          })}
     </span>
   );
 };

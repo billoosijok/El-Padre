@@ -1,5 +1,31 @@
 [
   {
+    "category": "Tapas del Momento",
+    "highlight": true,
+    "items": [
+      {
+        "name": "Pollo a la Crema Revisitado",
+        "price": 11,
+        "description": "Pollo tierno en salsa cremosa de champiñones y mostaza."
+      },
+      {
+        "name": "Vieiras a la Plancha",
+        "price": 12,
+        "description": "Vieiras a la plancha bañadas en salsa casera, servidas con pan tostado."
+      },
+      {
+        "name": "Hojaldre Casero de Ternera Confitada",
+        "price": 12,
+        "description": "Ternera cocinada a fuego lento en hojaldre crujiente."
+      },
+      {
+        "name": "Patata Rellena de Carne Picada",
+        "price": 9,
+        "description": "Patata rellena de carne picada picante y empanada."
+      }
+    ]
+  },
+  {
     "category": "Opciones Vegetarianas",
     "items": [
       {
