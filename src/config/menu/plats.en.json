@@ -1,5 +1,6 @@
 [
   {
+    "id": "main",
     "category": "Main Dishes",
     "items": [
       {
@@ -25,6 +26,7 @@
     ]
   },
   {
+    "id": "burgers",
     "category": "Burgers",
     "items": [
       {
@@ -40,6 +42,7 @@
     ]
   },
   {
+    "id": "kids",
     "category": "Kids' Menu",
     "items": [
       {
@@ -50,6 +53,7 @@
     ]
   },
   {
+    "id": "pasta",
     "category": "Pasta",
     "items": [
       {
@@ -70,6 +74,7 @@
     ]
   },
   {
+    "id": "sides",
     "category": "Side Dishes",
     "items": [
       {
@@ -87,6 +92,7 @@
     ]
   },
   {
+    "id": "salads",
     "category": "Salads",
     "items": [
       {
@@ -102,6 +108,7 @@
     ]
   },
   {
+    "id": "desserts",
     "category": "Desserts",
     "items": [
       {

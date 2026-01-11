@@ -1,5 +1,6 @@
 [
   {
+    "id": "main",
     "category": "Platos Principales",
     "items": [
       {
@@ -25,6 +26,7 @@
     ]
   },
   {
+    "id": "burgers",
     "category": "Hamburguesas",
     "items": [
       {
@@ -40,6 +42,7 @@
     ]
   },
   {
+    "id": "kids",
     "category": "Menú Infantil",
     "items": [
       {
@@ -50,6 +53,7 @@
     ]
   },
   {
+    "id": "pasta",
     "category": "Pastas",
     "items": [
       {
@@ -70,6 +74,7 @@
     ]
   },
   {
+    "id": "sides",
     "category": "Guarniciones",
     "items": [
       {
@@ -87,6 +92,7 @@
     ]
   },
   {
+    "id": "salads",
     "category": "Ensaladas",
     "items": [
       {
@@ -102,6 +108,7 @@
     ]
   },
   {
+    "id": "desserts",
     "category": "Postres",
     "items": [
       {

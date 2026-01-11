@@ -1,8 +1,8 @@
-import {colors, heroui} from "@heroui/theme"
+import { colors, heroui } from "@heroui/theme"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  
+
   content: [
     "./index.html",
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
@@ -14,7 +14,9 @@ module.exports = {
     fontFamily: {
       league: ["League Spartan", "sans-serif"],
       cardo: ["Cardo", "serif"],
-      glass: ["Glass Antiqua", "serif"]
+      glass: ["Glass Antiqua", "serif"],
+      cormorant: ["Cormorant Garamond", "serif"],
+      lato: ["Lato", "sans-serif"],
     },
     extend: {},
   },
@@ -23,16 +25,20 @@ module.exports = {
     prefix: 'padre',
     themes: {
       light: {
-        colors: {  // light theme colors
-          background: '#dad7cd',
-          backdrop: '#d3dadd',
-          primary: "#242d61",
+        colors: {
+          background: "#1a1a1a", // Dark background
+          backdrop: "#262626",   // Slightly lighter dark
+          primary: "#c59d5f",    // Gold accent
+          foreground: "#ffffff",
         },
       },
-      dark: { // dark theme colors
+      dark: {
         colors: {
-          backdrop: '#2e2d37'
-        }, 
+          background: "#1a1a1a",
+          backdrop: "#262626",
+          primary: "#c59d5f",
+          foreground: "#ffffff",
+        },
       },
     }
   })],

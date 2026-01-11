@@ -474,3 +474,89 @@ export const WineGlassIcon = (props: IconSvgProps) => (
     />
   </svg>
 );
+
+export const MenuIcon = (props: IconSvgProps) => (
+  <svg
+    suppressHydrationWarning
+    height={props.size || props.height || 24}
+    width={props.size || props.width || 24}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    {...props}
+  >
+    <path
+      d="M3 12H21"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M3 6H21"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M3 18H21"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const CloseIcon = (props: IconSvgProps) => (
+  <svg
+    suppressHydrationWarning
+    height={props.size || props.height || 24}
+    width={props.size || props.width || 24}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    {...props}
+  >
+    <path
+      d="M18 6L6 18"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6 6L18 18"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ChevronDownIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
+  <svg
+    aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height={size || height}
+    role="presentation"
+    viewBox="0 0 24 24"
+    width={size || width}
+    {...props}
+  >
+    <path
+      d="m19.92 8.95-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit={10}
+      strokeWidth={1.5}
+    />
+  </svg>
+);

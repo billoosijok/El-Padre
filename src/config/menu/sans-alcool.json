@@ -1,5 +1,6 @@
 [
   {
+    "id": "mocktails",
     "category": "Mocktails",
     "items": [
       {
@@ -25,69 +26,121 @@
     ]
   },
   {
+    "id": "softs",
     "category": "Softs",
     "items": [
       {
         "name": "Coca, Coca zero",
-        "price": [{ "name": "33cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "33cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "Ice Tea",
-        "price": [{ "name": "25cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "25cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "Sprite",
-        "price": [{ "name": "25cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "25cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "Schweppes Tonic, Agrumes",
-        "price": [{ "name": "33cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "33cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "Sirop à l’eau",
-        "price": [{ "name": "33cl", "value": 3 }]
+        "price": [
+          {
+            "name": "33cl",
+            "value": 3
+          }
+        ]
       },
       {
         "name": "Perrier",
-        "price": [{ "name": "33cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "33cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "Diabolo",
-        "price": [{ "name": "33cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "33cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "Jus",
-        "price": [{ "name": "25cl", "value": 3.5 }],
+        "price": [
+          {
+            "name": "25cl",
+            "value": 3.5
+          }
+        ],
         "description": "Orange, Pomme, Ananas, Tomate, Abricot."
       },
       {
         "name": "Evian",
-        "price": [{ "name": "50cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "50cl",
+            "value": 3.8
+          }
+        ]
       },
       {
         "name": "San Pellegrino",
-        "price": [{ "name": "50cl", "value": 3.8 }]
+        "price": [
+          {
+            "name": "50cl",
+            "value": 3.8
+          }
+        ]
       }
-    ]    
+    ]
   },
   {
+    "id": "hot_drinks",
     "category": "Chauds",
     "items": [
       {
         "name": "Café",
-        "price": 1.8 
+        "price": 1.8
       },
       {
         "name": "Noisette",
-        "price": 2 
+        "price": 2
       },
       {
         "name": "Cappuccino",
-        "price": 4 
+        "price": 4
       },
       {
         "name": "Café latte",
-        "price": 4.5 
+        "price": 4.5
       },
       {
         "name": "Chocolat chaud",
