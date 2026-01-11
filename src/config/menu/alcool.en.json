@@ -1,5 +1,6 @@
 [
   {
+    "id": "cocktails",
     "category": "Cocktails",
     "items": [
       {
@@ -95,6 +96,7 @@
     ]
   },
   {
+    "id": "beers",
     "category": "Beers",
     "items": [
       {
@@ -207,6 +209,7 @@
     ]
   },
   {
+    "id": "aperitifs-digestifs",
     "category": "Aperitifs & Digestives",
     "items": [
       {
@@ -290,6 +293,7 @@
     ]
   },
   {
+    "id": "shooters",
     "category": "Shooters",
     "items": [
       {
@@ -325,6 +329,7 @@
     ]
   },
   {
+    "id": "spirits",
     "category": "Spirits",
     "items": [
       {

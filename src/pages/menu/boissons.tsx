@@ -6,9 +6,6 @@ const sections = [
     name: "alcool",
     icon: <MartiniIcon />,
     menu: "alcool",
-    customizations: {
-      menuItemNameFont: "font-league",
-    },
   },
   {
     name: "sans alcool",
@@ -20,8 +17,8 @@ const sections = [
     icon: <WineIcon />,
     menu: "vin",
     customizations: {
-      menuItemSubCategoryClasses: "font-glass uppercase text-2xl",
-      menuItemNameClasses: "font-league font-[400] text-lg",
+      menuItemSubCategoryClasses:
+        "text-2xl font-glass text-padre-primary uppercase tracking-widest mt-12 mb-6 text-center border-b border-white/10 pb-2",
     },
   },
 ] as const;

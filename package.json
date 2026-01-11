@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint -c .eslintrc.json ./src/**/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
@@ -36,10 +36,12 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-ga4": "^2.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "6.23.0",
     "tailwind-merge": "^3.0.2",
     "tailwind-variants": "0.1.20",
     "tailwindcss": "3.4.16",
+    "vite-plugin-sitemap": "^0.8.2",
     "vite-plugin-static-copy": "^2.2.0"
   },
   "devDependencies": {

@@ -1,68 +1,197 @@
 {
-    "reserve": {
-      "fr": "Réservation",
-      "en": "Reservation",
-      "es": "Reserva"
-    },
-    "contact": {
-        "fr": "Coordonnées",
-        "en": "Location & Contact",
-        "es": "Ubicación y Contacto"
-    },
-    "plats": {
-      "fr": "Plats",
-      "en": "Dishes",
-      "es": "Platos"
-    },
-    "tapas": {
-      "fr": "Tapas",
-      "en": "Tapas",
-      "es": "Tapas"
-    },
-    "menu": {
-      "fr": "Menu",
-      "en": "Menu",
-      "es": "Menú"
-    },
-    "sans alcool": {
-      "fr": "Sans Alcool",
-      "en": "Non-Alcoholic",
-      "es": "Sin Alcohol"
-    },
-    "alcool": {
-      "fr": "Alcool",
-      "en": "Alcoholic",
-      "es": "Alcohol"
-    },
-    "vin": {
-      "fr": "Vin & Champagne",
-      "en": "Wine & Champagne",
-      "es": "Vino y Champán"
-    },
-    "nos horaires": {
-      "fr": "Nos Horaires",
-      "en": "Our Hours",
-      "es": "Nuestros Horarios"
-    },
-    "ouvert j7/7": {
-      "fr": "Ouvert j7/7",
-      "en": "Open 7 days a week",
-      "es": "Abierto 7 días a la semana"
-    },
-    "ven - dim": {
-      "fr": "Ven - Dim",
-      "en": "Fri - Sun",
-      "es": "Vie - Dom"
-    },
-    "autres jours": {
-      "fr": "Autres Jours",
-      "en": "Weekdays",
-      "es": "Otros Días"
-    },
-    "boissons": {
-      "fr": "Boissons",
-      "en": "Drinks",
-      "es": "Bebidas"
-    }
+  "reserve": {
+    "fr": "Réservation",
+    "en": "Reservation",
+    "es": "Reserva"
+  },
+  "contact": {
+    "fr": "Coordonnées",
+    "en": "Location & Contact",
+    "es": "Ubicación y Contacto"
+  },
+  "plats": {
+    "fr": "Plats",
+    "en": "Dishes",
+    "es": "Platos"
+  },
+  "tapas": {
+    "fr": "Tapas",
+    "en": "Tapas",
+    "es": "Tapas"
+  },
+  "menu": {
+    "fr": "Menu",
+    "en": "Menu",
+    "es": "Menú"
+  },
+  "sans alcool": {
+    "fr": "Sans Alcool",
+    "en": "Non-Alcoholic",
+    "es": "Sin Alcohol"
+  },
+  "alcool": {
+    "fr": "Alcool",
+    "en": "Alcoholic",
+    "es": "Alcohol"
+  },
+  "menu_tapas": {
+    "fr": "Plats & Tapas",
+    "en": "Dishes & Tapas",
+    "es": "Platos y Tapas"
+  },
+  "vin": {
+    "fr": "Vins & Champagnes",
+    "en": "Wines & Champagnes",
+    "es": "Vinos y Champanes"
+  },
+  "nos horaires": {
+    "fr": "Nos Horaires",
+    "en": "Our Hours",
+    "es": "Nuestros Horarios"
+  },
+  "ouvert j7/7": {
+    "fr": "Ouvert j7/7",
+    "en": "Open 7 days a week",
+    "es": "Abierto 7 días a la semana"
+  },
+  "ven - dim": {
+    "fr": "Ven - Dim",
+    "en": "Fri - Sun",
+    "es": "Vie - Dom"
+  },
+  "autres jours": {
+    "fr": "Autres Jours",
+    "en": "Weekdays",
+    "es": "Otros Días"
+  },
+  "boissons": {
+    "fr": "Boissons",
+    "en": "Drinks",
+    "es": "Bebidas"
+  },
+  "cocktails": {
+    "fr": "Cocktails",
+    "en": "Cocktails",
+    "es": "Cócteles"
+  },
+  "carte_boissons": {
+    "fr": "Carte Boissons",
+    "en": "Drinks Menu",
+    "es": "Carta de Bebidas"
+  },
+  "home": {
+    "fr": "Accueil",
+    "en": "Home",
+    "es": "Inicio"
+  },
+  "authentic_cuisine": {
+    "fr": "Cuisine authentique .. du frais, de fait maison, de la passion",
+    "en": "Authentic restaurant cuisine in the heart of Narbonne.",
+    "es": "Restaurante de cocina auténtica en el corazón de Narbona."
+  },
+  "premium_authentic": {
+    "fr": "Cuisine authentique .. du frais, de fait maison, de la passion",
+    "en": "Authentic Cuisine .. Fresh, Homemade, with Passion",
+    "es": "Cocina Auténtica .. Fresco, Casero, con Pasión"
+  },
+  "welcome_title": {
+    "fr": "Bienvenue chez El Padre",
+    "en": "Welcome to El Padre",
+    "es": "Bienvenido a El Padre"
+  },
+  "our_story": {
+    "fr": "Notre histoire",
+    "en": "Our Story",
+    "es": "Nuestra Historia"
+  },
+  "story_text": {
+    "fr": "Découvrez nos saveurs uniques, un mélange de tradition et de passion. Nous sommes dédiés à vous offrir les meilleurs tapas, plats et boissons de la ville.",
+    "en": "Discover our unique flavors, a blend of tradition and passion. We are dedicated to serving you the best tapas, dishes, and drinks in town.",
+    "es": "Descubre nuestros sabores únicos, una mezcla de tradición y pasión. Nos dedicamos a servirte las mejores tapas, platos y bebidas de la ciudad."
+  },
+  "featured_delicacies": {
+    "fr": "Nos Spécialités",
+    "en": "Our Featured Delicacies",
+    "es": "Nuestras Especialidades"
+  },
+  "waiting_to_serve": {
+    "fr": "Nous sommes impatients de vous servir !",
+    "en": "We Are Waiting to Serve You!",
+    "es": "¡Estamos ansiosos por servirle!"
+  },
+  "loved_by_many": {
+    "fr": "Aimé par beaucoup",
+    "en": "Loved by Many",
+    "es": "Amado por muchos"
+  },
+  "review_1": {
+    "fr": "La meilleure expérience culinaire de ma vie. Le steak était cuit à la perfection et les cocktails étaient incroyables.",
+    "en": "The best dining experience of my life. The steak was cooked to perfection and the cocktails were amazing.",
+    "es": "La mejor experiencia culinaria de mi vida. El bistec estaba cocinado a la perfección y los cócteles eran increíbles."
+  },
+  "review_2": {
+    "fr": "Une ambiance chaleureuse et un service impeccable. Je recommande vivement !",
+    "en": "A warm atmosphere and impeccable service. I highly recommend!",
+    "es": "Un ambiente cálido y un servicio impecable. ¡Recomiendo encarecidamente!"
+  },
+  "review_3": {
+    "fr": "Des saveurs authentiques qui nous transportent directement en Espagne.",
+    "en": "Authentic flavors that transport us directly to Spain.",
+    "es": "Sabores auténticos que nos transportan directamente a España."
+  },
+  "stats_dishes": {
+    "fr": "150+ Plats",
+    "en": "150+ Dishes",
+    "es": "150+ Platos"
+  },
+  "stats_authentic": {
+    "fr": "Goût Authentique",
+    "en": "Authentic Taste",
+    "es": "Sabor Auténtico"
+  },
+  "stats_chefs": {
+    "fr": "Chefs Experts",
+    "en": "Expert Chefs",
+    "es": "Chefs Expertos"
+  },
+  "privatisation": {
+    "fr": "Privatisation",
+    "en": "Privatisation",
+    "es": "Privatización"
+  },
+  "private_events": {
+    "fr": "Événements Privés",
+    "en": "Private Events",
+    "es": "Eventos Privados"
+  },
+  "privatisation_description": {
+    "fr": "Nous proposons de privatiser notre salle en sous-sol pour vos événements. Que ce soit pour un anniversaire, une réunion d'entreprise ou une célébration spéciale, notre espace unique offre l'atmosphère parfaite pour votre rassemblement.",
+    "en": "We offer our basement room for private events. Whether it's a birthday, corporate meeting, or a special celebration, our unique space provides the perfect atmosphere for your gathering.",
+    "es": "Ofrecemos nuestra sala en el sótano para eventos privados. Ya sea un cumpleaños, una reunión corporativa o una celebración especial, nuestro espacio único ofrece el ambiente perfecto para su reunión."
+  },
+  "special_menu_title": {
+    "fr": "Menus de Groupe",
+    "en": "Group Menus",
+    "es": "Menús de Grupo"
+  },
+  "special_menu_desc": {
+    "fr": "Pour rendre votre événement encore plus mémorable, notre chef peut créer un menu spécial adapté à vos goûts et à vos besoins. N'hésitez pas à nous demander !",
+    "en": "To make your event even more memorable, our chef can create a special menu tailored to your tastes and needs. Don't hesitate to ask us!",
+    "es": "Para hacer que su evento sea aún más memorable, nuestro chef puede crear un menú especial adaptado a sus gustos y necesidades. ¡No dude en preguntarnos!"
+  },
+  "privatisation_subtitle": {
+    "fr": "Votre Événement Sur Mesure",
+    "en": "Your Custom Event",
+    "es": "Tu Evento a Medida"
+  },
+  "signature_cocktails": {
+    "fr": "Cocktails Signatures",
+    "en": "Signature Cocktails",
+    "es": "Cócteles de Autor"
+  },
+  "start_planning": {
+    "fr": "Planifier mon événement",
+    "en": "Start Planning",
+    "es": "Planificar mi evento"
   }
-  
+}

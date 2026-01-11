@@ -3,48 +3,30 @@ import {
   Route,
   Routes,
   useLocation,
-  useNavigate,
 } from "react-router-dom";
-import { useCallback, useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import ReactGA from "react-ga4";
 
-import { Menu } from "./pages/menu/menu";
-import {
-  I18nProvider,
-  SupportedLanguages,
-  useI18n,
-} from "./hooks/useTranslations";
-import { LanguageSelectorModal } from "./components/LanguageSelector";
-import { MenuBoissons } from "./pages/menu/boissons";
+const Menu = lazy(() => import("./pages/menu/menu").then(module => ({ default: module.Menu })));
+const MenuBoissons = lazy(() => import("./pages/menu/boissons").then(module => ({ default: module.MenuBoissons })));
+import { I18nProvider } from "./hooks/useTranslations";
+import { ReservationProvider } from "@/context/ReservationContext";
 
-import IndexPage from "@/pages/index";
+const IndexPage = lazy(() => import("@/pages/index"));
+const PrivatisationPage = lazy(() => import("@/pages/privatisation"));
 
 ReactGA.initialize("G-VH1QHTSLEM");
 
 const RouteWrapper = () => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
-  const { setLanguage } = useI18n();
 
-  const onSelectLanguage = useCallback((lang: SupportedLanguages) => {
-    ReactGA.event({
-      category: "site interactions",
-      action: "Menu Language Selection",
-      label: lang,
-      value: 1,
-      nonInteraction: false,
-    });
-    setLanguage(lang);
-    navigate("/");
-  }, []);
+
 
   useEffect(() => {
     window.scroll(0, 0);
   }, [pathname]);
 
-  if (pathname.match(/\/menu\/?$/)) {
-    return <LanguageSelectorModal isOpen onSelectLanguage={onSelectLanguage} />;
-  }
+
 
   return <Outlet />;
 };
@@ -52,13 +34,18 @@ const RouteWrapper = () => {
 function App() {
   return (
     <I18nProvider>
-      <Routes>
-        <Route element={<RouteWrapper />}>
-          <Route key={"/"} element={<IndexPage />} path="/" />
-          <Route element={<MenuBoissons />} path="/boissons/*" />
-          <Route key={"/menu/*"} element={<Menu />} path="/menu/*" />
-        </Route>
-      </Routes>
+      <ReservationProvider>
+        <Suspense fallback={<div className="min-h-screen bg-[#1a1a1a]" />}>
+          <Routes>
+            <Route element={<RouteWrapper />}>
+              <Route key={"/"} element={<IndexPage />} path="/" />
+              <Route element={<MenuBoissons />} path="/boissons/*" />
+              <Route element={<PrivatisationPage />} path="/privatisation" />
+              <Route key={"/menu/*"} element={<Menu />} path="/menu/*" />
+            </Route>
+          </Routes>
+        </Suspense>
+      </ReservationProvider>
     </I18nProvider>
   );
 }

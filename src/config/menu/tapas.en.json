@@ -1,31 +1,5 @@
 [
   {
-    "category": "Tapas of the Moment",
-    "highlight": true,
-    "items": [
-      {
-        "name": "Chicken Stroganoff",
-        "price": 11,
-        "description": "Tender chicken in a creamy mushroom and mustard sauce."
-      },
-      {
-        "name": "Pan-Seared Scallops",
-        "price": 12,
-        "description": "Seared scallops topped with homemade sauce, served with toasted bread."
-      },
-      {
-        "name": "Homemade Beef Confit Puff Pastry",
-        "price": 12,
-        "description": "Slow-cooked beef in a crispy puff pastry."
-      },
-      {
-        "name": "Stuffed Potato with Minced Meat",
-        "price": 9,
-        "description": "Potato stuffed with spicy minced meat and breaded."
-      }
-    ]
-  },
-  {
     "category": "Vegetarian Options",
     "items": [
       {

@@ -1,31 +1,5 @@
 [
     {
-        "category": "Tapas Du Moment",
-        "highlight": true,
-        "items": [
-            {
-                "name": "Poulet à la crème revisité",
-                "price": 11,
-                "description": "Poulet tendre dans une sauce crémeuse aux champignons et moutarde."
-            },
-            {
-                "name": "Noix de Saint-Jacques",
-                "price": 12,
-                "description": "Noix de Saint-Jacques poêlées, nappées d’une sauce maison, servies avec pain grillé."
-            },
-            {
-                "name": "Feuilleté Maison au Bœuf Confit",
-                "price": 12,
-                "description": "Bœuf mijoté longuement dans une pâte feuilletée croustillante."
-            },
-            {
-                "name": "Farci de Pomme de Terre à la Viande Hachée",
-                "price": 9,
-                "description": "Pomme de terre farcie à la viande hachée épicée et panée."
-            }
-        ]
-    },
-    {
         "category": "Côté Végé",
         "items": [
             {

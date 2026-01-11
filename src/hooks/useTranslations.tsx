@@ -23,14 +23,23 @@ interface I18nContextValue {
 
 export const I18nContext = createContext<I18nContextValue>({
   language: DEFAULT_LANGUAGE,
-  setLanguage: () => {},
+  setLanguage: () => { },
 });
 
 export const I18nProvider = ({ children }: PropsWithChildren) => {
   const { set: saveToStorage, get: getFromStorage } = useLocalStorage();
+  const getBrowserLanguage = (): SupportedLanguages | null => {
+    if (typeof navigator === "undefined") return null;
+    const browserLang = navigator.language.split("-")[0];
+    if (browserLang in supported_languages) {
+      return browserLang as SupportedLanguages;
+    }
+    return null;
+  };
+
   const savedLanguage = getFromStorage("lang") as SupportedLanguages;
   const [lang, setLang] = useState<SupportedLanguages>(
-    savedLanguage || DEFAULT_LANGUAGE,
+    savedLanguage || getBrowserLanguage() || DEFAULT_LANGUAGE,
   );
 
   const onSetLanguage = useCallback((newLang: SupportedLanguages) => {

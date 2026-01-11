@@ -137,7 +137,11 @@ export const LanguageSelectorDropdown = () => {
         onAction={onSelect}
       >
         {Object.entries(supported_languages).map(([lang, { name, icon }]) => (
-          <DropdownItem key={lang} startContent={<StartImage src={icon} />}>
+          <DropdownItem
+            key={lang}
+            className="text-black"
+            startContent={<StartImage src={icon} />}
+          >
             {name}
           </DropdownItem>
         ))}

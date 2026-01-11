@@ -1,5 +1,6 @@
 [
   {
+    "id": "mocktails",
     "category": "Mocktails",
     "items": [
       {
@@ -25,6 +26,7 @@
     ]
   },
   {
+    "id": "softs",
     "category": "Soft Drinks",
     "items": [
       {
@@ -121,6 +123,7 @@
     ]
   },
   {
+    "id": "hot_drinks",
     "category": "Hot Drinks",
     "items": [
       {
