@@ -42,17 +42,17 @@ export const MenuDropdown = () => {
                     </Link>
                 </DropdownItem>
                 <DropdownItem key="cocktails" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("signature_cocktails")}>
-                    <Link to="/boissons#alcool" className="w-full block h-full">
+                    <Link to="/boissons#alcool-cocktails" className="w-full block h-full">
                         {goodLabel("signature_cocktails")}
                     </Link>
                 </DropdownItem>
                 <DropdownItem key="vin" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("vin")}>
-                    <Link to="/boissons#vin" className="w-full block h-full">
+                    <Link to="/boissons#vin-les-rouges" className="w-full block h-full">
                         {goodLabel("vin")}
                     </Link>
                 </DropdownItem>
                 <DropdownItem key="drinks" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("boissons")}>
-                    <Link to="/boissons" className="w-full block h-full">
+                    <Link to="/boissons#alcool-beers" className="w-full block h-full">
                         {goodLabel("boissons")}
                     </Link>
                 </DropdownItem>
