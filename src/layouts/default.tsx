@@ -228,7 +228,7 @@ export default function DefaultLayout({
           <div className="flex flex-col items-center justify-center gap-8">
             <Logo size={120} color="#c59d5f" />
             <div className="max-w-xs text-sm font-lato tracking-wide uppercase">
-              {goodLabel("authentic_cuisine")}
+              {goodLabel("premium_authentic")}
             </div>
           </div>
 
