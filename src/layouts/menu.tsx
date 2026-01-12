@@ -286,7 +286,7 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               src={modalImage}
-              alt="Full screen preview"
+              alt={goodLabel("full_screen_preview")}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />

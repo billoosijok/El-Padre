@@ -215,7 +215,7 @@ export default function DefaultLayout({
             <h3 className="text-2xl text-padre-primary font-cormorant mb-2">{goodLabel("contact")}</h3>
             <p className="font-lato leading-relaxed">
               <a href="https://maps.app.goo.gl/upvp6fR7qbgHyYpP9" className="hover:text-padre-primary transition-colors">
-                29 Cours de la République,<br />11100 Narbonne
+                {goodLabel("address_line_1")}<br />{goodLabel("address_line_2")}
               </a>
             </p>
             <p className="text-xl text-white font-cormorant mt-2">
@@ -240,7 +240,7 @@ export default function DefaultLayout({
         </div>
 
         <div className="text-center mt-16 text-sm text-gray-600">
-          <p>© {new Date().getFullYear()} El Padre. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} El Padre. {goodLabel("all_rights_reserved")}</p>
         </div>
       </footer>
     </div>

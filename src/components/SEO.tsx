@@ -20,13 +20,13 @@ export const SEO = ({
     breadcrumbs,
 }: SEOProps) => {
     const { pathname } = useLocation();
-    const { language } = useI18n();
+    const { language, goodLabel } = useI18n();
 
     const siteUrl = "https://el-padre.com"; // Replace with actual domain
     const fullUrl = `${siteUrl}${pathname}`;
 
-    const defaultTitle = "El Padre | Bistro & Bar | Narbonne";
-    const defaultDescription = "Restaurant authentique à Narbonne. Tapas, vins, cocktails et cuisine raffinée dans une ambiance conviviale. Réservez votre table !";
+    const defaultTitle = goodLabel("seo_default_title");
+    const defaultDescription = goodLabel("seo_default_description");
 
     const currentTitle = title ? `${title} | El Padre` : defaultTitle;
     const currentDescription = description || defaultDescription;
