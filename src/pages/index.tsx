@@ -24,14 +24,14 @@ export default function IndexPage() {
       <div className={" duration-700"}>
         <DefaultLayout homeTreatment>
           <SEO
-            title="Restaurant Narbonne | Tapas & Bistro"
-            description="Restaurant à Narbonne pour des tapas authentiques et une cuisine de bistro raffinée. Ambiance conviviale au cœur de la ville."
+            title={goodLabel("seo_home_title")}
+            description={goodLabel("seo_home_description")}
           />
           {/* Hero Section */}
           <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
             <img
               src="/assets/bar-photo.JPG"
-              alt="Bar atmosphere at El Padre"
+              alt={goodLabel("home_hero_alt")}
               className="absolute inset-0 w-full h-full object-cover -z-10"
               fetchPriority="high"
             />
@@ -62,7 +62,7 @@ export default function IndexPage() {
           {/* Featured Menu Section */}
           <section className="py-32 bg-[#0a0a0a] px-6">
             <div className="max-w-7xl mx-auto text-center mb-20">
-              <h3 className="text-padre-primary text-sm uppercase tracking-[0.2em] mb-4 font-bold">Discover</h3>
+              <h3 className="text-padre-primary text-sm uppercase tracking-[0.2em] mb-4 font-bold">{goodLabel("discover")}</h3>
               <h2 className="text-5xl md:text-6xl font-cormorant text-white">{goodLabel("featured_delicacies")}</h2>
               <div className="w-24 h-[1px] bg-padre-primary mx-auto mt-8" />
             </div>
@@ -141,7 +141,7 @@ export default function IndexPage() {
                 <div className="aspect-[4/5] relative rounded-sm shadow-2xl overflow-hidden group-hover:grayscale-0 grayscale transition-all duration-700">
                   <img
                     src="/assets/team.jpg"
-                    alt="Our Team"
+                    alt={goodLabel("team_alt")}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover"
@@ -149,7 +149,7 @@ export default function IndexPage() {
                 </div>
                 <div className="absolute -bottom-8 -right-8 border-2 border-padre-primary p-2 hidden md:block">
                   <div className="w-48 h-48 bg-[#8B0000] flex flex-col items-center justify-center text-center p-4">
-                    <img src="/assets/award.svg" alt="Award" className="w-full h-full object-contain" width={192} height={192} loading="lazy" />
+                    <img src="/assets/award.svg" alt={goodLabel("award_alt")} className="w-full h-full object-contain" width={192} height={192} loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function IndexPage() {
                   <span className="w-8 h-[1px] bg-padre-primary inline-block md:hidden"></span>
                 </h3>
                 <h2 className="text-5xl md:text-6xl font-cormorant text-white mb-8 leading-none">
-                  Authentic & Passionate
+                  {goodLabel("authentic_passionate_title")}
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10 font-lato">
                   {goodLabel("story_text")}
@@ -172,7 +172,7 @@ export default function IndexPage() {
                   className="btn-ghost px-8 py-4 text-sm"
                   variant="bordered"
                 >
-                  Discover More
+                  {goodLabel("discover_more")}
                 </Button>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function IndexPage() {
           <section className="py-32 bg-padre-background px-6 relative">
             <img
               src="/bg.png"
-              alt="Background pattern"
+              alt={goodLabel("background_pattern_alt")}
               className="absolute top-0 left-0 w-full h-full object-cover opacity-5"
               loading="lazy"
             />
@@ -214,7 +214,7 @@ export default function IndexPage() {
                 {goodLabel("reserve")}
               </Button>
               <div className="text-lg text-gray-400 font-lato">
-                Or Call <span className="text-white block md:inline text-xl mt-2 md:mt-0 font-cormorant text-padre-primary">04 68 32 40 11</span>
+                {goodLabel("or_call")} <span className="text-white block md:inline text-xl mt-2 md:mt-0 font-cormorant text-padre-primary">04 68 32 40 11</span>
               </div>
             </div>
           </section>

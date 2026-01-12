@@ -85,14 +85,14 @@
     "es": "Inicio"
   },
   "authentic_cuisine": {
-    "fr": "Cuisine authentique .. du frais, de fait maison, de la passion",
-    "en": "Authentic restaurant cuisine in the heart of Narbonne.",
-    "es": "Restaurante de cocina auténtica en el corazón de Narbona."
+    "fr": "Cuisine authentique : du frais, du fait maison, de la passion.",
+    "en": "Authentic French cuisine in the heart of Narbonne.",
+    "es": "Restaurante de cocina auténtica Francesa en el corazón de Narbona."
   },
   "premium_authentic": {
-    "fr": "Cuisine authentique : du frais, de fait maison, de la passion",
-    "en": "Authentic Cuisine : Fresh, Homemade, with Passion",
-    "es": "Cocina Auténtica : Fresco, Casero, con Pasión"
+    "fr": "Cuisine authentique : du frais, du fait maison, de la passion.",
+    "en": "Authentic French Cuisine : Fresh, Homemade, with Passion",
+    "es": "Cocina Auténtica Francesa : Fresco, Casero, con Pasión"
   },
   "welcome_title": {
     "fr": "Bienvenue chez El Padre",
@@ -193,5 +193,90 @@
     "fr": "Planifier mon événement",
     "en": "Start Planning",
     "es": "Planificar mi evento"
+  },
+  "seo_home_title": {
+    "fr": "Restaurant Narbonne | Tapas & Bistro",
+    "en": "Restaurant Narbonne | Tapas & Bistro",
+    "es": "Restaurante Narbona | Tapas y Bistró"
+  },
+  "seo_home_description": {
+    "fr": "Restaurant à Narbonne pour des tapas authentiques et une cuisine de bistro raffinée. Ambiance conviviale au cœur de la ville.",
+    "en": "Restaurant in Narbonne for authentic tapas and refined bistro cuisine. Friendly atmosphere in the heart of the city.",
+    "es": "Restaurante en Narbona para tapas auténticas y cocina de bistró refinada. Ambiente agradable en el corazón de la ciudad."
+  },
+  "discover": {
+    "fr": "Découvrir",
+    "en": "Discover",
+    "es": "Descubrir"
+  },
+  "discover_more": {
+    "fr": "En savoir plus",
+    "en": "Discover More",
+    "es": "Saber más"
+  },
+  "or_call": {
+    "fr": "Ou appelez le",
+    "en": "Or Call",
+    "es": "O llame al"
+  },
+  "home_hero_alt": {
+    "fr": "Ambiance bar chez El Padre",
+    "en": "Bar atmosphere at El Padre",
+    "es": "Ambiente de bar en El Padre"
+  },
+  "authentic_passionate_title": {
+    "fr": "Authentique & Passionné",
+    "en": "Authentic & Passionate",
+    "es": "Auténtico y Apasionado"
+  },
+  "team_alt": {
+    "fr": "Notre équipe",
+    "en": "Our Team",
+    "es": "Nuestro Equipo"
+  },
+  "award_alt": {
+    "fr": "Récompense",
+    "en": "Award",
+    "es": "Premio"
+  },
+  "background_pattern_alt": {
+    "fr": "Motif d'arrière-plan",
+    "en": "Background pattern",
+    "es": "Patrón de fondo"
+  },
+  "address_line_1": {
+    "fr": "29 Cours de la République,",
+    "en": "29 Cours de la République,",
+    "es": "29 Cours de la République,"
+  },
+  "address_line_2": {
+    "fr": "11100 Narbonne",
+    "en": "11100 Narbonne",
+    "es": "11100 Narbona"
+  },
+  "full_screen_preview": {
+    "fr": "Aperçu plein écran",
+    "en": "Full screen preview",
+    "es": "Vista previa a pantalla completa"
+  },
+  "seo_default_title": {
+    "fr": "El Padre | Bistro & Bar | Narbonne",
+    "en": "El Padre | Bistro & Bar | Narbonne",
+    "es": "El Padre | Bistró y Bar | Narbona"
+  },
+  "seo_default_description": {
+    "fr": "Restaurant authentique à Narbonne. Tapas, vins, cocktails et cuisine raffinée dans une ambiance conviviale. Réservez votre table !",
+    "en": "Authentic restaurant in Narbonne. Tapas, wines, cocktails, and refined cuisine in a friendly atmosphere. Book your table!",
+    "es": "Restaurante auténtico en Narbona. Tapas, vinos, cócteles y cocina refinada en un ambiente agradable. ¡Reserve su mesa!"
+  },
+  "action_done": {
+    "fr": "C'est parti",
+    "en": "Done",
+    "es": "Aquí vamos"
+  },
+  "all_rights_reserved": {
+    "fr": "Tous droits réservés.",
+    "en": "All Rights Reserved.",
+    "es": "Todos los derechos reservados."
   }
 }
