@@ -21,9 +21,22 @@ export default defineConfig({
     }),
     copyIndexTo404(),
     Sitemap({
-      hostname: "https://el-padre.com",
+      hostname: "https://elpadre-narbonne.com",
       dynamicRoutes: ["/menu", "/boissons", "/privatisation"],
       outDir: "docs",
+      exclude: ["/404"],
+      changefreq: {
+        "/": "weekly",
+        "/menu": "weekly",
+        "/boissons": "weekly",
+        "/privatisation": "monthly",
+      },
+      priority: {
+        "/": 1.0,
+        "/privatisation": 0.9,
+        "/menu": 0.8,
+        "/boissons": 0.8,
+      },
     }),
   ],
   build: {
