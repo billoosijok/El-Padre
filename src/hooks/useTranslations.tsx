@@ -3,14 +3,16 @@ import {
   PropsWithChildren,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
-
-import { useLocalStorage } from "./useLocalStorage";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import supported_languages from "@/config/supported_languages.json";
 import labels from "@/config/labels.json";
+
+export { supported_languages };
 
 export type SupportedLanguages = keyof typeof supported_languages;
 
@@ -26,26 +28,48 @@ export const I18nContext = createContext<I18nContextValue>({
   setLanguage: () => { },
 });
 
-export const I18nProvider = ({ children }: PropsWithChildren) => {
-  const { set: saveToStorage, get: getFromStorage } = useLocalStorage();
-  const getBrowserLanguage = (): SupportedLanguages | null => {
-    if (typeof navigator === "undefined") return null;
-    const browserLang = navigator.language.split("-")[0];
-    if (browserLang in supported_languages) {
-      return browserLang as SupportedLanguages;
-    }
-    return null;
-  };
+export const I18nProvider = ({
+  children,
+  initialLanguage = DEFAULT_LANGUAGE
+}: PropsWithChildren & { initialLanguage?: SupportedLanguages }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [lang, setLang] = useState<SupportedLanguages>(initialLanguage);
 
-  const savedLanguage = getFromStorage("lang") as SupportedLanguages;
-  const [lang, setLang] = useState<SupportedLanguages>(
-    savedLanguage || getBrowserLanguage() || DEFAULT_LANGUAGE,
-  );
+  // Sync state with prop if it changes (e.g. navigation)
+  useEffect(() => {
+    setLang(initialLanguage);
+  }, [initialLanguage]);
 
   const onSetLanguage = useCallback((newLang: SupportedLanguages) => {
-    saveToStorage("lang", newLang);
-    setLang(newLang);
-  }, []);
+    const currentPath = location.pathname;
+    let newPath = currentPath;
+
+    // Remove existing language prefix if present
+    const segments = currentPath.split('/').filter(Boolean);
+    const firstSegment = segments[0] as SupportedLanguages;
+
+    if (firstSegment && firstSegment in supported_languages) {
+      if (firstSegment === newLang) return; // Already on this language
+      // Remove the language prefix
+      segments.shift();
+    }
+
+    // Prepare the clean path (without language prefix)
+    const cleanPath = '/' + segments.join('/');
+
+    // Construct new path
+    if (newLang === DEFAULT_LANGUAGE) {
+      newPath = cleanPath;
+    } else {
+      newPath = `/${newLang}${cleanPath === '/' ? '' : cleanPath}`;
+    }
+
+    // If newPath is empty string (e.g. switching from /en back to /), make it /
+    if (newPath === '') newPath = '/';
+
+    navigate(newPath);
+  }, [navigate, location]);
 
   const value = useMemo(
     () => ({
@@ -67,14 +91,22 @@ export const useI18n = () => {
       const normalizedLabel = label.toLowerCase() as keyof typeof labels;
 
       if (!labels?.[normalizedLabel]?.[i18nContext.language]) {
-        // console.warn(
-        //   `label '${label}' needs to be translated into '${i18nContext.language}'`,
-        // );
-
         return `{${label}}`;
       }
 
       return labels?.[normalizedLabel]?.[i18nContext.language];
     },
+    getLocalizedPath: (path: string): string => {
+      if (i18nContext.language === DEFAULT_LANGUAGE) {
+        return path;
+      }
+      // Ensure path starts with /
+      const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+      // If path is just /, return /lang
+      if (normalizedPath === '/') {
+        return `/${i18nContext.language}`;
+      }
+      return `/${i18nContext.language}${normalizedPath}`;
+    }
   };
 };

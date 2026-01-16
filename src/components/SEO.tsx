@@ -22,7 +22,7 @@ export const SEO = ({
     const { pathname } = useLocation();
     const { language, goodLabel } = useI18n();
 
-    const siteUrl = "https://el-padre.com"; // Replace with actual domain
+    const siteUrl = "https://elpadre-narbonne.fr"; // Replace with actual domain
     const fullUrl = `${siteUrl}${pathname}`;
 
     const defaultTitle = goodLabel("seo_default_title");
@@ -37,9 +37,11 @@ export const SEO = ({
         "@type": "Restaurant",
         "name": "El Padre",
         "image": [
+            `${siteUrl}/assets/bar-photo.JPG`,
             `${siteUrl}/assets/team.jpg`,
-            `${siteUrl}/DSC06390_Original.jpg`
+            `${siteUrl}/tapas.jpg`
         ],
+        "logo": `${siteUrl}/icon.png`,
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "29 Cours de la République",
@@ -49,28 +51,50 @@ export const SEO = ({
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 43.1833, // Approximate, should be exact
-            "longitude": 3.0000 // Approximate, should be exact
+            "latitude": 43.1826179,
+            "longitude": 3.0057687
         },
         "url": siteUrl,
         "telephone": "+33468324011",
-        "servesCuisine": "Authentic, Tapas, French, Spanish",
+        "servesCuisine": "Authentic, Tapas, French",
         "priceRange": "$$",
+        "publicAccess": true,
         "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "11:00",
+                "dayOfWeek": ["Monday", "Friday"],
+                "opens": "12:00",
+                "closes": "15:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Friday"],
+                "opens": "18:00",
+                "closes": "02:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+                "opens": "12:00",
+                "closes": "15:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+                "opens": "18:00",
                 "closes": "23:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday"],
+                "opens": "12:00",
+                "closes": "02:00"
             }
+        ],
+        "sameAs": [
+            "https://www.instagram.com/el_padre.11/",
+            "https://www.facebook.com/profile.php?id=61568366311415",
+            "https://www.tiktok.com/@el_padre.11"
         ]
     };
 
@@ -92,6 +116,36 @@ export const SEO = ({
             <title>{currentTitle}</title>
             <meta name="description" content={currentDescription} />
             <link rel="canonical" href={fullUrl} />
+
+            {/* Hreflang Tags */}
+            {(() => {
+                const getPathWithoutLocale = (path: string) => {
+                    if (path.startsWith("/en/")) return path.substring(3);
+                    if (path === "/en") return "/";
+                    if (path.startsWith("/es/")) return path.substring(3);
+                    if (path === "/es") return "/";
+                    return path;
+                };
+
+                const basePath = getPathWithoutLocale(pathname);
+
+                // Helper to construct URL
+                const getLocaleUrl = (locale: string) => {
+                    if (locale === "fr") return `${siteUrl}${basePath === "/" ? "" : basePath}`;
+
+                    if (basePath === "/") return `${siteUrl}/${locale}`;
+                    return `${siteUrl}/${locale}${basePath}`;
+                };
+
+                return (
+                    <>
+                        <link rel="alternate" hrefLang="fr" href={getLocaleUrl("fr")} />
+                        <link rel="alternate" hrefLang="en" href={getLocaleUrl("en")} />
+                        <link rel="alternate" hrefLang="es" href={getLocaleUrl("es")} />
+                        <link rel="alternate" hrefLang="x-default" href={getLocaleUrl("fr")} />
+                    </>
+                );
+            })()}
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />

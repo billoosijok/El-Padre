@@ -11,7 +11,7 @@ import { useState } from "react";
 import { ChevronDownIcon } from "@/components/icons";
 
 export const MenuDropdown = () => {
-    const { goodLabel } = useI18n();
+    const { goodLabel, getLocalizedPath } = useI18n();
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -37,22 +37,22 @@ export const MenuDropdown = () => {
             </DropdownTrigger>
             <DropdownMenu aria-label="Menu Navigation" className="font-lato">
                 <DropdownItem key="food" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("menu_tapas")}>
-                    <Link to="/menu" className="w-full block h-full">
+                    <Link to={getLocalizedPath("/menu")} className="w-full block h-full">
                         {goodLabel("menu_tapas")}
                     </Link>
                 </DropdownItem>
                 <DropdownItem key="cocktails" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("signature_cocktails")}>
-                    <Link to="/boissons#alcool-cocktails" className="w-full block h-full">
+                    <Link to={getLocalizedPath("/boissons#alcool-cocktails")} className="w-full block h-full">
                         {goodLabel("signature_cocktails")}
                     </Link>
                 </DropdownItem>
                 <DropdownItem key="vin" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("vin")}>
-                    <Link to="/boissons#vin-les-rouges" className="w-full block h-full">
+                    <Link to={getLocalizedPath("/boissons#vin-les-rouges")} className="w-full block h-full">
                         {goodLabel("vin")}
                     </Link>
                 </DropdownItem>
                 <DropdownItem key="drinks" className="text-white hover:text-padre-primary uppercase tracking-widest text-xs py-3" textValue={goodLabel("boissons")}>
-                    <Link to="/boissons#alcool-beers" className="w-full block h-full">
+                    <Link to={getLocalizedPath("/boissons#alcool-beers")} className="w-full block h-full">
                         {goodLabel("boissons")}
                     </Link>
                 </DropdownItem>

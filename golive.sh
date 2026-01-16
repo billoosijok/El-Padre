@@ -1,3 +1,5 @@
+#!/bin/bash
+
 yarn build
 git add .
 read -p "What's new: " commit_message

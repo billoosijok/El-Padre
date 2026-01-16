@@ -1,0 +1,21 @@
+# El Padre Restaurant
+Refined Spanish & French Cuisine
+
+## About
+El Padre est un restaurant bistro bar chaleureux sur les barques en plein centre ville de Narbonne, canal de la Robine, offrant une ambiance conviviale, des plats faits maison et une sélection raffinée de vins et cocktails.
+
+## Key Links
+- [Home](https://elpadre-narbonne.fr/)
+- [Menu](https://elpadre-narbonne.fr/menu)
+- [Drinks](https://elpadre-narbonne.fr/boissons)
+- [Privatisation](https://elpadre-narbonne.fr/privatisation)
+
+## Tech Stack
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- HeroUI
+
+## Documentation
+- [Sitemap](https://elpadre-narbonne.fr/sitemap.xml)

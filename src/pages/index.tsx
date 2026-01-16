@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const showSplash = !sessionStorage.getItem('hasSeenSplash');
 
 export default function IndexPage() {
-  const { goodLabel } = useI18n();
+  const { goodLabel, getLocalizedPath } = useI18n();
   const { openReservation } = useReservation();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function IndexPage() {
           {/* Hero Section */}
           <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
             <img
-              src="/assets/bar-photo.JPG"
+              src="/assets/bar-photo.webp"
               alt={goodLabel("home_hero_alt")}
               className="absolute inset-0 w-full h-full object-cover -z-10"
               fetchPriority="high"
@@ -69,9 +69,9 @@ export default function IndexPage() {
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {/* Tapas */}
-              <Link to="/menu#tapas" className="group relative h-[500px] overflow-hidden block">
+              <Link to={getLocalizedPath("/menu#tapas")} className="group relative h-[500px] overflow-hidden block">
                 <img
-                  src="/DSC06390_Original.jpg"
+                  src="/tapas.jpg"
                   alt="Tapas"
                   loading="lazy"
                   decoding="async"
@@ -85,9 +85,9 @@ export default function IndexPage() {
               </Link>
 
               {/* Plats */}
-              <Link to="/menu#plats-main" className="group relative h-[500px] overflow-hidden block">
+              <Link to={getLocalizedPath("/menu#plats-main")} className="group relative h-[500px] overflow-hidden block">
                 <img
-                  src="/DSC06312_Original.jpg"
+                  src="/plats.jpg"
                   alt="Plats"
                   loading="lazy"
                   decoding="async"
@@ -101,9 +101,9 @@ export default function IndexPage() {
               </Link>
 
               {/* Cocktails Signatures (was Boissons) */}
-              <Link to="/boissons" className="group relative h-[500px] overflow-hidden block">
+              <Link to={getLocalizedPath("/boissons")} className="group relative h-[500px] overflow-hidden block">
                 <img
-                  src="/DSC07147_Original.jpg"
+                  src="/cocktails.jpg"
                   alt="Cocktails Signatures"
                   loading="lazy"
                   decoding="async"
@@ -117,7 +117,7 @@ export default function IndexPage() {
               </Link>
 
               {/* Vin & Champagne */}
-              <Link to="/boissons#vin-les-rouges" className="group relative h-[500px] overflow-hidden block">
+              <Link to={getLocalizedPath("/boissons#vin-les-rouges")} className="group relative h-[500px] overflow-hidden block">
                 <img
                   src="/assets/champagne.JPG"
                   alt="Vin & Champagne"
@@ -168,7 +168,7 @@ export default function IndexPage() {
                 </p>
                 <Button
                   as={Link}
-                  to="/menu"
+                  to={getLocalizedPath("/menu")}
                   className="btn-ghost px-8 py-4 text-sm"
                   variant="bordered"
                 >

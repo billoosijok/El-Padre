@@ -21,12 +21,12 @@ export const Menu = () => {
   return (
     <MenuLayout menu={sections as any}>
       <SEO
-        title="Menu | Tapas & Plats"
-        description="Découvrez notre menu varié : tapas maison, plats traditionnels et desserts gourmands à Narbonne."
         breadcrumbs={[
           { name: "Home", item: "/" },
-          { name: "Menu", item: "/menu" }
+          { name: "Menu", item: "/menu" },
         ]}
+        description="Découvrez notre menu varié : tapas maison, plats traditionnels et desserts gourmands à Narbonne."
+        title="Menu | Tapas & Plats"
       />
     </MenuLayout>
   );

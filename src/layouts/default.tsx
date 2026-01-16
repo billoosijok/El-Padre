@@ -7,7 +7,7 @@ import { useReservation } from "@/context/ReservationContext";
 
 import { useI18n } from "@/hooks/useTranslations";
 import { Logo } from "@/components/Logo";
-import { MenuIcon, CloseIcon, ChevronDownIcon } from "@/components/icons";
+import { MenuIcon, CloseIcon, ChevronDownIcon, InstagramIcon, FacebookIcon, TiktokIcon } from "@/components/icons";
 import { LanguageSelectorDropdown } from "@/components/LanguageSelector";
 import { MenuDropdown } from "@/components/MenuDropdown";
 
@@ -20,7 +20,7 @@ export default function DefaultLayout({
   contentOffset?: string; // Kept for compatibility
   homeTreatment?: boolean;
 }) {
-  const { goodLabel } = useI18n();
+  const { goodLabel, getLocalizedPath } = useI18n();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSubMenuOpen, setIsMobileSubMenuOpen] = useState(false);
@@ -55,20 +55,20 @@ export default function DefaultLayout({
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Left: Logo */}
           <div className={`flex-shrink-0 z-[61] transition-opacity duration-300 ${(!homeTreatment || isScrolled || isMobileMenuOpen) ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            <a href="/">
+            <a href={getLocalizedPath("/")}>
               <Logo animation="simple" size={50} color="#c59d5f" />
             </a>
           </div>
 
           {/* Center: Navigation (Hidden on mobile) */}
           <nav className="hidden md:flex gap-10 items-center uppercase tracking-[0.2em] text-xs font-bold font-lato text-white">
-            <a href="/" className="hover:text-padre-primary transition-colors">
+            <a href={getLocalizedPath("/")} className="hover:text-padre-primary transition-colors">
               {goodLabel("home")}
             </a>
 
             <MenuDropdown />
 
-            <a href="/privatisation" className="hover:text-padre-primary transition-colors">
+            <a href={getLocalizedPath("/privatisation")} className="hover:text-padre-primary transition-colors">
               {goodLabel("privatisation")}
             </a>
           </nav>
@@ -109,7 +109,7 @@ export default function DefaultLayout({
           >
             <nav className="flex flex-col items-center gap-6 uppercase tracking-[0.2em] text-lg font-bold font-lato text-white w-full">
               <a
-                href="/"
+                href={getLocalizedPath("/")}
                 className="hover:text-padre-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -140,28 +140,28 @@ export default function DefaultLayout({
                     >
                       <div className="flex flex-col items-center gap-4 py-4 bg-white/5 w-full mt-4">
                         <a
-                          href="/menu"
+                          href={getLocalizedPath("/menu")}
                           className="hover:text-padre-primary transition-colors text-base"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {goodLabel("menu_tapas")}
                         </a>
                         <a
-                          href="/boissons#alcool"
+                          href={getLocalizedPath("/boissons#alcool")}
                           className="hover:text-padre-primary transition-colors text-base"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {goodLabel("signature_cocktails")}
                         </a>
                         <a
-                          href="/boissons#vin"
+                          href={getLocalizedPath("/boissons#vin")}
                           className="hover:text-padre-primary transition-colors text-base"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {goodLabel("vin")}
                         </a>
                         <a
-                          href="/boissons"
+                          href={getLocalizedPath("/boissons")}
                           className="hover:text-padre-primary transition-colors text-base"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -174,7 +174,7 @@ export default function DefaultLayout({
               </div>
 
               <a
-                href="/privatisation"
+                href={getLocalizedPath("/privatisation")}
                 className="hover:text-padre-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -227,6 +227,35 @@ export default function DefaultLayout({
           {/* Column 2: Logo & Socials */}
           <div className="flex flex-col items-center justify-center gap-8">
             <Logo size={120} color="#c59d5f" />
+            <div className="flex items-center justify-center gap-6 mt-4">
+              <a
+                href="https://www.instagram.com/el_padre.11/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-padre-primary transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <InstagramIcon size={24} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61568366311415"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-padre-primary transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <FacebookIcon size={24} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@el_padre.11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-padre-primary transition-colors duration-300"
+                aria-label="TikTok"
+              >
+                <TiktokIcon size={24} />
+              </a>
+            </div>
             <div className="max-w-xs text-sm font-lato tracking-wide uppercase">
               {goodLabel("premium_authentic")}
             </div>
