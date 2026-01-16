@@ -1,0 +1,21 @@
+# El Padre Restaurant
+Refined Spanish & French Cuisine
+
+## About
+El Padre is a restaurant located in Narbonne, France, offering a blend of authentic Spanish and French cuisine. We focus on fresh, homemade ingredients and a passionate culinary experience.
+
+## Key Links
+- [Home](https://elpadre-narbonne.fr/)
+- [Menu](https://elpadre-narbonne.fr/menu)
+- [Drinks](https://elpadre-narbonne.fr/boissons)
+- [Privatisation](https://elpadre-narbonne.fr/privatisation)
+
+## Tech Stack
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- HeroUI
+
+## Documentation
+- [Sitemap](https://elpadre-narbonne.fr/sitemap.xml)
