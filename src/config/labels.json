@@ -195,9 +195,9 @@
     "es": "Planificar mi evento"
   },
   "seo_home_title": {
-    "fr": "Restaurant Narbonne | Tapas & Bistro",
-    "en": "Restaurant Narbonne | Tapas & Bistro",
-    "es": "Restaurante Narbona | Tapas y Bistró"
+    "fr": "El Padre - Restaurant & Bar | Narbonne",
+    "en": "El Padre - Restaurant & Bar | Narbonne",
+    "es": "El Padre - Restaurante y Bar | Narbona"
   },
   "seo_home_description": {
     "fr": "Restaurant à Narbonne pour des tapas authentiques et une cuisine de bistro raffinée. Ambiance conviviale au cœur de la ville.",
@@ -260,9 +260,9 @@
     "es": "Vista previa a pantalla completa"
   },
   "seo_default_title": {
-    "fr": "El Padre | Bistro & Bar | Narbonne",
-    "en": "El Padre | Bistro & Bar | Narbonne",
-    "es": "El Padre | Bistró y Bar | Narbona"
+    "fr": "El Padre - Restaurant & Bar | Narbonne",
+    "en": "El Padre - Restaurant & Bar | Narbonne",
+    "es": "El Padre - Restaurante y Bar | Narbona"
   },
   "seo_default_description": {
     "fr": "Restaurant authentique à Narbonne. Tapas, vins, cocktails et cuisine raffinée dans une ambiance conviviale. Réservez votre table !",
@@ -278,5 +278,35 @@
     "fr": "Tous droits réservés.",
     "en": "All Rights Reserved.",
     "es": "Todos los derechos reservados."
+  },
+  "seo_menu_description": {
+    "fr": "Découvrez notre menu varié : tapas maison, plats traditionnels et desserts gourmands à Narbonne.",
+    "en": "Discover our varied menu: homemade tapas, traditional dishes, and gourmet desserts in Narbonne.",
+    "es": "Descubre nuestro variado menú: tapas caseras, platos tradicionales y postres gourmet en Narbona."
+  },
+  "seo_privatisation_title": {
+    "fr": "Privatisation",
+    "en": "Privatisation",
+    "es": "Privatización"
+  },
+  "seo_privatisation_description": {
+    "fr": "Privatisez notre salle en sous-sol pour vos évènements à Narbonne. Anniversaires, réunions, mariages...",
+    "en": "Privatize our basement room for your events in Narbonne. Birthdays, meetings, weddings...",
+    "es": "Privatiza nuestra sala en el sótano para tus eventos en Narbona. Cumpleaños, reuniones, bodas..."
+  },
+  "breadcrumbs_home": {
+    "fr": "Accueil",
+    "en": "Home",
+    "es": "Inicio"
+  },
+  "breadcrumbs_menu": {
+    "fr": "Menu",
+    "en": "Menu",
+    "es": "Menú"
+  },
+  "breadcrumbs_privatisation": {
+    "fr": "Privatisation",
+    "en": "Privatisation",
+    "es": "Privatización"
   }
 }
