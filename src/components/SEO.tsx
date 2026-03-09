@@ -28,14 +28,14 @@ export const SEO = ({
     const defaultTitle = goodLabel("seo_default_title");
     const defaultDescription = goodLabel("seo_default_description");
 
-    const currentTitle = title ? `${title} | El Padre` : defaultTitle;
+    const currentTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
     const currentDescription = description || defaultDescription;
 
     // Base Schema for LocalBusiness
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "Restaurant",
-        "name": "El Padre",
+        "name": "El Padre - Restaurant & Bar",
         "image": [
             `${siteUrl}/assets/bar-photo.JPG`,
             `${siteUrl}/assets/team.jpg`,

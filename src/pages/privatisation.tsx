@@ -1,6 +1,8 @@
 import { Button } from "@heroui/button";
 import DefaultLayout from "@/layouts/default";
+import { SEO } from "@/components/SEO";
 import { useI18n } from "@/hooks/useTranslations";
+
 import { useReservation } from "@/context/ReservationContext";
 
 export default function PrivatisationPage() {
@@ -9,7 +11,16 @@ export default function PrivatisationPage() {
 
     return (
         <DefaultLayout>
+            <SEO
+                breadcrumbs={[
+                    { name: goodLabel("breadcrumbs_home"), item: "/" },
+                    { name: goodLabel("breadcrumbs_privatisation"), item: "/privatisation" },
+                ]}
+                description={goodLabel("seo_privatisation_description")}
+                title={goodLabel("seo_privatisation_title")}
+            />
             {/* Hero Section */}
+
             <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat bg-fixed">
                 <div className="absolute inset-0 bg-black/70" />
                 <div className="relative z-10 text-center px-4 flex flex-col items-center gap-8">
