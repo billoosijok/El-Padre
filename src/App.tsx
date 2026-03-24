@@ -19,6 +19,26 @@ const PrivatisationPage = lazy(() => import("@/pages/privatisation"));
 
 ReactGA.initialize("G-VH1QHTSLEM");
 
+const RedirectToVote = () => {
+  useEffect(() => {
+    // Record GA event
+    ReactGA.event({
+      category: "User",
+      action: "Click Vote Redirect",
+      label: "Google Form",
+    });
+
+    // Short delay to ensure GA event is sent
+    const timer = setTimeout(() => {
+      window.location.replace("https://docs.google.com/forms/d/e/1FAIpQLSd0YEcfg7e5E3bLDrGfcEL7uJDfk8iqBUTu1uaVcvd77mRKCQ/viewform");
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return null;
+};
+
 const RouteWrapper = () => {
   const { pathname } = useLocation();
 
@@ -36,6 +56,7 @@ const AppRoutes = () => {
         <Route index element={<IndexPage />} />
         <Route element={<MenuBoissons />} path="boissons/*" />
         <Route element={<PrivatisationPage />} path="privatisation" />
+        <Route element={<RedirectToVote />} path="vote" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
         <Route path="*" element={<div className="min-h-screen bg-padre-background flex items-center justify-center text-white"><h1 className="text-4xl font-cormorant">404 - Page introuvable</h1></div>} />
       </Route>
