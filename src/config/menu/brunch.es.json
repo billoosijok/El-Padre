@@ -1,0 +1,108 @@
+[
+  {
+    "category": "Salado",
+    "items": [
+      {
+        "name": "Full English Breakfast",
+        "price": 18,
+        "description": "2 salchichas, 2 lonchas de bacon, 2 huevos fritos, hash brown, tomate a la parrilla, champiñones y alubias en salsa de tomate, servido con pan de masa madre."
+      },
+      {
+        "name": "César Club Sandwich",
+        "price": 16,
+        "description": "Crema de queso, pollo a la parrilla casero, lascas de parmesano, tomates, cebolla frita, lechuga romana, salsa César, acompañado de patatas fritas crujientes.\n(extra › bacon a la parrilla +3)"
+      },
+      {
+        "name": "Huevos Benedictinos",
+        "price": 14,
+        "description": "Muffin inglés, aguacate, huevos pochados, bacon ahumado, salsa holandesa, acompañado de ensalada fresca."
+      },
+      {
+        "name": "Pancakes de Desayuno Salados",
+        "price": 14,
+        "description": "Tortitas esponjosas, 2 huevos fritos, cebollino, brotes, bacon crujiente a la parrilla y sirope de arce."
+      },
+      {
+        "name": "Tostada de Aguacate",
+        "price": 13,
+        "description": "Tostada de aguacate, tomates cherry, huevos pochados, puré de remolacha casero, queso feta.\n(extra › bacon a la parrilla +3)"
+      },
+      {
+        "name": "Tortilla de Queso",
+        "price": 10,
+        "description": "Tortilla de queso, ensalada fresca, queso mozzarella, servida con pan.\n(extra › bacon a la parrilla +3)"
+      },
+      {
+        "name": "Tortilla Francesa",
+        "price": 8,
+        "description": "Tortilla francesa, ensalada fresca, servida con pan.\n(extra › bacon a la parrilla +3)"
+      }
+    ]
+  },
+  {
+    "category": "Suplementos",
+    "layout": "compact",
+    "items": [
+      {
+        "name": "Bacon a la parrilla",
+        "price": 3
+      },
+      {
+        "name": "Salchicha",
+        "price": 3
+      },
+      {
+        "name": "Huevo frito o pochado",
+        "price": 2
+      },
+      {
+        "name": "Hash brown",
+        "price": 3
+      },
+      {
+        "name": "Aguacate",
+        "price": 3
+      },
+      {
+        "name": "Champiñones salteados",
+        "price": 3
+      },
+      {
+        "name": "Tomates a la parrilla",
+        "price": 2
+      },
+      {
+        "name": "Mozzarella o feta",
+        "price": 2
+      },
+      {
+        "name": "Cebolla frita",
+        "price": 1.5
+      },
+      {
+        "name": "Puré de remolacha casero",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "category": "Dulce",
+    "items": [
+      {
+        "name": "Pancakes o Torrija Pistacho",
+        "price": 14,
+        "description": "Mascarpone, salsa de pistacho, frutos rojos, pistachos picados y sirope de arce."
+      },
+      {
+        "name": "Pancakes o Torrija Chocolate",
+        "price": 13,
+        "description": "Mascarpone, praliné de avellanas, plátano, pepitas de chocolate con leche, avellanas caramelizadas y sirope de arce."
+      },
+      {
+        "name": "Granola Casera",
+        "price": 12,
+        "description": "Granola, yogur griego, frutas frescas, praliné de avellanas, miel y almendras picadas."
+      }
+    ]
+  }
+]

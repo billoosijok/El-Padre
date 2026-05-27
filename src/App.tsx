@@ -11,6 +11,7 @@ import { LanguageSwitchNotification } from "./components/LanguageSwitchNotificat
 
 const Menu = lazy(() => import("./pages/menu/menu").then(module => ({ default: module.Menu })));
 const MenuBoissons = lazy(() => import("./pages/menu/boissons").then(module => ({ default: module.MenuBoissons })));
+const MenuBrunch = lazy(() => import("./pages/menu/brunch").then(module => ({ default: module.MenuBrunch })));
 import { I18nProvider, SupportedLanguages, supported_languages } from "./hooks/useTranslations";
 import { ReservationProvider } from "@/context/ReservationContext";
 
@@ -58,6 +59,7 @@ const AppRoutes = () => {
         <Route element={<PrivatisationPage />} path="privatisation" />
         <Route element={<RedirectToVote />} path="vote" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
+        <Route element={<MenuBrunch />} path="brunch/*" />
         <Route path="*" element={<div className="min-h-screen bg-padre-background flex items-center justify-center text-white"><h1 className="text-4xl font-cormorant">404 - Page introuvable</h1></div>} />
       </Route>
     </Routes>

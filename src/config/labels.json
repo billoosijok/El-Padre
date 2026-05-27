@@ -44,10 +44,10 @@
     "en": "Wines & Champagnes",
     "es": "Vinos y Champanes"
   },
-  "nos horaires": {
-    "fr": "Nos Horaires",
-    "en": "Our Hours",
-    "es": "Nuestros Horarios"
+  "les horaires": {
+    "fr": "Les Horaires",
+    "en": "The Hours",
+    "es": "Los Horarios"
   },
   "ouvert j7/7": {
     "fr": "Ouvert j7/7",
@@ -308,5 +308,70 @@
     "fr": "Privatisation",
     "en": "Privatisation",
     "es": "Privatización"
+  },
+  "brunch": {
+    "fr": "Brunch",
+    "en": "Brunch",
+    "es": "Brunch"
+  },
+  "breadcrumbs_brunch": {
+    "fr": "Brunch",
+    "en": "Brunch",
+    "es": "Brunch"
+  },
+  "seo_brunch_title": {
+    "fr": "Brunch | El Padre Narbonne",
+    "en": "Brunch | El Padre Narbonne",
+    "es": "Brunch | El Padre Narbona"
+  },
+  "seo_brunch_description": {
+    "fr": "Découvrez notre brunch gourmand le week-end chez El Padre Narbonne. Œufs Bénédicte, Avocado Toast, Pancakes maison et Mimosa.",
+    "en": "Discover our gourmet weekend brunch at El Padre Narbonne. Eggs Benedict, Avocado Toast, homemade Pancakes, and Mimosa.",
+    "es": "Descubre nuestro brunch gourmet de fin de semana en El Padre Narbona. Huevos Benedictinos, Tostada de Aguacate, Pancakes caseros y Mimosa."
+  },
+  "selector_title": {
+    "fr": "Quel menu souhaitez-vous consulter ce matin ?",
+    "en": "Which menu would you like to view this morning?",
+    "es": "¿Qué menú le gustaría consultar esta mañana?"
+  },
+  "selector_subtitle": {
+    "fr": "Il est encore tôt, notre formule Brunch et notre carte classique sont toutes deux disponibles.",
+    "en": "It's still early, both our Brunch and classic menus are available.",
+    "es": "Todavía es temprano, tanto nuestro Brunch como el menú clásico están disponibles."
+  },
+  "selector_brunch_desc": {
+    "fr": "Œufs Bénédicte, Avocado Toast, Pancakes maison, mimosas et boissons chaudes.",
+    "en": "Eggs Benedict, Avocado Toast, homemade Pancakes, mimosas and hot drinks.",
+    "es": "Huevos Benedictinos, Tostada de Aguacate, Pancakes caseros, mimosas y bebidas calientes."
+  },
+  "selector_classic_desc": {
+    "fr": "Découvrez nos tapas faites maison, nos plats signatures, burgers et salades fraîches.",
+    "en": "Discover our homemade tapas, signature dishes, burgers and fresh salads.",
+    "es": "Descubra nuestras tapas caseras, platos de autor, hamburguesas y ensaladas frescas."
+  },
+  "selector_view_brunch": {
+    "fr": "Découvrir le Brunch",
+    "en": "Discover Brunch",
+    "es": "Descubrir el Brunch"
+  },
+  "selector_view_classic": {
+    "fr": "Consulter la Carte",
+    "en": "View Classic Menu",
+    "es": "Ver Menú Clásico"
+  },
+  "selector_skip": {
+    "fr": "Accéder directement à la carte",
+    "en": "Go directly to the menu",
+    "es": "Ir directamente al menú"
+  },
+  "selector_brunch_hours": {
+    "fr": "de Jeudi à Dimanche 8H - 11H30",
+    "en": "Thursday to Sunday 8H - 11H30",
+    "es": "De Jueves a Domingo 8H - 11H30"
+  },
+  "selector_classic_hours": {
+    "fr": "7/7 | 12h - 15h | 18h - 23h",
+    "en": "7/7 | 12h - 15h | 18h - 23h",
+    "es": "7/7 | 12h - 15h | 18h - 23h"
   }
 }
