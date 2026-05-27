@@ -104,5 +104,35 @@
         "description": "Granola, Greek yogurt, fresh fruits, hazelnut praline, honey & crushed almonds."
       }
     ]
+  },
+  {
+    "category": "Special Drinks",
+    "layout": "compact",
+    "items": [
+      {
+        "name": "Iced Latte",
+        "price": 5
+      },
+      {
+        "name": "Iced Tea",
+        "price": 6
+      },
+      {
+        "name": "Affogato",
+        "price": 4
+      },
+      {
+        "name": "Homemade Smoothie of the Moment",
+        "price": 8
+      },
+      {
+        "name": "Fresh Squeezed Orange Juice",
+        "price": 5
+      },
+      {
+        "name": "Mimosa",
+        "price": 8
+      }
+    ]
   }
 ]

@@ -104,5 +104,35 @@
         "description": "Granola, yogur griego, frutas frescas, praliné de avellanas, miel y almendras picadas."
       }
     ]
+  },
+  {
+    "category": "Bebidas Especiales",
+    "layout": "compact",
+    "items": [
+      {
+        "name": "Iced Latte",
+        "price": 5
+      },
+      {
+        "name": "Té Helado",
+        "price": 6
+      },
+      {
+        "name": "Affogato",
+        "price": 4
+      },
+      {
+        "name": "Smoothie casero del Momento",
+        "price": 8
+      },
+      {
+        "name": "Zumo de Naranja Natural",
+        "price": 5
+      },
+      {
+        "name": "Mimosa",
+        "price": 8
+      }
+    ]
   }
 ]
