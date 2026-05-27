@@ -62,14 +62,14 @@ export const LanguageSwitchNotification = () => {
                     className="text-white hover:text-[#c59d5f]"
                     onPress={handleDismiss}
                 >
-                    {language === 'fr' ? 'Non' : language === 'es' ? 'No' : 'No'}
+                    {suggestedLang === 'fr' ? 'Non' : suggestedLang === 'es' ? 'No' : 'No'}
                 </Button>
                 <Button
                     size="sm"
                     className="bg-[#c59d5f] text-black font-bold"
                     onPress={handleSwitch}
                 >
-                    {language === 'fr' ? 'Oui, changer' : language === 'es' ? 'Sí, cambiar' : 'Yes, switch'}
+                    {suggestedLang === 'fr' ? 'Oui, changer' : suggestedLang === 'es' ? 'Sí, cambiar' : 'Yes, switch'}
                 </Button>
             </div>
         </div>
