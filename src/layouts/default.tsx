@@ -14,17 +14,21 @@ import { MenuDropdown } from "@/components/MenuDropdown";
 export default function DefaultLayout({
   children,
   homeTreatment,
+  theme = "dark",
 }: {
   children: React.ReactNode;
   title?: ReactNode; // Kept for compatibility but might not be used in new design
   contentOffset?: string; // Kept for compatibility
   homeTreatment?: boolean;
+  theme?: "light" | "dark";
 }) {
   const { goodLabel, getLocalizedPath } = useI18n();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSubMenuOpen, setIsMobileSubMenuOpen] = useState(false);
   const { openReservation } = useReservation();
+  const isLight = theme === "light";
+  const isHeaderLight = isLight && (isScrolled || !homeTreatment || isMobileMenuOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,11 +48,13 @@ export default function DefaultLayout({
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="relative min-h-screen bg-padre-background text-white font-lato">
+    <div className={`relative min-h-screen font-lato ${isLight ? "bg-[#faf7f2] text-zinc-800" : "bg-padre-background text-white"}`}>
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${isScrolled || !homeTreatment || isMobileMenuOpen
-          ? "bg-black/90 shadow-lg py-4"
+          ? isLight
+            ? "bg-white/95 shadow-md py-4 border-b border-black/5 text-zinc-800"
+            : "bg-black/90 shadow-lg py-4 text-white"
           : "bg-transparent py-6"
           }`}
       >
@@ -61,12 +67,23 @@ export default function DefaultLayout({
           </div>
 
           {/* Center: Navigation (Hidden on mobile) */}
-          <nav className="hidden md:flex gap-10 items-center uppercase tracking-[0.2em] text-xs font-bold font-lato text-white">
+          <nav className={`hidden md:flex gap-10 items-center uppercase tracking-[0.2em] text-xs font-bold font-lato transition-colors duration-300 ${isHeaderLight ? "text-zinc-700" : "text-white"}`}>
             <a href={getLocalizedPath("/")} className="hover:text-padre-primary transition-colors">
               {goodLabel("home")}
             </a>
 
-            <MenuDropdown />
+            <MenuDropdown theme={isHeaderLight ? "light" : "dark"} />
+
+            <a href={getLocalizedPath("/brunch")} className="hover:text-padre-primary transition-colors flex items-center gap-1.5">
+              <span>{goodLabel("brunch")}</span>
+              <span className="bg-red-600 text-white text-[8px] font-sans px-1.5 py-0.5 rounded-sm font-black uppercase tracking-wider relative flex items-center justify-center shadow-sm">
+                NEW
+                <span className="absolute -top-0.5 -right-0.5 flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-600"></span>
+                </span>
+              </span>
+            </a>
 
             <a href={getLocalizedPath("/privatisation")} className="hover:text-padre-primary transition-colors">
               {goodLabel("privatisation")}
@@ -76,10 +93,14 @@ export default function DefaultLayout({
           {/* Right: Actions */}
           <div className="flex items-center gap-6 z-[61]">
             <div>
-              <LanguageSelectorDropdown />
+              <LanguageSelectorDropdown theme={isHeaderLight ? "light" : "dark"} />
             </div>
             <Button
-              className="hidden md:flex rounded-none bg-transparent border border-white text-white font-bold px-6 py-2 uppercase tracking-widest hover:bg-white hover:text-black transition-colors text-xs"
+              className={`hidden md:flex rounded-none bg-transparent border font-bold px-6 py-2 uppercase tracking-widest transition-colors text-xs ${
+                isHeaderLight
+                  ? "border-zinc-800 text-zinc-800 hover:bg-zinc-800 hover:text-white"
+                  : "border-white text-white hover:bg-white hover:text-black"
+              }`}
               onPress={openReservation}
               variant="solid"
             >
@@ -88,7 +109,7 @@ export default function DefaultLayout({
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden text-white focus:outline-none"
+              className={`md:hidden focus:outline-none transition-colors ${isHeaderLight ? "text-zinc-800" : "text-white"}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
@@ -105,9 +126,13 @@ export default function DefaultLayout({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[55] bg-black flex flex-col items-center justify-center space-y-8 md:hidden overflow-y-auto py-20"
+            className={`fixed inset-0 z-[55] flex flex-col items-center justify-center space-y-8 md:hidden overflow-y-auto py-20 ${
+              isLight ? "bg-[#faf7f2]" : "bg-black"
+            }`}
           >
-            <nav className="flex flex-col items-center gap-6 uppercase tracking-[0.2em] text-lg font-bold font-lato text-white w-full">
+            <nav className={`flex flex-col items-center gap-6 uppercase tracking-[0.2em] text-lg font-bold font-lato w-full ${
+              isLight ? "text-zinc-800" : "text-white"
+            }`}>
               <a
                 href={getLocalizedPath("/")}
                 className="hover:text-padre-primary transition-colors"
@@ -138,13 +163,22 @@ export default function DefaultLayout({
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden w-full"
                     >
-                      <div className="flex flex-col items-center gap-4 py-4 bg-white/5 w-full mt-4">
+                      <div className={`flex flex-col items-center gap-4 py-4 w-full mt-4 ${
+                        isLight ? "bg-black/5" : "bg-white/5"
+                      }`}>
                         <a
                           href={getLocalizedPath("/menu")}
                           className="hover:text-padre-primary transition-colors text-base"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {goodLabel("menu_tapas")}
+                        </a>
+                        <a
+                          href={getLocalizedPath("/brunch")}
+                          className="hover:text-padre-primary transition-colors text-base"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {goodLabel("brunch")}
                         </a>
                         <a
                           href={getLocalizedPath("/boissons#alcool")}
@@ -174,6 +208,21 @@ export default function DefaultLayout({
               </div>
 
               <a
+                href={getLocalizedPath("/brunch")}
+                className="hover:text-padre-primary transition-colors flex items-center gap-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span>{goodLabel("brunch")}</span>
+                <span className="bg-red-600 text-white text-[10px] font-sans px-2 py-0.5 rounded-sm font-black uppercase tracking-wider relative flex items-center justify-center shadow-sm">
+                  NEW
+                  <span className="absolute -top-0.5 -right-0.5 flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-600"></span>
+                  </span>
+                </span>
+              </a>
+
+              <a
                 href={getLocalizedPath("/privatisation")}
                 className="hover:text-padre-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -183,9 +232,12 @@ export default function DefaultLayout({
             </nav>
 
             <div className="flex flex-col items-center gap-6 mt-8">
-
               <Button
-                className="rounded-none bg-transparent border border-white text-white font-bold px-8 py-3 uppercase tracking-widest hover:bg-white hover:text-black transition-colors text-sm"
+                className={`rounded-none bg-transparent border font-bold px-8 py-3 uppercase tracking-widest transition-colors text-sm ${
+                  isLight
+                    ? "border-zinc-800 text-zinc-800 hover:bg-zinc-800 hover:text-white"
+                    : "border-white text-white hover:bg-white hover:text-black"
+                }`}
                 onPress={() => {
                   setIsMobileMenuOpen(false);
                   openReservation();
@@ -199,17 +251,16 @@ export default function DefaultLayout({
         )}
       </AnimatePresence>
 
-
-
       {/* Main Content */}
       <main className="w-full">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-[#111111] text-gray-400 py-20 mt-0 border-t border-white/10">
+      <footer className={`w-full py-20 mt-0 border-t ${
+        isLight ? "bg-[#f5f1e8] text-zinc-600 border-black/5" : "bg-[#111111] text-gray-400 border-white/10"
+      }`}>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-
           {/* Column 1: Contact */}
           <div className="flex flex-col items-center gap-6">
             <h3 className="text-2xl text-padre-primary font-cormorant mb-2">{goodLabel("contact")}</h3>
@@ -218,7 +269,7 @@ export default function DefaultLayout({
                 {goodLabel("address_line_1")}<br />{goodLabel("address_line_2")}
               </a>
             </p>
-            <p className="text-xl text-white font-cormorant mt-2">
+            <p className={`text-xl font-cormorant mt-2 ${isLight ? "text-zinc-800" : "text-white"}`}>
               <a href="tel:+33468324011">04 68 32 40 11</a>
             </p>
             <p className="font-lato">elpadre.aude@gmail.com</p>
@@ -232,7 +283,7 @@ export default function DefaultLayout({
                 href="https://www.instagram.com/el_padre.11/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-padre-primary transition-colors duration-300"
+                className={`transition-colors duration-300 ${isLight ? "text-zinc-800 hover:text-padre-primary" : "text-white hover:text-padre-primary"}`}
                 aria-label="Instagram"
               >
                 <InstagramIcon size={24} />
@@ -241,7 +292,7 @@ export default function DefaultLayout({
                 href="https://www.facebook.com/profile.php?id=61568366311415"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-padre-primary transition-colors duration-300"
+                className={`transition-colors duration-300 ${isLight ? "text-zinc-800 hover:text-padre-primary" : "text-white hover:text-padre-primary"}`}
                 aria-label="Facebook"
               >
                 <FacebookIcon size={24} />
@@ -250,25 +301,25 @@ export default function DefaultLayout({
                 href="https://www.tiktok.com/@el_padre.11"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-padre-primary transition-colors duration-300"
+                className={`transition-colors duration-300 ${isLight ? "text-zinc-800 hover:text-padre-primary" : "text-white hover:text-padre-primary"}`}
                 aria-label="TikTok"
               >
                 <TiktokIcon size={24} />
               </a>
             </div>
-            <div className="max-w-xs text-sm font-lato tracking-wide uppercase">
+            <div className={`max-w-xs text-sm font-lato tracking-wide uppercase ${isLight ? "text-zinc-600" : "text-white"}`}>
               {goodLabel("premium_authentic")}
             </div>
           </div>
 
           {/* Column 3: Hours */}
           <div className="flex flex-col items-center gap-6">
-            <h3 className="text-2xl text-padre-primary font-cormorant mb-2">{goodLabel("nos horaires")}</h3>
-            <p className="font-lato uppercase tracking-wider text-sm text-white">{goodLabel("ouvert j7/7")}</p>
+            <h3 className="text-2xl text-padre-primary font-cormorant mb-2">{goodLabel("les horaires")}</h3>
+            <p className={`font-lato uppercase tracking-wider text-sm ${isLight ? "text-zinc-800" : "text-white"}`}>{goodLabel("ouvert j7/7")}</p>
           </div>
         </div>
 
-        <div className="text-center mt-16 text-sm text-gray-600">
+        <div className={`text-center mt-16 text-sm ${isLight ? "text-zinc-400" : "text-gray-600"}`}>
           <p>© {new Date().getFullYear()} El Padre. {goodLabel("all_rights_reserved")}</p>
         </div>
       </footer>

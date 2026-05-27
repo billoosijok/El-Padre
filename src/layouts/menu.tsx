@@ -48,11 +48,13 @@ const MenuContext = createContext<{
   setActiveItemId: (id: string) => void;
   modalImage: string | null;
   setModalImage: (url: string | null) => void;
+  isLight?: boolean;
 }>({
   activeItemId: null,
   setActiveItemId: () => { },
   modalImage: null,
   setModalImage: () => { },
+  isLight: false,
 });
 
 const MenuLayoutWrapper = (props: any) => {
@@ -60,7 +62,7 @@ const MenuLayoutWrapper = (props: any) => {
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   return (
-    <MenuContext.Provider value={{ activeItemId, setActiveItemId, modalImage, setModalImage }}>
+    <MenuContext.Provider value={{ activeItemId, setActiveItemId, modalImage, setModalImage, isLight: props.theme === "light" }}>
       <MenuLayoutContent {...props} />
     </MenuContext.Provider>
   );
@@ -68,7 +70,22 @@ const MenuLayoutWrapper = (props: any) => {
 
 export { MenuLayoutWrapper as MenuLayout };
 
-const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSectionConfig[], children?: React.ReactNode }) => {
+const MenuLayoutContent = ({
+  menu: sectionConfigs,
+  children,
+  heroImage,
+  heroTitle,
+  heroSubtitle,
+  theme = "dark",
+}: {
+  menu: MenuSectionConfig[];
+  children?: React.ReactNode;
+  heroImage?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  theme?: "light" | "dark";
+}) => {
+  const isLight = theme === "light";
   const { language, goodLabel } = useI18n();
   const location = useLocation();
   const { modalImage, setModalImage } = useContext(MenuContext);
@@ -167,7 +184,7 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
 
   if (isLoading) {
     return (
-      <DefaultLayout title={<h1>{goodLabel("menu")}</h1>}>
+      <DefaultLayout homeTreatment={!!heroImage} theme={theme}>
         <div className="h-screen flex items-center justify-center">
           <Spinner color="warning" size="lg" />
         </div>
@@ -176,20 +193,48 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
   }
 
   return (
-    <DefaultLayout title={<h1>{goodLabel("menu")}</h1>}>
+    <DefaultLayout homeTreatment={!!heroImage} theme={theme}>
       {children}
+
+      {heroImage && (
+        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden z-10">
+          <img
+            src={heroImage}
+            alt={heroTitle || "Hero"}
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <div className="relative z-20 text-center px-4 flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-4 mb-2">
+              <h1 className="text-5xl md:text-7xl font-cormorant text-white uppercase tracking-wider">
+                {heroTitle}
+              </h1>
+              {heroSubtitle && (
+                <p className="text-xl md:text-2xl font-lato text-gray-300 italic">
+                  {heroSubtitle}
+                </p>
+              )}
+            </div>
+            <div className="h-[1px] w-24 bg-padre-primary" />
+          </div>
+        </section>
+      )}
+
       {/* Background Texture */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat opacity-10" />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className={`absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat ${isLight ? "opacity-[0.03]" : "opacity-10"}`} />
+        <div className={`absolute inset-0 ${isLight ? "bg-white/10" : "bg-black/20"}`} />
       </div>
 
-      <div className="relative z-10 m-auto flex flex-col align-center px-4 pb-20">
+      <div className={`relative z-10 m-auto flex flex-col align-center px-4 pb-20 ${heroImage ? "pt-16" : ""}`}>
 
         {/* Sticky Nav Bar */}
         <div
           ref={navContainerRef}
-          className="sticky top-[80px] z-50 py-2 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-white/10 mb-8 -mx-4 px-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          className={`sticky top-[80px] z-50 py-2 backdrop-blur-md border-b mb-8 -mx-4 px-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] ${
+            isLight ? "bg-[#faf7f2]/95 border-black/5" : "bg-[#1a1a1a]/95 border-white/10"
+          }`}
         >
           <div className="flex gap-8 min-w-max max-w-4xl m-auto px-2">
             {menuItems.map((item) => (
@@ -197,10 +242,11 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
                 key={item.id}
                 id={`tab-${item.id}`}
                 onClick={() => scrollToSection(item.id)}
-                className={`py-4 text-sm uppercase tracking-[0.2em] font-bold transition-all duration-300 border-b-2 ${activeSection === item.id
-                  ? "text-white border-white"
-                  : "text-gray-500 hover:text-white border-transparent"
-                  }`}
+                className={`py-4 text-sm uppercase tracking-[0.2em] font-bold transition-all duration-300 border-b-2 ${
+                  activeSection === item.id
+                    ? isLight ? "text-zinc-800 border-zinc-800" : "text-white border-white"
+                    : isLight ? "text-zinc-400 hover:text-zinc-800 border-transparent" : "text-gray-500 hover:text-white border-transparent"
+                }`}
               >
                 {item.category}
               </button>
@@ -222,7 +268,9 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
             >
               <div className="flex flex-col gap-6">
                 {!item.isConsolidated && (
-                  <h3 className="sticky top-[146px] z-40 bg-[#1a1a1a]/95 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary">
+                  <h3 className={`sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary ${
+                    isLight ? "bg-[#faf7f2]/95" : "bg-[#1a1a1a]/95"
+                  }`}>
                     {item.category}
                   </h3>
                 )}
@@ -233,7 +281,7 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
                     </h3>
                   </div>
                 )}
-                <div className="flex flex-col gap-8">
+                <div className={item.layout === "compact" ? "grid grid-cols-2 sm:grid-cols-3 gap-4" : "flex flex-col gap-8"}>
                   {item.items.map((subItem: any, idx: number) => {
                     if (subItem.category) {
                       return (
@@ -242,18 +290,23 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
                             className={
                               item.customizations?.menuItemSubCategoryClasses
                                 ? item.customizations.menuItemSubCategoryClasses
-                                : "sticky top-[146px] z-40 bg-[#1a1a1a]/95 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary"
+                                : `sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary ${
+                                    isLight ? "bg-[#faf7f2]/95" : "bg-[#1a1a1a]/95"
+                                  }`
                             }
                           >
                             {subItem.category}
                           </h5>
-                          {subItem.items.map((nestedItem: any) => (
-                            <MenuItem
-                              key={nestedItem.name} // Ensure unique keys if names are unique
-                              customizations={item.customizations}
-                              item={nestedItem}
-                            />
-                          ))}
+                          <div className={item.layout === "compact" ? "grid grid-cols-2 sm:grid-cols-3 gap-4" : "flex flex-col gap-8"}>
+                            {subItem.items.map((nestedItem: any) => (
+                              <MenuItem
+                                key={nestedItem.name} // Ensure unique keys if names are unique
+                                customizations={item.customizations}
+                                item={nestedItem}
+                                layout={item.layout}
+                              />
+                            ))}
+                          </div>
                         </Fragment>
                       );
                     }
@@ -262,6 +315,7 @@ const MenuLayoutContent = ({ menu: sectionConfigs, children }: { menu: MenuSecti
                         key={subItem.name}
                         customizations={item.customizations}
                         item={subItem}
+                        layout={item.layout}
                       />
                     )
                   })}
@@ -394,12 +448,14 @@ const MenuItemName = ({ item }: { item: any }) => {
 const MenuItem = ({
   item,
   customizations = {},
+  layout,
 }: {
   item: any;
   customizations?: MenuSectionConfig["customizations"];
+  layout?: string;
 }) => {
   const { menuItemNameClasses } = customizations || {};
-  const { activeItemId, setActiveItemId, setModalImage } = useContext(MenuContext);
+  const { activeItemId, setActiveItemId, setModalImage, isLight } = useContext(MenuContext);
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
 
@@ -411,41 +467,62 @@ const MenuItem = ({
 
   const isActive = activeItemId === item.name;
   const hasImage = item.image && item.image.thumb && item.image.full;
+  const isCompact = layout === "compact";
 
   return (
     <motion.div
       ref={ref}
       layout
       data-menu-item-id={item.name}
-      className={`flex flex-row gap-4 items-center justify-between py-6 border-b border-dashed border-white/10 last:border-0 relative min-h-[120px] ${isActive ? "z-20" : "z-10"
-        } group hover:bg-white/5 transition-colors duration-300 rounded-lg px-4`}
+      className={
+        isCompact
+          ? `flex flex-row items-center justify-between py-2.5 px-5 border rounded-full transition-all duration-300 transform cursor-pointer ${
+              isLight
+                ? "border-black/5 bg-black/[0.03] hover:bg-black/[0.06] hover:shadow-md hover:-translate-y-0.5"
+                : "border-white/10 bg-white/5 hover:bg-white/10 hover:shadow-lg hover:-translate-y-0.5 backdrop-blur-sm"
+            } ${isActive ? "z-20 border-padre-primary/50" : "z-10"}`
+          : `flex flex-row gap-4 items-center justify-between py-6 border-b border-dashed last:border-0 relative min-h-[120px] ${
+              isLight ? "border-black/10 hover:bg-black/5" : "border-white/10 hover:bg-white/5"
+            } ${isActive ? "z-20" : "z-10"} group transition-colors duration-300 rounded-lg px-4`
+      }
       onClick={() => {
-        if (hasImage) {
+        if (hasImage && !isCompact) {
           setModalImage(item.image.full);
         }
       }}
     >
       <div className="flex-1 z-10 w-full transition-all duration-500 ease-in-out">
-        <div className="mb-2">
+        <div className={isCompact ? "flex justify-between items-center w-full" : "mb-2"}>
           <h5
             className={
               menuItemNameClasses
                 ? menuItemNameClasses
-                : `font-cormorant font-bold uppercase text-2xl text-white group-hover:text-padre-primary transition-colors`
+                : `font-cormorant font-bold uppercase group-hover:text-padre-primary transition-colors ${
+                    isCompact ? "text-sm md:text-base leading-tight" : "text-2xl"
+                  } ${isLight ? "text-zinc-800" : "text-white"}`
             }
           >
             <MenuItemName item={item} />{" "}
-            <span className="font-light text-padre-primary text-xl normal-case">
-              - <MenuItemPrice price={item.price} />
-            </span>
+            {!isCompact && (
+              <span className="font-light text-padre-primary normal-case text-xl">
+                - <MenuItemPrice price={item.price} />
+              </span>
+            )}
           </h5>
+          {isCompact && (
+            <span className={`font-semibold text-padre-primary bg-padre-primary/10 px-3 py-1 rounded-full text-xs md:text-sm whitespace-nowrap ml-3`}>
+              <MenuItemPrice price={item.price} />
+            </span>
+          )}
         </div>
-        <p className="font-lato font-light text-gray-400 text-sm leading-relaxed max-w-[90%]">
-          {item.description}
-        </p>
+        {!isCompact && (
+          <p className={`font-lato font-light text-sm leading-relaxed max-w-[90%] ${isLight ? "text-zinc-600" : "text-gray-400"}`}>
+            {item.description}
+          </p>
+        )}
       </div>
 
-      {hasImage && (
+      {hasImage && !isCompact && (
         <motion.div
           layout
           className="flex-shrink-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] w-24 h-24 flex items-center justify-center cursor-pointer"

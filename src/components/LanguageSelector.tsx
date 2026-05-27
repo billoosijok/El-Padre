@@ -99,8 +99,9 @@ const StartImage = ({ src }: { src: string }) => {
   return <img alt="flag icon" src={`/${src}`} width="20" />;
 };
 
-export const LanguageSelectorDropdown = () => {
+export const LanguageSelectorDropdown = ({ theme = "dark" }: { theme?: "light" | "dark" }) => {
   const { language, setLanguage } = useI18n();
+  const isLight = theme === "light";
 
   const [isOpen, onOpenChange] = useState(false);
 
@@ -109,7 +110,14 @@ export const LanguageSelectorDropdown = () => {
   }, []);
 
   return (
-    <Dropdown onOpenChange={onOpenChange}>
+    <Dropdown
+      onOpenChange={onOpenChange}
+      classNames={{
+        content: isLight
+          ? "bg-white border border-black/10 text-zinc-800 rounded-sm p-2 min-w-[150px]"
+          : "bg-black/90 border border-white/10 text-white rounded-sm p-2 min-w-[150px]"
+      }}
+    >
       <DropdownTrigger>
         <Button
           endContent={
@@ -123,6 +131,7 @@ export const LanguageSelectorDropdown = () => {
           }
           size="sm"
           variant="flat"
+          className={isLight ? "bg-black/5 text-zinc-800" : "bg-white/10 text-white"}
         >
           <StartImage src={supported_languages[language].icon} />
         </Button>
@@ -136,7 +145,7 @@ export const LanguageSelectorDropdown = () => {
         {Object.entries(supported_languages).map(([lang, { name, icon }]) => (
           <DropdownItem
             key={lang}
-            className="text-black"
+            className={isLight ? "text-zinc-800 hover:text-padre-primary" : "text-white hover:text-padre-primary"}
             startContent={<StartImage src={icon} />}
           >
             {name}
