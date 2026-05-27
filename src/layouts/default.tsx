@@ -1,4 +1,4 @@
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode, useState, useEffect, Fragment } from "react";
 import { Button } from "@heroui/button";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -313,9 +313,36 @@ export default function DefaultLayout({
           </div>
 
           {/* Column 3: Hours */}
-          <div className="flex flex-col items-center gap-6">
-            <h3 className="text-2xl text-padre-primary font-cormorant mb-2">{goodLabel("les horaires")}</h3>
-            <p className={`font-lato uppercase tracking-wider text-sm ${isLight ? "text-zinc-800" : "text-white"}`}>{goodLabel("ouvert j7/7")}</p>
+          <div className="flex flex-col items-center gap-4 w-full">
+            <h3 className="text-2xl text-padre-primary font-cormorant mb-2">{goodLabel("nos_horaires")}</h3>
+            <div className={`flex flex-col gap-3 font-lato text-sm items-center w-full ${isLight ? "text-zinc-800" : "text-white"}`}>
+              <p className="uppercase tracking-wider font-bold mb-1">{goodLabel("ouvert j7/7")}</p>
+              
+              <div className="grid grid-cols-[1fr_auto_1fr] gap-x-3 gap-y-1.5 w-full">
+                {[
+                  "footer_hours_lundi_jeudi",
+                  "footer_hours_vendredi",
+                  "footer_hours_weekend",
+                  "footer_hours_brunch"
+                ].map((key) => {
+                  const label = goodLabel(key as Parameters<typeof goodLabel>[0]);
+                  const splitIndex = label.indexOf(":");
+                  const hasColon = splitIndex !== -1;
+                  const left = hasColon ? label.substring(0, splitIndex).trim() : label;
+                  const right = hasColon ? label.substring(splitIndex + 1).trim() : "";
+                  const isBrunch = key === "footer_hours_brunch";
+                  const textClass = isBrunch ? "text-xs opacity-75 mt-1" : "tracking-wide";
+                  
+                  return (
+                    <Fragment key={key}>
+                      <span className={`text-right font-medium ${textClass}`}>{left}</span>
+                      <span className={`text-center opacity-50 ${textClass}`}>{hasColon ? ":" : ""}</span>
+                      <span className={`text-left ${textClass}`}>{right}</span>
+                    </Fragment>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
 
