@@ -365,14 +365,14 @@
     "es": "Ir directamente al menú"
   },
   "selector_brunch_hours": {
-    "fr": "de Jeudi à Dimanche 8H - 11H30",
-    "en": "Thursday to Sunday 8H - 11H30",
-    "es": "De Jueves a Domingo 8H - 11H30"
+    "fr": "8H - 11H30",
+    "en": "8H - 11H30",
+    "es": "8H - 11H30"
   },
   "selector_classic_hours": {
-    "fr": "7/7 | 12h - 15h | 18h - 23h",
-    "en": "7/7 | 12h - 15h | 18h - 23h",
-    "es": "7/7 | 12h - 15h | 18h - 23h"
+    "fr": "7/7 | 8h - 15h | 18h - 23h",
+    "en": "7/7 | 8h - 15h | 18h - 23h",
+    "es": "7/7 | 8h - 15h | 18h - 23h"
   },
   "nos_horaires": {
     "fr": "Nos Horaires",
@@ -380,23 +380,23 @@
     "es": "Nuestros Horarios"
   },
   "footer_hours_lundi_jeudi": {
-    "fr": "Lun - Jeu : 12h - 15h | 18h - 23h",
-    "en": "Mon - Thu : 12h - 15h | 18h - 23h",
-    "es": "Lun - Jue : 12h - 15h | 18h - 23h"
+    "fr": "Lun - Jeu : 8h - 15h | 18h - 23h",
+    "en": "Mon - Thu : 8h - 15h | 18h - 23h",
+    "es": "Lun - Jue : 8h - 15h | 18h - 23h"
   },
   "footer_hours_vendredi": {
-    "fr": "Ven : 12h - 15h | 18h - 02h",
-    "en": "Fri : 12h - 15h | 18h - 02h",
-    "es": "Vie : 12h - 15h | 18h - 02h"
+    "fr": "Ven : 8h - 15h | 18h - 02h",
+    "en": "Fri : 8h - 15h | 18h - 02h",
+    "es": "Vie : 8h - 15h | 18h - 02h"
   },
   "footer_hours_weekend": {
-    "fr": "Sam - Dim : 12h - 02h",
-    "en": "Sat - Sun : 12h - 02h",
-    "es": "Sáb - Dom : 12h - 02h"
+    "fr": "Sam - Dim : 8h - 02h",
+    "en": "Sat - Sun : 8h - 02h",
+    "es": "Sáb - Dom : 8h - 02h"
   },
   "footer_hours_brunch": {
-    "fr": "Brunch (Jeu - Dim) : 8h - 11h30",
-    "en": "Brunch (Thu - Sun) : 8h - 11h30",
-    "es": "Brunch (Jue - Dom) : 8h - 11h30"
+    "fr": "Brunch : 8h - 11h30",
+    "en": "Brunch : 8h - 11h30",
+    "es": "Brunch : 8h - 11h30"
   }
 }

@@ -257,7 +257,7 @@ export default function DefaultLayout({
       </main>
 
       {/* Footer */}
-      <footer className={`w-full py-20 mt-0 border-t ${
+      <footer data-nosnippet className={`w-full py-20 mt-0 border-t ${
         isLight ? "bg-[#f5f1e8] text-zinc-600 border-black/5" : "bg-[#111111] text-gray-400 border-white/10"
       }`}>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
