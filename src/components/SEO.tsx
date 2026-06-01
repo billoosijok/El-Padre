@@ -28,7 +28,11 @@ export const SEO = ({
     const defaultTitle = goodLabel("seo_default_title");
     const defaultDescription = goodLabel("seo_default_description");
 
-    const currentTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+    const currentTitle = title
+        ? title.includes("El Padre")
+            ? title
+            : `${title} | ${defaultTitle}`
+        : defaultTitle;
     const currentDescription = description || defaultDescription;
 
     // Base Schema for LocalBusiness

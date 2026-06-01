@@ -201,7 +201,7 @@ export default function IndexPage() {
           </section>
 
           {/* Bottom CTA */}
-          <section className="py-32 bg-[#1a1a1a] relative overflow-hidden flex flex-col items-center justify-center text-center px-6 border-t border-white/5">
+          <section data-nosnippet className="py-32 bg-[#1a1a1a] relative overflow-hidden flex flex-col items-center justify-center text-center px-6 border-t border-white/5">
             <h2 className="text-5xl md:text-7xl font-cormorant text-white mb-10 max-w-4xl leading-tight">
               {goodLabel("waiting_to_serve")}
             </h2>
