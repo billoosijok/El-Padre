@@ -49,7 +49,12 @@ export const Menu = () => {
   }
 
   return (
-    <MenuLayout menu={sections as any}>
+    <MenuLayout
+      heroImage="/assets/menu-hero.jpg"
+      heroSubtitle={goodLabel("seo_menu_description")}
+      heroTitle={goodLabel("menu")}
+      menu={sections as any}
+    >
       <SEO
         breadcrumbs={[
           { name: goodLabel("breadcrumbs_home"), item: "/" },
