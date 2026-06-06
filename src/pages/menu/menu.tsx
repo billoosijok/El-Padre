@@ -6,6 +6,11 @@ import { PlatsMenuIcon, TapasMenuIcon } from "@/components/icons";
 import { MenuLayout } from "@/layouts/menu";
 import { SEO } from "@/components/SEO";
 import { useI18n } from "@/hooks/useTranslations";
+import {
+  isEntryOnMenu,
+  getMenuOptionSelected,
+  setMenuOptionSelected,
+} from "@/config/landing";
 
 const sections = [
   {
@@ -24,13 +29,19 @@ const sections = [
 
 export const Menu = () => {
   const { goodLabel, getLocalizedPath } = useI18n();
-  const [showSelector, setShowSelector] = useState(true);
+  const [showSelector, setShowSelector] = useState(() => {
+    return isEntryOnMenu && !getMenuOptionSelected();
+  });
 
   if (showSelector) {
     return (
       <MenuSelector
         brunchUrl={getLocalizedPath("/brunch")}
+        onChooseBrunch={() => {
+          setMenuOptionSelected(true);
+        }}
         onChooseRegular={() => {
+          setMenuOptionSelected(true);
           setShowSelector(false);
         }}
       />
