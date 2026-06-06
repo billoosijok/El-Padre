@@ -3,6 +3,7 @@ import { useI18n, SupportedLanguages, supported_languages } from "@/hooks/useTra
 import { CloseIcon } from "./icons";
 import { Button } from "@heroui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { isEntryOnMenu, getMenuOptionSelected } from "@/config/landing";
 
 const GA_MEASUREMENT_ID = "G-VH1QHTSLEM";
 
@@ -19,6 +20,8 @@ export const LanguageSwitchNotification = () => {
   const [step, setStep] = useState<BannerStep>("cookies");
   const [isCustomizing, setIsCustomizing] = useState(false);
   const [suggestedLang, setSuggestedLang] = useState<SupportedLanguages | null>(null);
+  
+  const [menuOptionSelected, setMenuOptionSelectedState] = useState(getMenuOptionSelected());
   
   const [preferences, setPreferences] = useState<CookiePreferences>({
     analytics: false,
@@ -51,6 +54,7 @@ export const LanguageSwitchNotification = () => {
     // Check cookie consent state
     const savedConsent = localStorage.getItem("elpadre-cookie-consent");
     const hasLanguageDismissed = sessionStorage.getItem("language_notification_dismissed");
+    const shouldHideForMenuSelector = isEntryOnMenu && !menuOptionSelected;
 
     if (savedConsent) {
       const parsedPrefs = JSON.parse(savedConsent) as CookiePreferences;
@@ -60,13 +64,23 @@ export const LanguageSwitchNotification = () => {
       // If cookies already accepted, but language differs and is not dismissed, show language switch
       if (hasDifferentLang && !hasLanguageDismissed) {
         setStep("language");
-        setIsVisible(true);
+        if (shouldHideForMenuSelector) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      } else {
+        setIsVisible(false);
       }
     } else {
       // No cookie consent yet: disable GA by default and show cookie step
       (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
       setStep("cookies");
-      setIsVisible(true);
+      if (shouldHideForMenuSelector) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
     }
 
     // Custom event listener to reopen cookie settings from policy pages
@@ -76,11 +90,19 @@ export const LanguageSwitchNotification = () => {
       setIsVisible(true);
     };
 
+    // Listen to menu selection changes
+    const handleMenuSelectionChange = (e: Event) => {
+      const selected = (e as CustomEvent).detail;
+      setMenuOptionSelectedState(selected);
+    };
+
     window.addEventListener("open-cookie-settings", handleOpenSettings);
+    window.addEventListener("menu-option-selected-change", handleMenuSelectionChange);
     return () => {
       window.removeEventListener("open-cookie-settings", handleOpenSettings);
+      window.removeEventListener("menu-option-selected-change", handleMenuSelectionChange);
     };
-  }, [language]);
+  }, [language, menuOptionSelected]);
 
   // Transitions after cookie choice is made
   const checkLanguageTransitionOrClose = () => {

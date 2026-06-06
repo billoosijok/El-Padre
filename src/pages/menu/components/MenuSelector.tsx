@@ -5,11 +5,13 @@ import { Button } from "@heroui/button";
 
 interface MenuSelectorProps {
   onChooseRegular: () => void;
+  onChooseBrunch: () => void;
   brunchUrl: string;
 }
 
 export const MenuSelector = ({
   onChooseRegular,
+  onChooseBrunch,
   brunchUrl,
 }: MenuSelectorProps) => {
   const { goodLabel } = useI18n();
@@ -21,7 +23,10 @@ export const MenuSelector = ({
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        onClick={() => window.location.assign(brunchUrl)}
+        onClick={() => {
+          onChooseBrunch();
+          window.location.assign(brunchUrl);
+        }}
         className="relative flex-1 h-[50vh] md:h-full group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-white/10"
       >
         <div
@@ -46,7 +51,10 @@ export const MenuSelector = ({
             as={Link}
             to={brunchUrl}
             className="bg-transparent border border-white text-white group-hover:bg-white group-hover:text-black font-bold uppercase tracking-widest text-xs py-3 px-8 rounded-none transition-all duration-300 hover:scale-105"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onChooseBrunch();
+            }}
           >
             {goodLabel("selector_view_brunch")}
           </Button>

@@ -8,6 +8,7 @@ import { Suspense, lazy, useEffect } from "react";
 import ReactGA from "react-ga4";
 
 import { LanguageSwitchNotification } from "./components/LanguageSwitchNotification";
+import "@/config/landing";
 
 const Menu = lazy(() => import("./pages/menu/menu").then(module => ({ default: module.Menu })));
 const MenuBoissons = lazy(() => import("./pages/menu/boissons").then(module => ({ default: module.MenuBoissons })));
