@@ -23,22 +23,22 @@ export function copyIndexTo404(options?: Options): Plugin {
         console.error("Error copying index.html to 404.html:", error);
       }
 
-      // 2. Generate folders for each route and copy index.html inside them
+      // 2. Generate flat HTML files for each route to leverage GitHub Pages' clean URLs
       if (options?.routes && Array.isArray(options.routes)) {
         for (const route of options.routes) {
-          // Normalize the route path to avoid leading/trailing slashes causing issues
+          // Normalize the route path to avoid leading/trailing slashes
           const cleanRoute = route.replace(/^\/+/, "").replace(/\/+$/, "");
           if (!cleanRoute) continue; // Skip root page since index.html already exists there
 
-          const targetDir = path.join(outDir, cleanRoute);
-          const targetPath = path.join(targetDir, "index.html");
+          const targetPath = path.join(outDir, `${cleanRoute}.html`);
+          const targetDir = path.dirname(targetPath);
 
           try {
             await fs.promises.mkdir(targetDir, { recursive: true });
             await fs.promises.copyFile(indexPath, targetPath);
-            console.log(`Successfully generated static route index: ${targetPath}`);
+            console.log(`Successfully generated static route file: ${targetPath}`);
           } catch (error) {
-            console.error(`Error copying index.html to static route ${route}:`, error);
+            console.error(`Error copying index.html to static route file for ${route}:`, error);
           }
         }
       }
