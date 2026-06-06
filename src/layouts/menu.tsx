@@ -268,17 +268,17 @@ const MenuLayoutContent = ({
             >
               <div className="flex flex-col gap-6">
                 {!item.isConsolidated && (
-                  <h3 className={`sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary ${
+                  <h2 className={`sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary ${
                     isLight ? "bg-[#faf7f2]/95" : "bg-[#1a1a1a]/95"
                   }`}>
                     {item.category}
-                  </h3>
+                  </h2>
                 )}
                 {item.isConsolidated && (
                   <div className="mb-8 pl-4 border-l-4 border-l-padre-primary">
-                    <h3 className="text-3xl font-cormorant text-padre-primary uppercase tracking-widest">
+                    <h2 className="text-3xl font-cormorant text-padre-primary uppercase tracking-widest">
                       {item.category}
-                    </h3>
+                    </h2>
                   </div>
                 )}
                 <div className={item.layout === "compact" ? "grid grid-cols-2 sm:grid-cols-3 gap-4" : "flex flex-col gap-8"}>
@@ -286,7 +286,7 @@ const MenuLayoutContent = ({
                     if (subItem.category) {
                       return (
                         <Fragment key={idx}>
-                          <h5
+                          <h2
                             className={
                               item.customizations?.menuItemSubCategoryClasses
                                 ? item.customizations.menuItemSubCategoryClasses
@@ -296,7 +296,7 @@ const MenuLayoutContent = ({
                             }
                           >
                             {subItem.category}
-                          </h5>
+                          </h2>
                           <div className={item.layout === "compact" ? "grid grid-cols-2 sm:grid-cols-3 gap-4" : "flex flex-col gap-8"}>
                             {subItem.items.map((nestedItem: any) => (
                               <MenuItem
@@ -493,7 +493,7 @@ const MenuItem = ({
     >
       <div className="flex-1 z-10 w-full transition-all duration-500 ease-in-out">
         <div className={isCompact ? "flex justify-between items-center w-full" : "mb-2"}>
-          <h5
+          <h3
             className={
               menuItemNameClasses
                 ? menuItemNameClasses
@@ -508,7 +508,7 @@ const MenuItem = ({
                 - <MenuItemPrice price={item.price} />
               </span>
             )}
-          </h5>
+          </h3>
           {isCompact && (
             <span className={`font-semibold text-padre-primary bg-padre-primary/10 px-3 py-1 rounded-full text-xs md:text-sm whitespace-nowrap ml-3`}>
               <MenuItemPrice price={item.price} />
