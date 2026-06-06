@@ -1,4 +1,5 @@
 import { Button } from "@heroui/button";
+import { Link } from "react-router-dom";
 import DefaultLayout from "@/layouts/default";
 import { SEO } from "@/components/SEO";
 import { useI18n } from "@/hooks/useTranslations";
@@ -6,7 +7,7 @@ import { useI18n } from "@/hooks/useTranslations";
 import { useReservation } from "@/context/ReservationContext";
 
 export default function PrivatisationPage() {
-    const { goodLabel } = useI18n();
+    const { goodLabel, getLocalizedPath } = useI18n();
     const { openReservation } = useReservation();
 
     return (
@@ -52,8 +53,9 @@ export default function PrivatisationPage() {
                         </p>
                         <div className="flex justify-center md:justify-start gap-6">
                             <Button
+                                as={Link}
+                                to={getLocalizedPath("/contact")}
                                 className="btn-ghost px-12 py-6 text-lg hover:scale-105 transition-transform"
-                                onPress={openReservation}
                                 variant="bordered"
                             >
                                 {goodLabel("contact")}

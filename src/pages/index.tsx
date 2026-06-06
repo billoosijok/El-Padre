@@ -214,7 +214,13 @@ export default function IndexPage() {
                 {goodLabel("reserve")}
               </Button>
               <div className="text-lg text-gray-400 font-lato">
-                {goodLabel("or_call")} <span className="text-white block md:inline text-xl mt-2 md:mt-0 font-cormorant text-padre-primary">04 68 32 40 11</span>
+                {goodLabel("or_call")}{" "}
+                <Link
+                  to={getLocalizedPath("/contact")}
+                  className="text-padre-primary hover:underline hover:text-white transition-colors block md:inline text-xl mt-2 md:mt-0 font-cormorant"
+                >
+                  04 68 32 40 11
+                </Link>
               </div>
             </div>
           </section>

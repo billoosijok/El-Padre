@@ -370,9 +370,9 @@
     "es": "8H - 11H30"
   },
   "selector_classic_hours": {
-    "fr": "7/7 | 8h - 15h | 18h - 23h",
-    "en": "7/7 | 8h - 15h | 18h - 23h",
-    "es": "7/7 | 8h - 15h | 18h - 23h"
+    "fr": "Lun - Ven : 12h - 15h | 18h - 23h",
+    "en": "Mon - Fri : 12h - 15h | 18h - 23h",
+    "es": "Lun - Vie : 12h - 15h | 18h - 23h"
   },
   "nos_horaires": {
     "fr": "Nos Horaires",
@@ -398,5 +398,55 @@
     "fr": "Brunch : 8h - 11h30",
     "en": "Brunch : 8h - 11h30",
     "es": "Brunch : 8h - 11h30"
+  },
+  "breadcrumbs_contact": {
+    "fr": "Contact",
+    "en": "Contact",
+    "es": "Contacto"
+  },
+  "seo_contact_title": {
+    "fr": "Contact",
+    "en": "Contact",
+    "es": "Contacto"
+  },
+  "seo_contact_description": {
+    "fr": "Contactez El Padre à Narbonne. Adresse, téléphone, horaires d'ouverture et carte interactive.",
+    "en": "Contact El Padre in Narbonne. Address, telephone, opening hours and interactive map.",
+    "es": "Contacte con El Padre en Narbona. Dirección, teléfono, horarios y mapa interactivo."
+  },
+  "contact_title": {
+    "fr": "Contactez-nous",
+    "en": "Contact Us",
+    "es": "Contacto"
+  },
+  "contact_subtitle": {
+    "fr": "Une question, un événement ou une réservation ? Notre équipe est à votre écoute.",
+    "en": "A question, an event, or a reservation? Our team is here to listen.",
+    "es": "¿Una pregunta, un evento o una reserva? Nuestro equipo está a su disposición."
+  },
+  "contact_map_title": {
+    "fr": "Nous trouver à Narbonne",
+    "en": "Find us in Narbonne",
+    "es": "Encuéntranos en Narbona"
+  },
+  "address": {
+    "fr": "Adresse",
+    "en": "Address",
+    "es": "Dirección"
+  },
+  "phone": {
+    "fr": "Téléphone",
+    "en": "Phone",
+    "es": "Teléfono"
+  },
+  "email": {
+    "fr": "Email",
+    "en": "Email",
+    "es": "Email"
+  },
+  "hours": {
+    "fr": "Horaires d'ouverture",
+    "en": "Opening Hours",
+    "es": "Horario de apertura"
   }
 }

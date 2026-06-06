@@ -17,6 +17,7 @@ import { ReservationProvider } from "@/context/ReservationContext";
 
 const IndexPage = lazy(() => import("@/pages/index"));
 const PrivatisationPage = lazy(() => import("@/pages/privatisation"));
+const ContactPage = lazy(() => import("@/pages/contact"));
 
 ReactGA.initialize("G-VH1QHTSLEM");
 
@@ -57,6 +58,7 @@ const AppRoutes = () => {
         <Route index element={<IndexPage />} />
         <Route element={<MenuBoissons />} path="boissons/*" />
         <Route element={<PrivatisationPage />} path="privatisation" />
+        <Route element={<ContactPage />} path="contact" />
         <Route element={<RedirectToVote />} path="vote" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
         <Route element={<MenuBrunch />} path="brunch/*" />
