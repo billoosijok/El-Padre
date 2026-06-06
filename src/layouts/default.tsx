@@ -88,6 +88,10 @@ export default function DefaultLayout({
             <a href={getLocalizedPath("/privatisation")} className="hover:text-padre-primary transition-colors">
               {goodLabel("privatisation")}
             </a>
+
+            <a href={getLocalizedPath("/contact")} className="hover:text-padre-primary transition-colors">
+              {goodLabel("breadcrumbs_contact")}
+            </a>
           </nav>
 
           {/* Right: Actions */}
@@ -228,6 +232,14 @@ export default function DefaultLayout({
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {goodLabel("privatisation")}
+              </a>
+
+              <a
+                href={getLocalizedPath("/contact")}
+                className="hover:text-padre-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {goodLabel("breadcrumbs_contact")}
               </a>
             </nav>
 
