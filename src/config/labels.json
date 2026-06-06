@@ -35,9 +35,9 @@
     "es": "Alcohol"
   },
   "menu_tapas": {
-    "fr": "Plats & Tapas",
-    "en": "Dishes & Tapas",
-    "es": "Platos y Tapas"
+    "fr": "Entrées & Plats",
+    "en": "Starters & Dishes",
+    "es": "Tapas y Platos"
   },
   "vin": {
     "fr": "Vins & Champagnes",
@@ -448,5 +448,145 @@
     "fr": "Horaires d'ouverture",
     "en": "Opening Hours",
     "es": "Horario de apertura"
+  },
+  "mentions_legales": {
+    "fr": "Mentions légales",
+    "en": "Legal Notice",
+    "es": "Aviso legal"
+  },
+  "politique_confidentialite": {
+    "fr": "Politique de confidentialité",
+    "en": "Privacy Policy",
+    "es": "Política de privacidad"
+  },
+  "politique_cookies": {
+    "fr": "Politique de cookies",
+    "en": "Cookie Policy",
+    "es": "Política de cookies"
+  },
+  "cookie_title": {
+    "fr": "Gestion des cookies",
+    "en": "Cookie Consent",
+    "es": "Gestión de cookies"
+  },
+  "cookie_desc": {
+    "fr": "Nous utilisons des cookies pour optimiser votre expérience, mesurer l'audience et mesurer nos performances publicitaires.",
+    "en": "We use cookies to optimize your experience, measure audience, and evaluate our advertising performance.",
+    "es": "Utilizamos cookies para optimizar su experiencia, medir la audiencia y evaluar nuestro rendimiento publicitario."
+  },
+  "cookie_accept_all": {
+    "fr": "Tout accepter",
+    "en": "Accept All",
+    "es": "Aceptar todo"
+  },
+  "cookie_decline": {
+    "fr": "Tout refuser",
+    "en": "Decline All",
+    "es": "Rechazar todo"
+  },
+  "cookie_customize": {
+    "fr": "Personnaliser",
+    "en": "Customize",
+    "es": "Personalizar"
+  },
+  "cookie_save": {
+    "fr": "Enregistrer les préférences",
+    "en": "Save Preferences",
+    "es": "Guardar preferencias"
+  },
+  "cookie_essential_only": {
+    "fr": "Nécessaires uniquement",
+    "en": "Essential Only",
+    "es": "Solo esenciales"
+  },
+  "cookie_essential_title": {
+    "fr": "Cookies strictement nécessaires (Obligatoires)",
+    "en": "Strictly Necessary Cookies (Required)",
+    "es": "Cookies estrictamente necesarias (Obligatorias)"
+  },
+  "cookie_essential_desc": {
+    "fr": "Ces cookies garantissent le bon fonctionnement du site et ne peuvent pas être désactivés.",
+    "en": "These cookies ensure the proper functioning of the site and cannot be disabled.",
+    "es": "Estas cookies garantizan el correcto funcionamiento del sitio y no se pueden desactivar."
+  },
+  "cookie_analytics_title": {
+    "fr": "Mesure d'audience (Google Analytics)",
+    "en": "Audience Measurement (Google Analytics)",
+    "es": "Medición de audiencia (Google Analytics)"
+  },
+  "cookie_analytics_desc": {
+    "fr": "Permet de comprendre comment les visiteurs naviguent sur le site pour améliorer son contenu.",
+    "en": "Helps understand how visitors navigate the site to improve its content.",
+    "es": "Permite comprender cómo navegan los visitantes por el sitio para mejorar su contenido."
+  },
+  "cookie_marketing_title": {
+    "fr": "Cookies publicitaires (Google Ads & Remarketing)",
+    "en": "Advertising Cookies (Google Ads & Remarketing)",
+    "es": "Cookies publicitarias (Google Ads y Remarketing)"
+  },
+  "cookie_marketing_desc": {
+    "fr": "Permet de mesurer l'efficacité de nos campagnes publicitaires et de vous proposer des offres adaptées.",
+    "en": "Allows measuring the effectiveness of our advertising campaigns and offering tailored promotions.",
+    "es": "Permite medir la eficacia de nuestras campañas publicitarias y ofrecerle promociones personalizadas."
+  },
+  "footer_brand_desc": {
+    "fr": "Brunch • Tapas • Cocktails Signatures • Afterwork • Privatisation",
+    "en": "Brunch • Tapas • Signature Cocktails • Afterwork • Privatisation",
+    "es": "Brunch • Tapas • Cócteles de autor • Afterwork • Privatización"
+  },
+  "footer_univers_title": {
+    "fr": "Nos Univers",
+    "en": "Our Universes",
+    "es": "Nuestros Universos"
+  },
+  "footer_seo_text": {
+    "fr": "Restaurant, brunch et bar à cocktails situé au centre-ville de Narbonne au bord du Canal de la Robine. Découvrez une cuisine fraîche et faite maison, des planches à partager, des cocktails créatifs et une atmosphère élégante pensée pour les déjeuners, dîners, afterworks et moments privilégiés entre amis ou collègues.",
+    "en": "Restaurant, brunch, and cocktail bar located in downtown Narbonne along the Canal de la Robine. Discover fresh, homemade cuisine, shared platters, creative cocktails, and an elegant atmosphere designed for lunch, dinner, afterworks, and special moments with friends or colleagues.",
+    "es": "Restaurante, brunch y bar de cócteles ubicado en el centro de Narbona a lo largo del Canal de la Robine. Descubra cocina fresca y casera, tablas para compartir, cócteles creativos y un ambiente elegante diseñado para almuerzos, cenas, afterworks y momentos especiales con amigos o colegas."
+  },
+  "footer_decouvrir_title": {
+    "fr": "Découvrir",
+    "en": "Discover",
+    "es": "Descubrir"
+  },
+  "univers_brunch": {
+    "fr": "Brunch à Narbonne",
+    "en": "Brunch in Narbonne",
+    "es": "Brunch en Narbona"
+  },
+  "univers_planches": {
+    "fr": "Planches à partager",
+    "en": "Sharing Platters",
+    "es": "Tablas para compartir"
+  },
+  "univers_cocktails": {
+    "fr": "Cocktails Signature",
+    "en": "Signature Cocktails",
+    "es": "Cócteles de Autor"
+  },
+  "univers_vins": {
+    "fr": "Vins & Champagnes",
+    "en": "Wines & Champagnes",
+    "es": "Vinos y Champanes"
+  },
+  "univers_repas_affaires": {
+    "fr": "Repas d'affaires",
+    "en": "Business Meals",
+    "es": "Almuerzos de negocios"
+  },
+  "univers_afterwork": {
+    "fr": "Afterwork",
+    "en": "Afterwork",
+    "es": "Afterwork"
+  },
+  "univers_evenements": {
+    "fr": "Événements privés",
+    "en": "Private Events",
+    "es": "Eventos privados"
+  },
+  "univers_privatisation": {
+    "fr": "Groupes & privatisation",
+    "en": "Groups & Privatisation",
+    "es": "Grupos y privatización"
   }
 }

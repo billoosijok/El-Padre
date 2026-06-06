@@ -13,6 +13,9 @@ const routes = [
   "/privatisation",
   "/brunch",
   "/contact",
+  "/mentions-legales",
+  "/politique-de-confidentialite",
+  "/politique-de-cookies",
   // English
   "/en",
   "/en/menu",
@@ -20,6 +23,9 @@ const routes = [
   "/en/privatisation",
   "/en/brunch",
   "/en/contact",
+  "/en/mentions-legales",
+  "/en/politique-de-confidentialite",
+  "/en/politique-de-cookies",
   // Spanish
   "/es",
   "/es/menu",
@@ -27,6 +33,9 @@ const routes = [
   "/es/privatisation",
   "/es/brunch",
   "/es/contact",
+  "/es/mentions-legales",
+  "/es/politique-de-confidentialite",
+  "/es/politique-de-cookies",
 ];
 
 // https://vitejs.dev/config/
@@ -56,6 +65,9 @@ export default defineConfig({
         "/privatisation": "monthly",
         "/brunch": "weekly",
         "/contact": "monthly",
+        "/mentions-legales": "monthly",
+        "/politique-de-confidentialite": "monthly",
+        "/politique-de-cookies": "monthly",
         // English
         "/en": "weekly",
         "/en/menu": "weekly",
@@ -63,6 +75,9 @@ export default defineConfig({
         "/en/privatisation": "monthly",
         "/en/brunch": "weekly",
         "/en/contact": "monthly",
+        "/en/mentions-legales": "monthly",
+        "/en/politique-de-confidentialite": "monthly",
+        "/en/politique-de-cookies": "monthly",
         // Spanish
         "/es": "weekly",
         "/es/menu": "weekly",
@@ -70,6 +85,9 @@ export default defineConfig({
         "/es/privatisation": "monthly",
         "/es/brunch": "weekly",
         "/es/contact": "monthly",
+        "/es/mentions-legales": "monthly",
+        "/es/politique-de-confidentialite": "monthly",
+        "/es/politique-de-cookies": "monthly",
       },
       priority: {
         "/": 1.0,
@@ -78,6 +96,9 @@ export default defineConfig({
         "/boissons": 0.8,
         "/brunch": 0.8,
         "/contact": 0.7,
+        "/mentions-legales": 0.5,
+        "/politique-de-confidentialite": 0.5,
+        "/politique-de-cookies": 0.5,
         // English
         "/en": 1.0,
         "/en/privatisation": 0.9,
@@ -85,6 +106,9 @@ export default defineConfig({
         "/en/boissons": 0.8,
         "/en/brunch": 0.8,
         "/en/contact": 0.7,
+        "/en/mentions-legales": 0.5,
+        "/en/politique-de-confidentialite": 0.5,
+        "/en/politique-de-cookies": 0.5,
         // Spanish
         "/es": 1.0,
         "/es/privatisation": 0.9,
@@ -92,6 +116,9 @@ export default defineConfig({
         "/es/boissons": 0.8,
         "/es/brunch": 0.8,
         "/es/contact": 0.7,
+        "/es/mentions-legales": 0.5,
+        "/es/politique-de-confidentialite": 0.5,
+        "/es/politique-de-cookies": 0.5,
       },
     }),
   ],

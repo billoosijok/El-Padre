@@ -18,6 +18,9 @@ import { ReservationProvider } from "@/context/ReservationContext";
 const IndexPage = lazy(() => import("@/pages/index"));
 const PrivatisationPage = lazy(() => import("@/pages/privatisation"));
 const ContactPage = lazy(() => import("@/pages/contact"));
+const MentionsLegalesPage = lazy(() => import("@/pages/mentions-legales"));
+const PolitiqueConfidentialitePage = lazy(() => import("@/pages/politique-de-confidentialite"));
+const PolitiqueCookiesPage = lazy(() => import("@/pages/politique-de-cookies"));
 
 ReactGA.initialize("G-VH1QHTSLEM");
 
@@ -62,6 +65,9 @@ const AppRoutes = () => {
         <Route element={<RedirectToVote />} path="vote" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
         <Route element={<MenuBrunch />} path="brunch/*" />
+        <Route element={<MentionsLegalesPage />} path="mentions-legales" />
+        <Route element={<PolitiqueConfidentialitePage />} path="politique-de-confidentialite" />
+        <Route element={<PolitiqueCookiesPage />} path="politique-de-cookies" />
         <Route path="*" element={<div className="min-h-screen bg-padre-background flex items-center justify-center text-white"><h1 className="text-4xl font-cormorant">404 - Page introuvable</h1></div>} />
       </Route>
     </Routes>
