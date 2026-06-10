@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@heroui/modal";
 import { useI18n } from "@/hooks/useTranslations";
+import { BookingForm } from "@/components/BookingForm";
 
 interface ReservationContextType {
     openReservation: () => void;
@@ -12,6 +13,7 @@ const ReservationContext = createContext<ReservationContextType | undefined>(und
 
 export function ReservationProvider({ children }: { children: ReactNode }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [formKey, setFormKey] = useState(0);
     const { goodLabel } = useI18n();
 
     useEffect(() => {
@@ -28,6 +30,7 @@ export function ReservationProvider({ children }: { children: ReactNode }) {
     }, []);
 
     const openReservation = () => {
+        setFormKey((k) => k + 1);
         if (window.location.hash !== "#reservation") {
             window.location.hash = "reservation";
         } else {
@@ -57,11 +60,12 @@ export function ReservationProvider({ children }: { children: ReactNode }) {
             <Modal
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
-                size="full"
+                size="2xl"
                 placement="center"
                 backdrop="blur"
+                scrollBehavior="inside"
                 classNames={{
-                    base: "bg-[#1a1a1a] z-[60] text-white border border-white/10 relative z-[100] min-h-[80vh]",
+                    base: "bg-[#1a1a1a] text-white border border-white/10",
                     header: "border-b border-white/10",
                     closeButton: "hover:bg-white/10 active:bg-white/20",
                     wrapper: "z-[60]",
@@ -74,12 +78,8 @@ export function ReservationProvider({ children }: { children: ReactNode }) {
                             <ModalHeader className="flex flex-col gap-1 font-cormorant text-2xl">
                                 {goodLabel("reserve")}
                             </ModalHeader>
-                            <ModalBody className="p-0 overflow-hidden">
-                                <iframe
-                                    src="https://app.tableo.com/r/8BkhxG"
-                                    className="w-full h-full border-none"
-                                    title="Reservation"
-                                />
+                            <ModalBody>
+                                <BookingForm key={formKey} />
                             </ModalBody>
                         </>
                     )}

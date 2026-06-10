@@ -588,5 +588,200 @@
     "fr": "Groupes & privatisation",
     "en": "Groups & Privatisation",
     "es": "Grupos y privatización"
+  },
+  "booking_name_prefix": {
+    "fr": "Réservation pour",
+    "en": "Reservation for",
+    "es": "Reserva para"
+  },
+  "booking_name_placeholder": {
+    "fr": "Jean Dupont",
+    "en": "John Smith",
+    "es": "Juan García"
+  },
+  "booking_date_label": {
+    "fr": "Date souhaitée",
+    "en": "Preferred date",
+    "es": "Fecha deseada"
+  },
+  "booking_party_size_label": {
+    "fr": "Nombre de personnes",
+    "en": "Party size",
+    "es": "Número de personas"
+  },
+  "booking_phone_label": {
+    "fr": "Téléphone",
+    "en": "Phone",
+    "es": "Teléfono"
+  },
+  "booking_email_label": {
+    "fr": "Email (facultatif)",
+    "en": "Email (optional)",
+    "es": "Email (opcional)"
+  },
+  "booking_submit": {
+    "fr": "Réserver",
+    "en": "Book now",
+    "es": "Reservar"
+  },
+  "booking_loading": {
+    "fr": "Réservation en cours...",
+    "en": "Booking...",
+    "es": "Reservando..."
+  },
+  "booking_success_title": {
+    "fr": "Demande reçue !",
+    "en": "Request received!",
+    "es": "¡Solicitud recibida!"
+  },
+  "booking_success_message": {
+    "fr": "Votre demande de réservation a bien été reçue. Il ne s'agit pas encore d'une confirmation — nous vous contacterons rapidement pour confirmer votre table.",
+    "en": "Your reservation request has been received. This is not a confirmation yet — we'll contact you shortly to confirm your table.",
+    "es": "Hemos recibido tu solicitud de reserva. Todavía no es una confirmación — te contactaremos pronto para confirmar tu mesa."
+  },
+  "booking_time_label": {
+    "fr": "Heure souhaitée",
+    "en": "Preferred time",
+    "es": "Hora deseada"
+  },
+  "booking_time_hint": {
+    "fr": "Choisissez d'abord une date pour voir les créneaux.",
+    "en": "Pick a date first to see available times.",
+    "es": "Elige primero una fecha para ver los horarios."
+  },
+  "booking_time_loading": {
+    "fr": "Chargement des créneaux...",
+    "en": "Loading times...",
+    "es": "Cargando horarios..."
+  },
+  "booking_time_none": {
+    "fr": "Aucun créneau disponible pour cette date.",
+    "en": "No times available for this date.",
+    "es": "No hay horarios disponibles para esta fecha."
+  },
+  "booking_success_details": {
+    "fr": "Récapitulatif",
+    "en": "Summary",
+    "es": "Resumen"
+  },
+  "booking_preorder_title": {
+    "fr": "Grand groupe ?",
+    "en": "Large group?",
+    "es": "¿Grupo grande?"
+  },
+  "booking_preorder_desc": {
+    "fr": "Avec 7 personnes ou plus, chaque membre peut choisir ses plats à l'avance. Votre groupe sera servi sans attente.",
+    "en": "With 7 or more guests, each member can pre-select their dishes in advance. Your group gets served without the wait.",
+    "es": "Con 7 o más personas, cada miembro puede preelegir sus platos de antemano. Su grupo será atendido sin esperas."
+  },
+  "booking_preorder_yes": {
+    "fr": "Oui, nous adorons ça !",
+    "en": "Yes, we'd love that!",
+    "es": "¡Sí, nos encantaría!"
+  },
+  "booking_preorder_no": {
+    "fr": "Non merci",
+    "en": "No thanks",
+    "es": "No, gracias"
+  },
+  "booking_error_required": {
+    "fr": "Veuillez remplir tous les champs obligatoires.",
+    "en": "Please fill in all required fields.",
+    "es": "Por favor, complete todos los campos obligatorios."
+  },
+  "booking_error_generic": {
+    "fr": "Une erreur est survenue. Veuillez réessayer.",
+    "en": "Something went wrong. Please try again.",
+    "es": "Algo salió mal. Por favor, inténtelo de nuevo."
+  },
+  "review_prompt_title": {
+    "fr": "Comment était votre expérience ?",
+    "en": "How was your experience?",
+    "es": "¿Cómo fue tu experiencia?"
+  },
+  "review_prompt_subtitle": {
+    "fr": "Votre avis compte énormément pour nous.",
+    "en": "Your feedback means the world to us.",
+    "es": "Tu opinión significa mucho para nosotros."
+  },
+  "review_redirecting": {
+    "fr": "Merci ! Redirection en cours...",
+    "en": "Thank you! Redirecting...",
+    "es": "¡Gracias! Redirigiendo..."
+  },
+  "review_feedback_title": {
+    "fr": "Aidez-nous à nous améliorer",
+    "en": "Help us improve",
+    "es": "Ayúdanos a mejorar"
+  },
+  "review_feedback_subtitle": {
+    "fr": "Dites-nous ce qui n'a pas été à la hauteur. Votre retour reste privé.",
+    "en": "Tell us what fell short. Your feedback stays private.",
+    "es": "Cuéntanos qué no estuvo a la altura. Tu opinión es privada."
+  },
+  "review_feedback_placeholder": {
+    "fr": "Votre message...",
+    "en": "Your message...",
+    "es": "Tu mensaje..."
+  },
+  "review_feedback_email": {
+    "fr": "Email (facultatif)",
+    "en": "Email (optional)",
+    "es": "Email (opcional)"
+  },
+  "review_feedback_submit": {
+    "fr": "Envoyer",
+    "en": "Send",
+    "es": "Enviar"
+  },
+  "review_feedback_sending": {
+    "fr": "Envoi en cours...",
+    "en": "Sending...",
+    "es": "Enviando..."
+  },
+  "review_thanks_title": {
+    "fr": "Merci pour votre retour",
+    "en": "Thank you for your feedback",
+    "es": "Gracias por tu opinión"
+  },
+  "review_thanks_message": {
+    "fr": "Nous prenons votre message à cœur et travaillons à nous améliorer.",
+    "en": "We take your message to heart and are working to do better.",
+    "es": "Tomamos tu mensaje muy en serio y trabajamos para mejorar."
+  },
+  "review_error_required": {
+    "fr": "Veuillez écrire un message avant d'envoyer.",
+    "en": "Please write a message before sending.",
+    "es": "Por favor, escribe un mensaje antes de enviar."
+  },
+  "seo_reviews_title": {
+    "fr": "Votre avis | El Padre Narbonne",
+    "en": "Your Review | El Padre Narbonne",
+    "es": "Tu opinión | El Padre Narbona"
+  },
+  "seo_reviews_description": {
+    "fr": "Partagez votre expérience chez El Padre à Narbonne.",
+    "en": "Share your experience at El Padre in Narbonne.",
+    "es": "Comparte tu experiencia en El Padre en Narbona."
+  },
+  "reservation_subtitle": {
+    "fr": "Réservez votre table en quelques instants.",
+    "en": "Book your table in just a few moments.",
+    "es": "Reserve su mesa en unos instantes."
+  },
+  "breadcrumbs_reservation": {
+    "fr": "Réservation",
+    "en": "Reservation",
+    "es": "Reserva"
+  },
+  "seo_reservation_title": {
+    "fr": "Réservation | El Padre Narbonne",
+    "en": "Reservation | El Padre Narbonne",
+    "es": "Reserva | El Padre Narbona"
+  },
+  "seo_reservation_description": {
+    "fr": "Réservez votre table au restaurant El Padre à Narbonne. Tapas, brunch, cocktails et cuisine raffinée dans une ambiance conviviale.",
+    "en": "Book your table at El Padre restaurant in Narbonne. Tapas, brunch, cocktails and refined cuisine in a friendly atmosphere.",
+    "es": "Reserve su mesa en el restaurante El Padre en Narbona. Tapas, brunch, cócteles y cocina refinada en un ambiente agradable."
   }
 }

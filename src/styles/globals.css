@@ -46,3 +46,17 @@ h6 {
   color: black;
   border-color: white;
 }
+
+/* Render the native date field (text + calendar popup) in dark mode so the
+   inner text is light instead of black on the dark inputs. */
+input[type="date"],
+input[type="time"] {
+  color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}

@@ -22,6 +22,8 @@ const ContactPage = lazy(() => import("@/pages/contact"));
 const MentionsLegalesPage = lazy(() => import("@/pages/mentions-legales"));
 const PolitiqueConfidentialitePage = lazy(() => import("@/pages/politique-de-confidentialite"));
 const PolitiqueCookiesPage = lazy(() => import("@/pages/politique-de-cookies"));
+const ReviewsPage = lazy(() => import("@/pages/reviews"));
+const ReservationPage = lazy(() => import("@/pages/reservation"));
 
 ReactGA.initialize("G-VH1QHTSLEM");
 
@@ -62,7 +64,9 @@ const AppRoutes = () => {
         <Route index element={<IndexPage />} />
         <Route element={<MenuBoissons />} path="boissons/*" />
         <Route element={<PrivatisationPage />} path="privatisation" />
+        <Route element={<ReservationPage />} path="reservation" />
         <Route element={<ContactPage />} path="contact" />
+        <Route element={<ReviewsPage />} path="reviews" />
         <Route element={<RedirectToVote />} path="vote" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
         <Route element={<MenuBrunch />} path="brunch/*" />
