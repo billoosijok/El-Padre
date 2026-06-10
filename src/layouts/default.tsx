@@ -415,12 +415,12 @@ export default function DefaultLayout({
                 </a>
               </li>
               <li>
-                <button
-                  onClick={openReservation}
-                  className="hover:text-padre-primary transition-colors text-left focus:outline-none"
+                <a
+                  href={getLocalizedPath("/reservation")}
+                  className="hover:text-padre-primary transition-colors"
                 >
                   {goodLabel("reserve")}
-                </button>
+                </a>
               </li>
             </ul>
           </div>
