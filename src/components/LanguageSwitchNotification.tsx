@@ -4,6 +4,7 @@ import { CloseIcon } from "./icons";
 import { Button } from "@heroui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { isEntryOnMenu, getMenuOptionSelected } from "@/config/landing";
+import { useLocation } from "react-router-dom";
 
 const GA_MEASUREMENT_ID = "G-VH1QHTSLEM";
 
@@ -15,6 +16,7 @@ interface CookiePreferences {
 type BannerStep = "cookies" | "language";
 
 export const LanguageSwitchNotification = () => {
+  const location = useLocation();
   const { language, setLanguage, goodLabel, getLocalizedPath } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
   const [step, setStep] = useState<BannerStep>("cookies");
@@ -55,6 +57,8 @@ export const LanguageSwitchNotification = () => {
     const savedConsent = localStorage.getItem("elpadre-cookie-consent");
     const hasLanguageDismissed = sessionStorage.getItem("language_notification_dismissed");
     const shouldHideForMenuSelector = isEntryOnMenu && !menuOptionSelected;
+    const isReviewsRoute = location.pathname.includes('/reviews');
+    const shouldHide = shouldHideForMenuSelector || isReviewsRoute;
 
     if (savedConsent) {
       const parsedPrefs = JSON.parse(savedConsent) as CookiePreferences;
@@ -64,7 +68,7 @@ export const LanguageSwitchNotification = () => {
       // If cookies already accepted, but language differs and is not dismissed, show language switch
       if (hasDifferentLang && !hasLanguageDismissed) {
         setStep("language");
-        if (shouldHideForMenuSelector) {
+        if (shouldHide) {
           setIsVisible(false);
         } else {
           setIsVisible(true);
@@ -76,7 +80,7 @@ export const LanguageSwitchNotification = () => {
       // No cookie consent yet: disable GA by default and show cookie step
       (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
       setStep("cookies");
-      if (shouldHideForMenuSelector) {
+      if (shouldHide) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
@@ -102,7 +106,7 @@ export const LanguageSwitchNotification = () => {
       window.removeEventListener("open-cookie-settings", handleOpenSettings);
       window.removeEventListener("menu-option-selected-change", handleMenuSelectionChange);
     };
-  }, [language, menuOptionSelected]);
+  }, [language, menuOptionSelected, location.pathname]);
 
   // Transitions after cookie choice is made
   const checkLanguageTransitionOrClose = () => {
