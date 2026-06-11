@@ -65,10 +65,11 @@ export function ReservationProvider({ children }: { children: ReactNode }) {
                 backdrop="blur"
                 scrollBehavior="inside"
                 classNames={{
-                    base: "bg-[#1a1a1a] text-white border border-white/10",
+                    base: "bg-[#1a1a1a] text-white border border-white/10 !h-[100dvh] !max-h-[100dvh]",
                     header: "border-b border-white/10",
+                    body: "overflow-y-auto pb-safe",
                     closeButton: "hover:bg-white/10 active:bg-white/20",
-                    wrapper: "z-[60]",
+                    wrapper: "z-[60] !h-[100dvh]",
                     backdrop: "z-[60]",
                 }}
             >
