@@ -60,7 +60,7 @@ export function ReservationProvider({ children }: { children: ReactNode }) {
             <Modal
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
-                size="2xl"
+                size="full"
                 placement="center"
                 backdrop="blur"
                 scrollBehavior="inside"
