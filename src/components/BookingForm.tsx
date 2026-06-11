@@ -174,9 +174,14 @@ export function BookingForm() {
       !form.name.trim() ||
       !form.date ||
       !form.partySize ||
-      !form.phone.trim()
+      !form.phone.trim() ||
+      !form.email.trim()
     ) {
       setError(goodLabel("booking_error_required"));
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      setError(goodLabel("booking_error_email"));
       return;
     }
     // A time is required only when slots are actually offered for the date.
@@ -203,7 +208,7 @@ export function BookingForm() {
           bookingDate: form.date,
           partySize: Number(form.partySize),
           phone: form.phone.trim(),
-          ...(form.email.trim() && { email: form.email.trim() }),
+          email: form.email.trim(),
           ...(selectedTime && { bookingTime: selectedTime }),
           ...(selectedServiceId && { serviceId: selectedServiceId }),
           enablePreOrder,

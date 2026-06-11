@@ -615,9 +615,9 @@
     "es": "Teléfono"
   },
   "booking_email_label": {
-    "fr": "Email (facultatif)",
-    "en": "Email (optional)",
-    "es": "Email (opcional)"
+    "fr": "Email",
+    "en": "Email",
+    "es": "Email"
   },
   "booking_submit": {
     "fr": "Réserver",
@@ -693,6 +693,11 @@
     "fr": "Une erreur est survenue. Veuillez réessayer.",
     "en": "Something went wrong. Please try again.",
     "es": "Algo salió mal. Por favor, inténtelo de nuevo."
+  },
+  "booking_error_email": {
+    "fr": "Veuillez saisir une adresse email valide.",
+    "en": "Please enter a valid email address.",
+    "es": "Por favor, introduzca un correo electrónico válido."
   },
   "review_prompt_title": {
     "fr": "Comment était votre expérience ?",
