@@ -609,6 +609,26 @@
     "en": "Party size",
     "es": "Número de personas"
   },
+  "booking_adults_label": {
+    "fr": "Adultes",
+    "en": "Adults",
+    "es": "Adultos"
+  },
+  "booking_children_label": {
+    "fr": "Enfants",
+    "en": "Children",
+    "es": "Niños"
+  },
+  "booking_notes_label": {
+    "fr": "Demandes particulières / Notes",
+    "en": "Special requests / Notes",
+    "es": "Peticiones especiales / Notas"
+  },
+  "booking_notes_placeholder": {
+    "fr": "Allergies, anniversaire, préférence de table...",
+    "en": "Allergies, birthday, table preference...",
+    "es": "Alergias, cumpleaños, preferencia de mesa..."
+  },
   "booking_phone_label": {
     "fr": "Téléphone",
     "en": "Phone",
