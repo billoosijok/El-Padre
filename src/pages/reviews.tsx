@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@heroui/button";
 import { Input, Textarea } from "@heroui/input";
+import { Spinner } from "@heroui/spinner";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { Logo } from "@/components/Logo";
@@ -49,7 +50,8 @@ export default function ReviewsPage() {
   const [step, setStep] = useState<Step>("rate");
   const [rating, setRating] = useState(0);
   const [hovered, setHovered] = useState(0);
-  const [googleUrl, setGoogleUrl] = useState<string | null>(null);
+  const [googleUrl, setGoogleUrl] = useState<string>("https://g.page/r/CfG_i_X8_g2JEBM/review");
+  const [isConfigLoading, setIsConfigLoading] = useState(true);
 
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
@@ -64,21 +66,20 @@ export default function ReviewsPage() {
         const url = data?.reviewsConfig?.googleReviewUrl;
         if (url) setGoogleUrl(url);
       })
-      .catch(() => {
-        /* non-fatal: handled at redirect time */
+      .catch((err) => {
+        console.error("Failed to load config, using default redirect:", err);
+      })
+      .finally(() => {
+        setIsConfigLoading(false);
       });
   }, []);
 
   const selectRating = (value: number) => {
     setRating(value);
     if (value >= POSITIVE_THRESHOLD) {
-      if (googleUrl) {
-        setStep("redirecting");
-        setTimeout(() => window.location.assign(googleUrl), 900);
-      } else {
-        // No Google link configured — fall back to a graceful thank-you.
-        setStep("thanks");
-      }
+      const urlToUse = googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
+      setStep("redirecting");
+      setTimeout(() => window.location.assign(urlToUse), 900);
     } else {
       setStep("feedback");
     }
@@ -133,8 +134,20 @@ export default function ReviewsPage() {
           <Logo color="#c59d5f" />
         </div>
 
-        <AnimatePresence mode="wait">
-          {step === "rate" && (
+         <AnimatePresence mode="wait">
+          {isConfigLoading && (
+            <motion.div
+              key="loading"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex flex-col items-center justify-center py-12"
+            >
+              <Spinner color="warning" size="lg" />
+            </motion.div>
+          )}
+
+          {!isConfigLoading && step === "rate" && (
             <motion.div
               key="rate"
               initial={{ opacity: 0 }}
@@ -169,7 +182,7 @@ export default function ReviewsPage() {
             </motion.div>
           )}
 
-          {step === "redirecting" && (
+          {!isConfigLoading && step === "redirecting" && (
             <motion.div
               key="redirecting"
               initial={{ opacity: 0 }}
@@ -189,7 +202,7 @@ export default function ReviewsPage() {
             </motion.div>
           )}
 
-          {step === "feedback" && (
+          {!isConfigLoading && step === "feedback" && (
             <motion.div
               key="feedback"
               initial={{ opacity: 0, y: 10 }}
@@ -244,7 +257,7 @@ export default function ReviewsPage() {
             </motion.div>
           )}
 
-          {step === "thanks" && (
+          {!isConfigLoading && step === "thanks" && (
             <motion.div
               key="thanks"
               initial={{ opacity: 0, scale: 0.97 }}
