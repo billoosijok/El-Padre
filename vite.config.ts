@@ -17,6 +17,7 @@ const routes = [
   "/mentions-legales",
   "/politique-de-confidentialite",
   "/politique-de-cookies",
+  "/reviews",
   // English
   "/en",
   "/en/menu",
@@ -28,6 +29,7 @@ const routes = [
   "/en/mentions-legales",
   "/en/politique-de-confidentialite",
   "/en/politique-de-cookies",
+  "/en/reviews",
   // Spanish
   "/es",
   "/es/menu",
@@ -39,6 +41,7 @@ const routes = [
   "/es/mentions-legales",
   "/es/politique-de-confidentialite",
   "/es/politique-de-cookies",
+  "/es/reviews",
 ];
 
 // https://vitejs.dev/config/
@@ -72,6 +75,7 @@ export default defineConfig({
         "/mentions-legales": "monthly",
         "/politique-de-confidentialite": "monthly",
         "/politique-de-cookies": "monthly",
+        "/reviews": "weekly",
         // English
         "/en": "weekly",
         "/en/menu": "weekly",
@@ -83,6 +87,7 @@ export default defineConfig({
         "/en/mentions-legales": "monthly",
         "/en/politique-de-confidentialite": "monthly",
         "/en/politique-de-cookies": "monthly",
+        "/en/reviews": "weekly",
         // Spanish
         "/es": "weekly",
         "/es/menu": "weekly",
@@ -94,6 +99,7 @@ export default defineConfig({
         "/es/mentions-legales": "monthly",
         "/es/politique-de-confidentialite": "monthly",
         "/es/politique-de-cookies": "monthly",
+        "/es/reviews": "weekly",
       },
       priority: {
         "/": 1.0,
@@ -102,6 +108,7 @@ export default defineConfig({
         "/menu": 0.8,
         "/boissons": 0.8,
         "/brunch": 0.8,
+        "/reviews": 0.8,
         "/contact": 0.7,
         "/mentions-legales": 0.5,
         "/politique-de-confidentialite": 0.5,
@@ -113,6 +120,7 @@ export default defineConfig({
         "/en/menu": 0.8,
         "/en/boissons": 0.8,
         "/en/brunch": 0.8,
+        "/en/reviews": 0.8,
         "/en/contact": 0.7,
         "/en/mentions-legales": 0.5,
         "/en/politique-de-confidentialite": 0.5,
@@ -124,6 +132,7 @@ export default defineConfig({
         "/es/menu": 0.8,
         "/es/boissons": 0.8,
         "/es/brunch": 0.8,
+        "/es/reviews": 0.8,
         "/es/contact": 0.7,
         "/es/mentions-legales": 0.5,
         "/es/politique-de-confidentialite": 0.5,

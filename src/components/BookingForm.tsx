@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Input } from "@heroui/input";
+import { Input, Textarea } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/hooks/useTranslations";
@@ -16,7 +16,9 @@ type Step = "form" | "preorder" | "success";
 interface FormData {
   name: string;
   date: string;
-  partySize: string;
+  adultCount: string;
+  childrenCount: string;
+  notes: string;
   phone: string;
   email: string;
 }
@@ -78,7 +80,9 @@ function buildServiceSlots(
   const slots: Slot[] = [];
   if (range && service.intervalMinutes >= 1) {
     const start = toMinutes(range.startTime);
-    const end = toMinutes(range.endTime);
+    // Exclude the final hour of the range: the last bookable slot is one hour
+    // before endTime.
+    const end = toMinutes(range.endTime) - 60;
     const leadCutoff = now.getTime() + MIN_LEAD_HOURS * 60 * 60 * 1000;
 
     for (let m = start; m <= end; m += service.intervalMinutes) {
@@ -111,7 +115,9 @@ export function BookingForm() {
   const [form, setForm] = useState<FormData>({
     name: "",
     date: "",
-    partySize: "",
+    adultCount: "2",
+    childrenCount: "0",
+    notes: "",
     phone: "",
     email: "",
   });
@@ -122,7 +128,7 @@ export function BookingForm() {
   const [selectedServiceId, setSelectedServiceId] = useState("");
 
   const today = new Date().toISOString().split("T")[0];
-  const isLargeGroup = Number(form.partySize) > 6;
+  const isLargeGroup = (Number(form.adultCount) || 0) + (Number(form.childrenCount) || 0) > 6;
 
   // Pull the venue's booking config (services / opening windows) once.
   useEffect(() => {
@@ -151,7 +157,7 @@ export function BookingForm() {
   const hasAnySlots = serviceSlots.length > 0;
 
   const setField =
-    (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const value = e.target.value;
       setForm((prev) => ({ ...prev, [field]: value }));
       setError(null);
@@ -173,7 +179,7 @@ export function BookingForm() {
     if (
       !form.name.trim() ||
       !form.date ||
-      !form.partySize ||
+      !form.adultCount ||
       !form.phone.trim() ||
       !form.email.trim()
     ) {
@@ -199,6 +205,8 @@ export function BookingForm() {
   const submit = async (enablePreOrder: boolean) => {
     setSubmitting(true);
     setError(null);
+    const adults = Number(form.adultCount) || 0;
+    const children = Number(form.childrenCount) || 0;
     try {
       const res = await fetch(API_URL, {
         method: "POST",
@@ -206,7 +214,9 @@ export function BookingForm() {
         body: JSON.stringify({
           bookingName: form.name.trim(),
           bookingDate: form.date,
-          partySize: Number(form.partySize),
+          adultCount: adults,
+          childrenCount: children,
+          notes: form.notes.trim(),
           phone: form.phone.trim(),
           email: form.email.trim(),
           ...(selectedTime && { bookingTime: selectedTime }),
@@ -271,7 +281,7 @@ export function BookingForm() {
 
             <div className="w-full h-px bg-white/5" />
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col gap-4">
               <Input
                 label={goodLabel("booking_date_label")}
                 type="date"
@@ -280,17 +290,28 @@ export function BookingForm() {
                 onChange={setField("date")}
                 classNames={inputClass}
               />
-              <Input
-                label={goodLabel("booking_party_size_label")}
-                type="number"
-                inputMode="numeric"
-                min="1"
-                max="50"
-                placeholder="2"
-                value={form.partySize}
-                onChange={setField("partySize")}
-                classNames={inputClass}
-              />
+              <div className="grid grid-cols-2 gap-4">
+                <Input
+                  label={goodLabel("booking_adults_label")}
+                  type="number"
+                  inputMode="numeric"
+                  min="1"
+                  max="50"
+                  value={form.adultCount}
+                  onChange={setField("adultCount")}
+                  classNames={inputClass}
+                />
+                <Input
+                  label={goodLabel("booking_children_label")}
+                  type="number"
+                  inputMode="numeric"
+                  min="0"
+                  max="50"
+                  value={form.childrenCount}
+                  onChange={setField("childrenCount")}
+                  classNames={inputClass}
+                />
+              </div>
             </div>
 
             {/* Time slots, driven by the venue's bookingConfig */}
@@ -366,6 +387,15 @@ export function BookingForm() {
               type="email"
               value={form.email}
               onChange={setField("email")}
+              classNames={inputClass}
+            />
+
+            <Textarea
+              label={goodLabel("booking_notes_label")}
+              placeholder={goodLabel("booking_notes_placeholder")}
+              value={form.notes}
+              onChange={setField("notes")}
+              minRows={3}
               classNames={inputClass}
             />
 
@@ -513,10 +543,28 @@ export function BookingForm() {
                     ]
                   : []),
                 {
-                  key: "size",
-                  label: goodLabel("booking_party_size_label"),
-                  value: form.partySize,
+                  key: "adults",
+                  label: goodLabel("booking_adults_label"),
+                  value: form.adultCount,
                 },
+                ...(Number(form.childrenCount) > 0
+                  ? [
+                      {
+                        key: "children",
+                        label: goodLabel("booking_children_label"),
+                        value: form.childrenCount,
+                      },
+                    ]
+                  : []),
+                ...(form.notes.trim()
+                  ? [
+                      {
+                        key: "notes",
+                        label: goodLabel("booking_notes_label"),
+                        value: form.notes.trim(),
+                      },
+                    ]
+                  : []),
                 {
                   key: "phone",
                   label: goodLabel("booking_phone_label"),
