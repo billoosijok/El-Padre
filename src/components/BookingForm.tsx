@@ -16,7 +16,7 @@ type Step = "form" | "preorder" | "success";
 interface FormData {
   name: string;
   date: string;
-  adultCount: string;
+  adultsCount: string;
   childrenCount: string;
   notes: string;
   phone: string;
@@ -115,7 +115,7 @@ export function BookingForm() {
   const [form, setForm] = useState<FormData>({
     name: "",
     date: "",
-    adultCount: "2",
+    adultsCount: "2",
     childrenCount: "0",
     notes: "",
     phone: "",
@@ -128,7 +128,7 @@ export function BookingForm() {
   const [selectedServiceId, setSelectedServiceId] = useState("");
 
   const today = new Date().toISOString().split("T")[0];
-  const isLargeGroup = (Number(form.adultCount) || 0) + (Number(form.childrenCount) || 0) > 6;
+  const isLargeGroup = (Number(form.adultsCount) || 0) + (Number(form.childrenCount) || 0) > 6;
 
   // Pull the venue's booking config (services / opening windows) once.
   useEffect(() => {
@@ -179,7 +179,7 @@ export function BookingForm() {
     if (
       !form.name.trim() ||
       !form.date ||
-      !form.adultCount ||
+      !form.adultsCount ||
       !form.phone.trim() ||
       !form.email.trim()
     ) {
@@ -205,7 +205,7 @@ export function BookingForm() {
   const submit = async (enablePreOrder: boolean) => {
     setSubmitting(true);
     setError(null);
-    const adults = Number(form.adultCount) || 0;
+    const adults = Number(form.adultsCount) || 0;
     const children = Number(form.childrenCount) || 0;
     try {
       const res = await fetch(API_URL, {
@@ -214,7 +214,7 @@ export function BookingForm() {
         body: JSON.stringify({
           bookingName: form.name.trim(),
           bookingDate: form.date,
-          adultCount: adults,
+          adultsCount: adults,
           childrenCount: children,
           notes: form.notes.trim(),
           phone: form.phone.trim(),
@@ -297,8 +297,8 @@ export function BookingForm() {
                   inputMode="numeric"
                   min="1"
                   max="50"
-                  value={form.adultCount}
-                  onChange={setField("adultCount")}
+                  value={form.adultsCount}
+                  onChange={setField("adultsCount")}
                   classNames={inputClass}
                 />
                 <Input
@@ -545,7 +545,7 @@ export function BookingForm() {
                 {
                   key: "adults",
                   label: goodLabel("booking_adults_label"),
-                  value: form.adultCount,
+                  value: form.adultsCount,
                 },
                 ...(Number(form.childrenCount) > 0
                   ? [
