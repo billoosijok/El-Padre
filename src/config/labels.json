@@ -808,5 +808,15 @@
     "fr": "Réservez votre table au restaurant El Padre à Narbonne. Tapas, brunch, cocktails et cuisine raffinée dans une ambiance conviviale.",
     "en": "Book your table at El Padre restaurant in Narbonne. Tapas, brunch, cocktails and refined cuisine in a friendly atmosphere.",
     "es": "Reserve su mesa en el restaurante El Padre en Narbona. Tapas, brunch, cócteles y cocina refinada en un ambiente agradable."
+  },
+  "banner_fathers_day_text": {
+    "fr": "Fête des Pères le 21 Juin — Offrez-lui un moment d'exception chez El Padre !",
+    "en": "Father's Day on June 21st — Treat him to an exceptional moment at El Padre!",
+    "es": "Día del Padre el 21 de Junio — ¡Regálale un momento excepcional en El Padre!"
+  },
+  "banner_fathers_day_cta": {
+    "fr": "Réserver",
+    "en": "Book Table",
+    "es": "Reservar"
   }
 }

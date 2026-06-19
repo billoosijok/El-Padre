@@ -69,8 +69,8 @@ export function ReservationProvider({ children }: { children: ReactNode }) {
                     header: "border-b border-white/10",
                     body: "overflow-y-auto pb-safe",
                     closeButton: "hover:bg-white/10 active:bg-white/20",
-                    wrapper: "z-[60] !h-[100dvh]",
-                    backdrop: "z-[60]",
+                    wrapper: "z-[100] !h-[100dvh]",
+                    backdrop: "z-[100]",
                 }}
             >
                 <ModalContent>

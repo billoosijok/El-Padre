@@ -70,6 +70,30 @@ function buildServiceSlots(
 ): ServiceSlots {
   const [y, mo, d] = dateStr.split("-").map(Number);
   const weekday = WEEKDAYS[new Date(y, mo - 1, d).getDay()];
+  const slots: Slot[] = [];
+
+  // Special override for Father's Day (June 21, 2026) to limit slots to 18:30, 19:00, 21:00
+  if (dateStr === "2026-06-21") {
+    const isSoirService =
+      service.name.toLowerCase() === "soir" ||
+      service.id === "d6b2a753-d410-48e1-86b3-f3a9bc659cc0";
+      
+    if (isSoirService) {
+      const targetTimes = ["18:30", "19:00", "21:00"];
+      const leadCutoff = now.getTime() + MIN_LEAD_HOURS * 60 * 60 * 1000;
+      
+      for (const time of targetTimes) {
+        const [sh, sm] = time.split(":").map(Number);
+        const slotDate = new Date(y, mo - 1, d, sh, sm);
+        if (slotDate.getTime() < now.getTime()) continue;
+        slots.push({
+          time,
+          disabled: slotDate.getTime() < leadCutoff,
+        });
+      }
+    }
+    return { serviceId: service.id, serviceName: service.name, slots };
+  }
 
   // Per-weekday override wins; an explicit null means the venue is closed.
   let range: TimeRange | null = service.default;
@@ -77,7 +101,6 @@ function buildServiceSlots(
     range = service.overrides[weekday];
   }
 
-  const slots: Slot[] = [];
   if (range && service.intervalMinutes >= 1) {
     const start = toMinutes(range.startTime);
     // Exclude the final hour of the range: the last bookable slot is one hour
