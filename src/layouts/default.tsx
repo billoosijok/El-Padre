@@ -17,6 +17,7 @@ import {
 } from "@/components/icons";
 import { LanguageSelectorDropdown } from "@/components/LanguageSelector";
 import { MenuDropdown } from "@/components/MenuDropdown";
+import { EventBanner } from "@/components/EventBanner";
 
 export default function DefaultLayout({
   children,
@@ -34,6 +35,7 @@ export default function DefaultLayout({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSubMenuOpen, setIsMobileSubMenuOpen] = useState(false);
   const { openReservation } = useReservation();
+  const [bannerHeight, setBannerHeight] = useState(0);
   const isLight = theme === "light";
   const isHeaderLight =
     isLight && (isScrolled || !homeTreatment || isMobileMenuOpen);
@@ -59,9 +61,12 @@ export default function DefaultLayout({
     <div
       className={`relative min-h-screen font-lato ${isLight ? "bg-[#faf7f2] text-zinc-800" : "bg-padre-background text-white"}`}
     >
+      <EventBanner onHeightChange={setBannerHeight} />
+
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${
+        style={{ top: `${bannerHeight}px` }}
+        className={`fixed left-0 right-0 z-[60] transition-all duration-300 ${
           isScrolled || !homeTreatment || isMobileMenuOpen
             ? isLight
               ? "bg-white/95 shadow-md py-4 border-b border-black/5 text-zinc-800"
@@ -301,7 +306,12 @@ export default function DefaultLayout({
       </AnimatePresence>
 
       {/* Main Content */}
-      <main className="w-full">{children}</main>
+      <main
+        style={{ paddingTop: `${bannerHeight}px` }}
+        className="w-full transition-all duration-300"
+      >
+        {children}
+      </main>
 
       {/* Footer */}
       <footer
