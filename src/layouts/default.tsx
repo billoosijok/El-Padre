@@ -128,7 +128,7 @@ export default function DefaultLayout({
 
           {/* Right: Actions */}
           <div className="flex items-center gap-6 z-[61]">
-            <div>
+            <div data-nosnippet>
               <LanguageSelectorDropdown
                 theme={isHeaderLight ? "light" : "dark"}
               />
