@@ -96,11 +96,11 @@ export const LanguageSelectorModal = ({
 };
 
 const StartImage = ({ src }: { src: string }) => {
-  return <img alt="flag icon" src={`/${src}`} width="20" />;
+  return <img alt="" aria-hidden="true" src={`/${src}`} width="20" />;
 };
 
 export const LanguageSelectorDropdown = ({ theme = "dark" }: { theme?: "light" | "dark" }) => {
-  const { language, setLanguage } = useI18n();
+  const { language, setLanguage, goodLabel } = useI18n();
   const isLight = theme === "light";
 
   const [isOpen, onOpenChange] = useState(false);
@@ -120,6 +120,7 @@ export const LanguageSelectorDropdown = ({ theme = "dark" }: { theme?: "light" |
     >
       <DropdownTrigger>
         <Button
+          aria-label={goodLabel("select_language")}
           endContent={
             <RightArrow
               style={{

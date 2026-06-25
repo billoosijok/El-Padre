@@ -818,5 +818,10 @@
     "fr": "Réserver",
     "en": "Book Table",
     "es": "Reservar"
+  },
+  "select_language": {
+    "fr": "Sélectionner la langue",
+    "en": "Select language",
+    "es": "Seleccionar idioma"
   }
 }
