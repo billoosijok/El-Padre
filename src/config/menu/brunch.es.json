@@ -4,6 +4,7 @@
     "items": [
       {
         "name": "Full English Breakfast",
+        "image": { "thumb": "/assets/brunch/opt/fe-thumb.jpg", "full": "/assets/brunch/opt/fe-full.jpg" },
         "price": 18,
         "description": "2 salchichas, 2 lonchas de bacon, 2 huevos fritos, hash brown, tomate a la parrilla, champiñones y alubias en salsa de tomate, servido con pan de masa madre."
       },
@@ -24,11 +25,13 @@
       },
       {
         "name": "Tostada de Aguacate",
+        "image": { "thumb": "/assets/brunch/opt/avo-thumb.jpg", "full": "/assets/brunch/opt/avo-full.jpg" },
         "price": 13,
         "description": "Tostada de aguacate, tomates cherry, huevos pochados, puré de remolacha casero, queso feta.\n(extra › bacon a la parrilla +3)"
       },
       {
         "name": "Tortilla de Queso",
+        "image": { "thumb": "/assets/brunch/opt/om-thumb.jpg", "full": "/assets/brunch/opt/om-full.jpg" },
         "price": 10,
         "description": "Tortilla de queso, ensalada fresca, queso mozzarella, servida con pan.\n(extra › bacon a la parrilla +3)"
       },
@@ -90,6 +93,7 @@
     "items": [
       {
         "name": "Pancakes o Torrija Pistacho",
+        "image": { "thumb": "/assets/brunch/opt/ft-thumb.jpg", "full": "/assets/brunch/opt/ft-full.jpg" },
         "price": 14,
         "description": "Mascarpone, salsa de pistacho, frutos rojos, pistachos picados y sirope de arce."
       },

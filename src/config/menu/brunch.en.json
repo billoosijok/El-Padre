@@ -4,6 +4,7 @@
     "items": [
       {
         "name": "Full English Breakfast",
+        "image": { "thumb": "/assets/brunch/opt/fe-thumb.jpg", "full": "/assets/brunch/opt/fe-full.jpg" },
         "price": 18,
         "description": "2 sausages, 2 slices of bacon, 2 fried eggs, hash brown, grilled tomato, mushrooms, and baked beans in tomato sauce, served with sourdough bread."
       },
@@ -24,11 +25,13 @@
       },
       {
         "name": "Avocado Toast",
+        "image": { "thumb": "/assets/brunch/opt/avo-thumb.jpg", "full": "/assets/brunch/opt/avo-full.jpg" },
         "price": 13,
         "description": "Avocado toast, cherry tomatoes, poached eggs, homemade beetroot puree, feta.\n(extra › grilled bacon +3)"
       },
       {
         "name": "Cheese Omelette",
+        "image": { "thumb": "/assets/brunch/opt/om-thumb.jpg", "full": "/assets/brunch/opt/om-full.jpg" },
         "price": 10,
         "description": "Cheese omelette, fresh salad, mozzarella, served with bread.\n(extra › grilled bacon +3)"
       },
@@ -90,6 +93,7 @@
     "items": [
       {
         "name": "Pancakes or French Toast Pistachio",
+        "image": { "thumb": "/assets/brunch/opt/ft-thumb.jpg", "full": "/assets/brunch/opt/ft-full.jpg" },
         "price": 14,
         "description": "Mascarpone, pistachio sauce, red berries, crushed pistachios & maple syrup."
       },

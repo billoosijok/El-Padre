@@ -325,9 +325,94 @@
     "es": "Brunch | El Padre Narbona"
   },
   "seo_brunch_description": {
-    "fr": "Découvrez notre brunch gourmand le week-end chez El Padre Narbonne. Œufs Bénédicte, Avocado Toast, Pancakes maison et Mimosa.",
-    "en": "Discover our gourmet weekend brunch at El Padre Narbonne. Eggs Benedict, Avocado Toast, homemade Pancakes, and Mimosa.",
-    "es": "Descubre nuestro brunch gourmet de fin de semana en El Padre Narbona. Huevos Benedictinos, Tostada de Aguacate, Pancakes caseros y Mimosa."
+    "fr": "Découvrez notre brunch gourmand tous les jours de 8h à 11h30 chez El Padre Narbonne. Œufs Bénédicte, Avocado Toast, Pancakes maison et Mimosa.",
+    "en": "Discover our gourmet brunch every day from 8am to 11:30am at El Padre Narbonne. Eggs Benedict, Avocado Toast, homemade Pancakes, and Mimosa.",
+    "es": "Descubre nuestro brunch gourmet todos los días de 8h a 11h30 en El Padre Narbona. Huevos Benedictinos, Tostada de Aguacate, Pancakes caseros y Mimosa."
+  },
+  "brunch_hero_tagline": {
+    "fr": "Chaque matin mérite un brunch.",
+    "en": "Every morning deserves a brunch.",
+    "es": "Cada mañana merece un brunch."
+  },
+  "brunch_hours_badge": {
+    "fr": "Tous les jours · 8h – 11h30",
+    "en": "Every day · 8am – 11:30am",
+    "es": "Todos los días · 8h – 11h30"
+  },
+  "brunch_intro_kicker": {
+    "fr": "Le rituel du matin",
+    "en": "The morning ritual",
+    "es": "El ritual de la mañana"
+  },
+  "brunch_intro_title": {
+    "fr": "L'art du brunch",
+    "en": "The art of brunch",
+    "es": "El arte del brunch"
+  },
+  "brunch_intro_text": {
+    "fr": "Œufs Bénédicte, avocado toast, pancakes maison, French toast à la pistache… Des assiettes généreuses, préparées maison, à savourer en terrasse ou en salle — chaque jour, dès le matin.",
+    "en": "Eggs Benedict, avocado toast, homemade pancakes, pistachio French toast… Generous plates, made in-house, to enjoy on the terrace or indoors — every day, from the morning.",
+    "es": "Huevos Benedictinos, tostada de aguacate, pancakes caseros, torrija de pistacho… Platos generosos, hechos en casa, para disfrutar en la terraza o en el salón — todos los días, desde la mañana."
+  },
+  "brunch_signatures_kicker": {
+    "fr": "À découvrir",
+    "en": "Discover",
+    "es": "Para descubrir"
+  },
+  "brunch_signatures_title": {
+    "fr": "Nos incontournables",
+    "en": "Our signatures",
+    "es": "Nuestros imprescindibles"
+  },
+  "brunch_menu_kicker": {
+    "fr": "La carte complète",
+    "en": "The full menu",
+    "es": "La carta completa"
+  },
+  "brunch_menu_title": {
+    "fr": "La Carte Brunch",
+    "en": "The Brunch Menu",
+    "es": "La Carta Brunch"
+  },
+  "brunch_jump_to_menu": {
+    "fr": "Voir le menu",
+    "en": "View the menu",
+    "es": "Ver el menú"
+  },
+  "brunch_cta_title": {
+    "fr": "Réservez votre table pour le brunch",
+    "en": "Book your table for brunch",
+    "es": "Reserve su mesa para el brunch"
+  },
+  "brunch_cta_subtitle": {
+    "fr": "Servi tous les jours de 8h à 11h30, en terrasse ou en salle.",
+    "en": "Served every day from 8am to 11:30am, on the terrace or indoors.",
+    "es": "Servido todos los días de 8h a 11h30, en la terraza o en el salón."
+  },
+  "brunch_dish_full_english": {
+    "fr": "Full English Breakfast",
+    "en": "Full English Breakfast",
+    "es": "Full English Breakfast"
+  },
+  "brunch_dish_avocado_toast": {
+    "fr": "Avocado Toast",
+    "en": "Avocado Toast",
+    "es": "Tostada de Aguacate"
+  },
+  "brunch_dish_french_toast": {
+    "fr": "French Toast Pistache",
+    "en": "Pistachio French Toast",
+    "es": "Torrija de Pistacho"
+  },
+  "brunch_dish_omelette": {
+    "fr": "Omelette Maison",
+    "en": "House Omelette",
+    "es": "Tortilla de la Casa"
+  },
+  "brunch_scroll_cue": {
+    "fr": "Découvrir",
+    "en": "Explore",
+    "es": "Descubrir"
   },
   "selector_title": {
     "fr": "Quel menu souhaitez-vous consulter ce matin ?",

@@ -57,35 +57,36 @@ const MenuContext = createContext<{
   isLight: false,
 });
 
-const MenuLayoutWrapper = (props: any) => {
+/**
+ * Chrome-less renderer for a menu's category nav + sections + image lightbox.
+ * Self-contained (provides its own MenuContext) so it can be dropped into a
+ * full-page layout (MenuLayout) OR embedded as a section inside another page
+ * (e.g. the Brunch Landing). See docs/adr/0002.
+ */
+export const MenuSections = ({
+  menu,
+  isLight = false,
+}: {
+  menu: MenuSectionConfig[];
+  isLight?: boolean;
+}) => {
   const [activeItemId, setActiveItemId] = useState<string | null>(null);
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   return (
-    <MenuContext.Provider value={{ activeItemId, setActiveItemId, modalImage, setModalImage, isLight: props.theme === "light" }}>
-      <MenuLayoutContent {...props} />
+    <MenuContext.Provider value={{ activeItemId, setActiveItemId, modalImage, setModalImage, isLight }}>
+      <MenuSectionsContent menu={menu} isLight={isLight} />
     </MenuContext.Provider>
   );
 };
 
-export { MenuLayoutWrapper as MenuLayout };
-
-const MenuLayoutContent = ({
+const MenuSectionsContent = ({
   menu: sectionConfigs,
-  children,
-  heroImage,
-  heroTitle,
-  heroSubtitle,
-  theme = "dark",
+  isLight,
 }: {
   menu: MenuSectionConfig[];
-  children?: React.ReactNode;
-  heroImage?: string;
-  heroTitle?: string;
-  heroSubtitle?: string;
-  theme?: "light" | "dark";
+  isLight: boolean;
 }) => {
-  const isLight = theme === "light";
   const { language, goodLabel } = useI18n();
   const location = useLocation();
   const { modalImage, setModalImage } = useContext(MenuContext);
@@ -184,51 +185,15 @@ const MenuLayoutContent = ({
 
   if (isLoading) {
     return (
-      <DefaultLayout homeTreatment={!!heroImage} theme={theme}>
-        <div className="h-screen flex items-center justify-center">
-          <Spinner color="warning" size="lg" />
-        </div>
-      </DefaultLayout>
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <Spinner color="warning" size="lg" />
+      </div>
     );
   }
 
   return (
-    <DefaultLayout homeTreatment={!!heroImage} theme={theme}>
-      {children}
-
-      {heroImage && (
-        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden z-10">
-          <img
-            src={heroImage}
-            alt={heroTitle || "Hero"}
-            className="absolute inset-0 w-full h-full object-cover"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-black/50 z-10" />
-          <div className="relative z-20 text-center px-4 flex flex-col items-center gap-6">
-            <div className="flex flex-col items-center gap-4 mb-2">
-              <h1 className="text-5xl md:text-7xl font-cormorant text-white uppercase tracking-wider">
-                {heroTitle}
-              </h1>
-              {heroSubtitle && (
-                <p className="text-xl md:text-2xl font-lato text-gray-300 italic">
-                  {heroSubtitle}
-                </p>
-              )}
-            </div>
-            <div className="h-[1px] w-24 bg-padre-primary" />
-          </div>
-        </section>
-      )}
-
-      {/* Background Texture */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className={`absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat ${isLight ? "opacity-[0.03]" : "opacity-10"}`} />
-        <div className={`absolute inset-0 ${isLight ? "bg-white/10" : "bg-black/20"}`} />
-      </div>
-
-      <div className={`relative z-10 m-auto flex flex-col align-center px-4 pb-20 ${heroImage ? "pt-16" : ""}`}>
-
+    <>
+      <div className="relative z-10 m-auto flex flex-col align-center px-4 pb-20">
         {/* Sticky Nav Bar */}
         <div
           ref={navContainerRef}
@@ -353,9 +318,74 @@ const MenuLayoutContent = ({
           </motion.div>
         )}
       </AnimatePresence>
+    </>
+  );
+};
+
+/**
+ * Full-page menu layout: page chrome (header/footer) + hero + background
+ * texture wrapped around <MenuSections>. Used by /menu and /boissons.
+ */
+const MenuLayout = ({
+  menu,
+  children,
+  heroImage,
+  heroTitle,
+  heroSubtitle,
+  theme = "dark",
+}: {
+  menu: MenuSectionConfig[];
+  children?: React.ReactNode;
+  heroImage?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  theme?: "light" | "dark";
+}) => {
+  const isLight = theme === "light";
+
+  return (
+    <DefaultLayout homeTreatment={!!heroImage} theme={theme}>
+      {children}
+
+      {heroImage && (
+        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden z-10">
+          <img
+            src={heroImage}
+            alt={heroTitle || "Hero"}
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <div className="relative z-20 text-center px-4 flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-4 mb-2">
+              <h1 className="text-5xl md:text-7xl font-cormorant text-white uppercase tracking-wider">
+                {heroTitle}
+              </h1>
+              {heroSubtitle && (
+                <p className="text-xl md:text-2xl font-lato text-gray-300 italic">
+                  {heroSubtitle}
+                </p>
+              )}
+            </div>
+            <div className="h-[1px] w-24 bg-padre-primary" />
+          </div>
+        </section>
+      )}
+
+      {/* Background Texture */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className={`absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat ${isLight ? "opacity-[0.03]" : "opacity-10"}`} />
+        <div className={`absolute inset-0 ${isLight ? "bg-white/10" : "bg-black/20"}`} />
+      </div>
+
+      <div className={`relative z-10 ${heroImage ? "pt-16" : ""}`}>
+        <MenuSections menu={menu} isLight={isLight} />
+      </div>
     </DefaultLayout>
   );
 };
+
+export { MenuLayout };
 
 const MenuSectionSpy = ({
   id,

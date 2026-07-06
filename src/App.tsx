@@ -12,7 +12,7 @@ import "@/config/landing";
 
 const Menu = lazy(() => import("./pages/menu/menu").then(module => ({ default: module.Menu })));
 const MenuBoissons = lazy(() => import("./pages/menu/boissons").then(module => ({ default: module.MenuBoissons })));
-const MenuBrunch = lazy(() => import("./pages/menu/brunch").then(module => ({ default: module.MenuBrunch })));
+const BrunchLanding = lazy(() => import("./pages/brunch").then(module => ({ default: module.BrunchLanding })));
 import { I18nProvider, SupportedLanguages, supported_languages } from "./hooks/useTranslations";
 import { ReservationProvider } from "@/context/ReservationContext";
 
@@ -69,7 +69,7 @@ const AppRoutes = () => {
         <Route element={<ReviewsPage />} path="reviews" />
         <Route element={<RedirectToVote />} path="vote" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
-        <Route element={<MenuBrunch />} path="brunch/*" />
+        <Route element={<BrunchLanding />} path="brunch/*" />
         <Route element={<MentionsLegalesPage />} path="mentions-legales" />
         <Route element={<PolitiqueConfidentialitePage />} path="politique-de-confidentialite" />
         <Route element={<PolitiqueCookiesPage />} path="politique-de-cookies" />
