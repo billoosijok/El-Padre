@@ -16,7 +16,7 @@ const REVIEWS_URL = `${DISHTRIBUTER_API_BASE}/public/reviews`;
 
 // Ratings at or above this threshold are routed to the public Google page;
 // anything below is captured privately.
-const POSITIVE_THRESHOLD = 4;
+const POSITIVE_THRESHOLD = 5;
 
 type Step = "rate" | "redirecting" | "feedback" | "thanks";
 
