@@ -3,13 +3,17 @@ import { Input, Textarea } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/hooks/useTranslations";
-import { DISHTRIBUTER_API_BASE, dishtributerHeaders } from "@/config/dishtributer";
+import {
+  DISHTRIBUTER_API_BASE,
+  dishtributerHeaders,
+} from "@/config/dishtributer";
 
 const API_URL = `${DISHTRIBUTER_API_BASE}/public/bookings`;
 const CONFIG_URL = `${DISHTRIBUTER_API_BASE}/public/config`;
 
 // A reservation slot must start at least this many hours from now.
 const MIN_LEAD_HOURS = 2;
+const LARGE_GROUP_THRESHOLD = 7;
 
 type Step = "form" | "preorder" | "success";
 
@@ -66,7 +70,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 function buildServiceSlots(
   service: BookingService,
   dateStr: string,
-  now: Date
+  now: Date,
 ): ServiceSlots {
   const [y, mo, d] = dateStr.split("-").map(Number);
   const weekday = WEEKDAYS[new Date(y, mo - 1, d).getDay()];
@@ -77,11 +81,11 @@ function buildServiceSlots(
     const isSoirService =
       service.name.toLowerCase() === "soir" ||
       service.id === "d6b2a753-d410-48e1-86b3-f3a9bc659cc0";
-      
+
     if (isSoirService) {
       const targetTimes = ["18:30", "19:00", "21:00"];
       const leadCutoff = now.getTime() + MIN_LEAD_HOURS * 60 * 60 * 1000;
-      
+
       for (const time of targetTimes) {
         const [sh, sm] = time.split(":").map(Number);
         const slotDate = new Date(y, mo - 1, d, sh, sm);
@@ -151,7 +155,7 @@ export function BookingForm() {
   const [selectedServiceId, setSelectedServiceId] = useState("");
 
   const today = new Date().toISOString().split("T")[0];
-  const isLargeGroup = (Number(form.adultsCount) || 0) + (Number(form.childrenCount) || 0) > 6;
+  const isLargeGroup = (Number(form.adultsCount) || 0) > LARGE_GROUP_THRESHOLD;
 
   // Pull the venue's booking config (services / opening windows) once.
   useEffect(() => {
@@ -180,7 +184,8 @@ export function BookingForm() {
   const hasAnySlots = serviceSlots.length > 0;
 
   const setField =
-    (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    (field: keyof FormData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const value = e.target.value;
       setForm((prev) => ({ ...prev, [field]: value }));
       setError(null);
@@ -254,7 +259,7 @@ export function BookingForm() {
       setStep("success");
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : goodLabel("booking_error_generic")
+        err instanceof Error ? err.message : goodLabel("booking_error_generic"),
       );
     } finally {
       setSubmitting(false);
@@ -359,7 +364,10 @@ export function BookingForm() {
                 ) : (
                   <div className="flex flex-col gap-4">
                     {serviceSlots.map((group) => (
-                      <div key={group.serviceId} className="flex flex-col gap-2">
+                      <div
+                        key={group.serviceId}
+                        className="flex flex-col gap-2"
+                      >
                         <p className="text-padre-primary text-[11px] uppercase tracking-[0.15em] font-bold font-lato">
                           {group.serviceName}
                         </p>
@@ -422,9 +430,7 @@ export function BookingForm() {
               classNames={inputClass}
             />
 
-            {error && (
-              <p className="text-red-400 text-sm font-lato">{error}</p>
-            )}
+            {error && <p className="text-red-400 text-sm font-lato">{error}</p>}
 
             <Button
               type="submit"
@@ -473,9 +479,7 @@ export function BookingForm() {
               </p>
             </div>
 
-            {error && (
-              <p className="text-red-400 text-sm font-lato">{error}</p>
-            )}
+            {error && <p className="text-red-400 text-sm font-lato">{error}</p>}
 
             <div className="flex flex-col gap-3 w-full">
               <Button
