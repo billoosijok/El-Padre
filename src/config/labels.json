@@ -829,6 +829,41 @@
     "en": "Tell us what fell short. Your feedback stays private.",
     "es": "Cuéntanos qué no estuvo a la altura. Tu opinión es privada."
   },
+  "review_feedback_subtitle_4star": {
+    "fr": "Dites-nous comment obtenir 5 étoiles la prochaine fois. Votre retour reste privé.",
+    "en": "Tell us how we can earn 5 stars next time. Your feedback stays private.",
+    "es": "Cuéntanos cómo podemos obtener 5 estrellas la próxima vez. Tu opinión es privada."
+  },
+  "review_feedback_subtitle_1to3star": {
+    "fr": "Dites-nous ce qui n'a pas été à la hauteur de vos attentes. Votre retour reste privé.",
+    "en": "Tell us what fell short of your expectations. Your feedback stays private.",
+    "es": "Cuéntanos qué no estuvo a la altura de tus expectativas. Tu opinión es privada."
+  },
+  "review_label_5star": {
+    "fr": "Satisfait !",
+    "en": "Satisfied!",
+    "es": "¡Satisfecho!"
+  },
+  "review_label_4star": {
+    "fr": "À améliorer",
+    "en": "Room to improve",
+    "es": "A mejorar"
+  },
+  "review_label_1to3star": {
+    "fr": "Pas satisfait",
+    "en": "Not satisfied",
+    "es": "No satisfecho"
+  },
+  "review_feedback_change_rating": {
+    "fr": "Modifier la note",
+    "en": "Change rating",
+    "es": "Cambiar calificación"
+  },
+  "review_feedback_back": {
+    "fr": "Retour",
+    "en": "Back",
+    "es": "Volver"
+  },
   "review_feedback_placeholder": {
     "fr": "Votre message...",
     "en": "Your message...",

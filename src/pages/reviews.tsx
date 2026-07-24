@@ -28,12 +28,16 @@ const inputClass = {
   input: "placeholder:text-neutral-500",
 };
 
-function Star({ filled }: { filled: boolean }) {
+function Star({ filled, isFiveStar }: { filled: boolean; isFiveStar?: boolean }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className={`w-12 h-12 sm:w-14 sm:h-14 transition-colors duration-150 ${
-        filled ? "text-padre-primary" : "text-white/15"
+      className={`w-12 h-12 sm:w-14 sm:h-14 transition-all duration-150 ${
+        filled
+          ? isFiveStar
+            ? "text-padre-primary drop-shadow-[0_0_10px_rgba(197,157,95,0.7)] scale-105"
+            : "text-padre-primary"
+          : "text-white/15"
       }`}
       fill="currentColor"
       stroke="currentColor"
@@ -57,6 +61,8 @@ export default function ReviewsPage() {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const currentStar = hovered || rating;
 
   // Pre-fetch the Google review link on mount so a positive rating redirects instantly.
   useEffect(() => {
@@ -134,7 +140,7 @@ export default function ReviewsPage() {
           <Logo color="#c59d5f" />
         </div>
 
-         <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
           {isConfigLoading && (
             <motion.div
               key="loading"
@@ -159,25 +165,53 @@ export default function ReviewsPage() {
               <h1 className="font-cormorant text-3xl sm:text-4xl text-white">
                 {goodLabel("review_prompt_title")}
               </h1>
-              <p className="font-lato text-gray-400 text-base mb-4">
+              <p className="font-lato text-gray-400 text-base mb-2">
                 {goodLabel("review_prompt_subtitle")}
               </p>
               <div
-                className="flex gap-2"
+                className="w-full max-w-sm flex flex-col items-center mt-2"
                 onMouseLeave={() => setHovered(0)}
               >
-                {[1, 2, 3, 4, 5].map((value) => (
-                  <button
-                    key={value}
-                    type="button"
-                    aria-label={`${value} / 5`}
-                    onMouseEnter={() => setHovered(value)}
-                    onClick={() => selectRating(value)}
-                    className="p-1 hover:scale-110 transition-transform focus:outline-none"
-                  >
-                    <Star filled={value <= (hovered || rating)} />
-                  </button>
-                ))}
+                <div className="grid grid-cols-5 gap-1.5 sm:gap-2 w-full">
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <button
+                      key={value}
+                      type="button"
+                      aria-label={`${value} / 5`}
+                      onMouseEnter={() => setHovered(value)}
+                      onClick={() => selectRating(value)}
+                      className="p-1 flex justify-center items-center hover:scale-110 transition-transform focus:outline-none"
+                    >
+                      <Star
+                        filled={value <= currentStar}
+                        isFiveStar={value === 5 && currentStar === 5}
+                      />
+                    </button>
+                  ))}
+                </div>
+
+                {/* Labels directly under the stars */}
+                <div className="grid grid-cols-5 gap-1.5 sm:gap-2 w-full text-center font-lato text-[11px] sm:text-xs mt-2.5">
+                  <div className="col-span-3 flex flex-col items-center justify-center px-1">
+                    <div className="w-full flex items-center gap-1.5 text-rose-400/90 font-medium">
+                      <div className="h-[1px] flex-1 bg-rose-400/40 relative">
+                        <div className="absolute left-0 -top-1 w-[1px] h-2.5 bg-rose-400/60" />
+                      </div>
+                      <span className="shrink-0 leading-none">
+                        {goodLabel("review_label_1to3star")}
+                      </span>
+                      <div className="h-[1px] flex-1 bg-rose-400/40 relative">
+                        <div className="absolute right-0 -top-1 w-[1px] h-2.5 bg-rose-400/60" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-span-1 text-amber-400/90 font-medium px-0.5 flex items-center justify-center">
+                    {goodLabel("review_label_4star")}
+                  </div>
+                  <div className="col-span-1 text-emerald-400 font-semibold px-0.5 flex items-center justify-center">
+                    {goodLabel("review_label_5star")}
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
@@ -193,7 +227,7 @@ export default function ReviewsPage() {
             >
               <div className="flex gap-1.5">
                 {[1, 2, 3, 4, 5].map((v) => (
-                  <Star key={v} filled={v <= rating} />
+                  <Star key={v} filled={v <= rating} isFiveStar={v === 5} />
                 ))}
               </div>
               <p className="font-lato text-gray-300 text-lg">
@@ -216,7 +250,9 @@ export default function ReviewsPage() {
                   {goodLabel("review_feedback_title")}
                 </h1>
                 <p className="font-lato text-gray-400 text-sm">
-                  {goodLabel("review_feedback_subtitle")}
+                  {rating === 4
+                    ? goodLabel("review_feedback_subtitle_4star")
+                    : goodLabel("review_feedback_subtitle_1to3star")}
                 </p>
               </div>
 
@@ -254,6 +290,24 @@ export default function ReviewsPage() {
                   ? goodLabel("review_feedback_sending")
                   : goodLabel("review_feedback_submit")}
               </Button>
+
+              <button
+                type="button"
+                onClick={() => setStep("rate")}
+                className="self-center text-sm font-bold uppercase tracking-[0.2em] font-lato text-gray-400 hover:text-white transition-colors focus:outline-none flex items-center justify-center gap-2 py-1 mt-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 text-padre-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                <span>{goodLabel("review_feedback_back")}</span>
+              </button>
             </motion.div>
           )}
 
