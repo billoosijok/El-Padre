@@ -89,6 +89,8 @@ export function copyIndexTo404(options?: Options): Plugin {
           }
         }
         
+        const isNoIndex = basePath === "/reviews";
+        
         // 2. Build canonical and alternate links
         const siteUrl = "https://elpadre-narbonne.fr";
         const canonicalUrl = lang === "fr"
@@ -101,6 +103,7 @@ export function copyIndexTo404(options?: Options): Plugin {
         const alternateDefault = alternateFr;
         
         const headTags = [
+          ...(isNoIndex ? ['<meta name="robots" content="noindex, nofollow" />'] : []),
           `<link rel="canonical" href="${canonicalUrl}" />`,
           `<link rel="alternate" hrefLang="fr" href="${alternateFr}" />`,
           `<link rel="alternate" hrefLang="en" href="${alternateEn}" />`,

@@ -127,6 +127,7 @@ export default function ReviewsPage() {
       <SEO
         title={goodLabel("seo_reviews_title")}
         description={goodLabel("seo_reviews_description")}
+        noindex={true}
       />
       <div className="absolute inset-0 bg-black/80" />
 

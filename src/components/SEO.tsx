@@ -9,6 +9,7 @@ interface SEOProps {
     type?: string;
     schema?: Record<string, any>;
     breadcrumbs?: Array<{ name: string; item: string }>;
+    noindex?: boolean;
 }
 
 export const SEO = ({
@@ -18,6 +19,7 @@ export const SEO = ({
     type = "website",
     schema,
     breadcrumbs,
+    noindex = false,
 }: SEOProps) => {
     const { pathname } = useLocation();
     const { language, goodLabel } = useI18n();
@@ -113,12 +115,15 @@ export const SEO = ({
         }))
     } : null;
 
+    const isNoIndex = noindex || pathname.includes("/reviews");
+
     return (
         <Helmet>
             {/* Basic Meta Tags */}
             <html lang={language} />
             <title>{currentTitle}</title>
             <meta name="description" content={currentDescription} />
+            <meta name="robots" content={isNoIndex ? "noindex, nofollow" : "index, follow"} />
             <link rel="canonical" href={fullUrl} />
 
             {/* Hreflang Tags */}

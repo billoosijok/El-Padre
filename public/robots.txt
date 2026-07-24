@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /reviews
+Disallow: /en/reviews
+Disallow: /es/reviews
+
+Sitemap: https://elpadre-narbonne.fr/sitemap.xml
