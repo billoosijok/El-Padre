@@ -86,7 +86,15 @@ export default function ReviewsPage() {
       const urlToUse = googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
       setStep("redirecting");
       setTimeout(() => window.location.assign(urlToUse), 900);
-    } else {
+    }
+  };
+
+  const confirmRating = () => {
+    if (rating >= POSITIVE_THRESHOLD) {
+      const urlToUse = googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
+      setStep("redirecting");
+      setTimeout(() => window.location.assign(urlToUse), 900);
+    } else if (rating > 0) {
       setStep("feedback");
     }
   };
@@ -213,6 +221,15 @@ export default function ReviewsPage() {
                     {goodLabel("review_label_5star")}
                   </div>
                 </div>
+
+                {/* Confirm rating button */}
+                <Button
+                  className="w-full mt-6 h-12 bg-[#c59d5f] text-black font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:bg-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  isDisabled={rating === 0}
+                  onPress={confirmRating}
+                >
+                  {goodLabel("review_confirm")}
+                </Button>
               </div>
             </motion.div>
           )}
@@ -291,24 +308,6 @@ export default function ReviewsPage() {
                   ? goodLabel("review_feedback_sending")
                   : goodLabel("review_feedback_submit")}
               </Button>
-
-              <button
-                type="button"
-                onClick={() => setStep("rate")}
-                className="self-center text-sm font-bold uppercase tracking-[0.2em] font-lato text-gray-400 hover:text-white transition-colors focus:outline-none flex items-center justify-center gap-2 py-1 mt-1"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4 text-padre-primary"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-                <span>{goodLabel("review_feedback_back")}</span>
-              </button>
             </motion.div>
           )}
 

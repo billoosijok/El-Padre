@@ -864,6 +864,11 @@
     "en": "Back",
     "es": "Volver"
   },
+  "review_confirm": {
+    "fr": "Valider",
+    "en": "Confirm",
+    "es": "Confirmar"
+  },
   "review_feedback_placeholder": {
     "fr": "Votre message...",
     "en": "Your message...",
