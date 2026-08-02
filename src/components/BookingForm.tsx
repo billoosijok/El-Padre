@@ -116,9 +116,8 @@ function buildServiceSlots(
 
   if (range && service.intervalMinutes >= 1) {
     const start = toMinutes(range.startTime);
-    // Exclude the final hour of the range: the last bookable slot is one hour
-    // before endTime.
-    const end = toMinutes(range.endTime) - 60;
+    // The last bookable slot is one service interval before endTime (e.g., 11:15 for 11:30 endTime with 15m interval).
+    const end = toMinutes(range.endTime) - service.intervalMinutes;
 
     for (let m = start; m <= end; m += service.intervalMinutes) {
       const slotDate = new Date(y, mo - 1, d, Math.floor(m / 60), m % 60);
