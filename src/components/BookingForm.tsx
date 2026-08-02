@@ -11,9 +11,16 @@ import {
 const API_URL = `${DISHTRIBUTER_API_BASE}/public/bookings`;
 const CONFIG_URL = `${DISHTRIBUTER_API_BASE}/public/config`;
 
-// A reservation slot must start at least this many hours from now.
-const MIN_LEAD_HOURS = 2;
+// Reservation lead times (in minutes) from current time.
+const DEFAULT_LEAD_MINUTES = 60; // 1 hour for standard services
+const BRUNCH_LEAD_MINUTES = 15; // 15 minutes for Brunch
 const LARGE_GROUP_THRESHOLD = 7;
+
+function getLeadMinutes(serviceName: string): number {
+  return serviceName.toLowerCase().includes("brunch")
+    ? BRUNCH_LEAD_MINUTES
+    : DEFAULT_LEAD_MINUTES;
+}
 
 type Step = "form" | "preorder" | "success";
 
@@ -76,6 +83,9 @@ function buildServiceSlots(
   const weekday = WEEKDAYS[new Date(y, mo - 1, d).getDay()];
   const slots: Slot[] = [];
 
+  const leadMinutes = getLeadMinutes(service.name);
+  const leadCutoff = now.getTime() + leadMinutes * 60 * 1000;
+
   // Special override for Father's Day (June 21, 2026) to limit slots to 18:30, 19:00, 21:00
   if (dateStr === "2026-06-21") {
     const isSoirService =
@@ -84,7 +94,6 @@ function buildServiceSlots(
 
     if (isSoirService) {
       const targetTimes = ["18:30", "19:00", "21:00"];
-      const leadCutoff = now.getTime() + MIN_LEAD_HOURS * 60 * 60 * 1000;
 
       for (const time of targetTimes) {
         const [sh, sm] = time.split(":").map(Number);
@@ -110,7 +119,6 @@ function buildServiceSlots(
     // Exclude the final hour of the range: the last bookable slot is one hour
     // before endTime.
     const end = toMinutes(range.endTime) - 60;
-    const leadCutoff = now.getTime() + MIN_LEAD_HOURS * 60 * 60 * 1000;
 
     for (let m = start; m <= end; m += service.intervalMinutes) {
       const slotDate = new Date(y, mo - 1, d, Math.floor(m / 60), m % 60);
