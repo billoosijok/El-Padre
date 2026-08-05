@@ -675,9 +675,9 @@
     "es": "Grupos y privatización"
   },
   "booking_name_prefix": {
-    "fr": "Réservation pour",
-    "en": "Reservation for",
-    "es": "Reserva para"
+    "fr": "Nom complet",
+    "en": "Full name",
+    "es": "Nombre completo"
   },
   "booking_name_placeholder": {
     "fr": "Jean Dupont",

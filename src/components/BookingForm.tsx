@@ -247,6 +247,7 @@ export function BookingForm() {
         method: "POST",
         headers: dishtributerHeaders,
         body: JSON.stringify({
+          guestName: form.name.trim(),
           bookingName: form.name.trim(),
           bookingDate: form.date,
           adultsCount: adults,
