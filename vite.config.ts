@@ -10,6 +10,7 @@ import { copyIndexTo404 } from "./plugins/copyIndexTo404";
 const routes = [
   "/menu",
   "/boissons",
+  "/qr/carte",
   "/privatisation",
   "/reservation",
   "/brunch",
@@ -22,6 +23,7 @@ const routes = [
   "/en",
   "/en/menu",
   "/en/boissons",
+  "/en/qr/carte",
   "/en/privatisation",
   "/en/reservation",
   "/en/brunch",
@@ -34,6 +36,7 @@ const routes = [
   "/es",
   "/es/menu",
   "/es/boissons",
+  "/es/qr/carte",
   "/es/privatisation",
   "/es/reservation",
   "/es/brunch",
@@ -44,7 +47,7 @@ const routes = [
   "/es/reviews",
 ];
 
-const sitemapRoutes = routes.filter((r) => !r.includes("reviews"));
+const sitemapRoutes = routes.filter((r) => !r.includes("reviews") && !r.includes("qr/carte"));
 
 // https://vitejs.dev/config/
 export default defineConfig({

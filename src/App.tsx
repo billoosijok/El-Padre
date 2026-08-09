@@ -3,6 +3,7 @@ import {
   Route,
   Routes,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import ReactGA from "react-ga4";
@@ -68,6 +69,7 @@ const AppRoutes = () => {
         <Route element={<ContactPage />} path="contact" />
         <Route element={<ReviewsPage />} path="reviews" />
         <Route element={<RedirectToVote />} path="vote" />
+        <Route element={<Navigate to="/menu" replace />} path="qr/carte" />
         <Route key={"menu"} element={<Menu />} path="menu/*" />
         <Route element={<BrunchLanding />} path="brunch/*" />
         <Route element={<MentionsLegalesPage />} path="mentions-legales" />
