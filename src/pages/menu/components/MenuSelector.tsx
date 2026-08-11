@@ -31,7 +31,7 @@ export const MenuSelector = ({
       >
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-[1500ms] ease-out group-hover:scale-105"
-          style={{ backgroundImage: "url('/assets/brunch.jpg')" }}
+          style={{ backgroundImage: "url('/assets/brunch/hero.jpeg')" }}
         />
         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-colors duration-500 z-10" />
 
