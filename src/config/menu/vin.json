@@ -5,10 +5,19 @@
       {
         "category": "Domaine st. Marie des Crozes",
         "items": [
-            {
+          {
             "name": "4ème Génération",
             "extraInfo": "AOP Corbières",
-            "price": [{"name": "Verre", "value": 4}, {"name": "Bouteille","value": 19}],
+            "price": [
+              {
+                "name": "Verre",
+                "value": 4
+              },
+              {
+                "name": "Bouteille",
+                "value": 19
+              }
+            ],
             "description": "Carignan 40%, Syrah 40%, Grenache 20%"
           }
         ]
@@ -19,18 +28,36 @@
           {
             "name": "Fitou Cuvée Prestige",
             "extraInfo": "AOP Fitou",
-            "price": [{"name": "Verre", "value": 4}, {"name": "Bouteille","value": 20}],
+            "price": [
+              {
+                "name": "Verre",
+                "value": 4
+              },
+              {
+                "name": "Bouteille",
+                "value": 20
+              }
+            ],
             "description": "Carignan 25%, Syrah 25%, Grenache 25%, Mourvèdre 25%"
           }
         ]
       },
       {
-        "category": "CHÂTEAU Moyau", 
-        "items":[
+        "category": "CHÂTEAU Moyau",
+        "items": [
           {
             "name": "Terre de Pierres",
             "extraInfo": "AOP La Clape",
-            "price": [{"name": "Verre", "value": 5.5}, {"name": "Bouteille","value": 29}],
+            "price": [
+              {
+                "name": "Verre",
+                "value": 5.5
+              },
+              {
+                "name": "Bouteille",
+                "value": 29
+              }
+            ],
             "description": "Mourvèdre 10%, Grenache noir 40%, Carignan 25%, Syrah 25%"
           }
         ]
@@ -41,13 +68,23 @@
           {
             "name": "Sansa - Sans Sulfites Ajoutés",
             "extraInfo": "AOP Corbières",
-            "price": [{"name": "Bouteille","value": 18}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 18
+              }
+            ],
             "description": "Syrah 50%, Grenache 20% et Carignan 30%"
           },
           {
             "name": "La Cuvée n°3 - 2021",
             "extraInfo": "AOP Corbières",
-            "price": [{"name": "Bouteille","value": 49}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 49
+              }
+            ],
             "description": "Carignan 25%, Grenache noir 35%, Syrah 40%"
           }
         ]
@@ -58,13 +95,23 @@
           {
             "name": "Convivalité",
             "extraInfo": "IGP Coteaux de Narbonne",
-            "price": [{"name": "Bouteille","value": 17}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 17
+              }
+            ],
             "description": "Marselan 50%, Syrah 25%, Grenache 25%"
           },
           {
             "name": "Réserve",
             "extraInfo": "AOP La Clape",
-            "price": [{"name": "Bouteille","value": 23}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 23
+              }
+            ],
             "description": "Syrah 80%, Grenache 20%"
           }
         ]
@@ -75,7 +122,12 @@
           {
             "name": "Domaine de Villemajou",
             "extraInfo": "AOP Corbière Boutenac",
-            "price": [{"name": "Bouteille","value": 32}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 32
+              }
+            ],
             "description": "Carignan 50%, Syrah 25%, Grenache noir 25%"
           }
         ]
@@ -86,7 +138,12 @@
           {
             "name": "Hé Ho",
             "extraInfo": "AOP Fitou",
-            "price": [{"name": "Bouteille","value": 23}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 23
+              }
+            ],
             "description": "Carignan 100%"
           }
         ]
@@ -97,7 +154,20 @@
           {
             "name": "Les Trois Garçons",
             "extraInfo": "IGP Oc",
-            "price": [{"name": "Verre", "value": 3.5}, {"name": "25cl", "value": 6}, {"name": "50cl", "value": 9}],
+            "price": [
+              {
+                "name": "Verre",
+                "value": 3.5
+              },
+              {
+                "name": "25cl",
+                "value": 6
+              },
+              {
+                "name": "50cl",
+                "value": 9
+              }
+            ],
             "description": "Grenache noir 50%, Syrah 50%"
           }
         ]
@@ -113,7 +183,24 @@
           {
             "name": "Chardonnay",
             "extraInfo": "IGP Pays d'Oc",
-            "price": [{"name": "Verre", "value": 3.5}, {"name": "25cl", "value": 6}, {"name": "50cl", "value": 9},{"name": "Bouteille", "value": 17}],
+            "price": [
+              {
+                "name": "Verre",
+                "value": 3.5
+              },
+              {
+                "name": "25cl",
+                "value": 6
+              },
+              {
+                "name": "50cl",
+                "value": 9
+              },
+              {
+                "name": "Bouteille",
+                "value": 17
+              }
+            ],
             "description": "Chardonnay 100%"
           }
         ]
@@ -124,13 +211,31 @@
           {
             "name": "Sauvignon",
             "extraInfo": "IGP d'Oc",
-            "price": [{"name": "Bouteille","value": 20}, {"name": "Verre", "value": 4}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 20
+              },
+              {
+                "name": "Verre",
+                "value": 4
+              }
+            ],
             "description": "Sauvignon 100%"
           },
           {
             "name": "Pourquoi Pas",
             "extraInfo": "IGP d'Oc Blanc",
-            "price": [{"name": "Verre", "value": 4.5}, {"name": "Bouteille","value": 21}],
+            "price": [
+              {
+                "name": "Verre",
+                "value": 4.5
+              },
+              {
+                "name": "Bouteille",
+                "value": 21
+              }
+            ],
             "description": "Sauvignon 90%, Viognier 10%"
           }
         ]
@@ -141,7 +246,16 @@
           {
             "name": "Réserve",
             "extraInfo": "IGP Coteaux de Narbonne",
-            "price": [{"name": "Bouteille","value": 22}, { "name": "Verre", "value": 4.5 }],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 22
+              },
+              {
+                "name": "Verre",
+                "value": 4.5
+              }
+            ],
             "description": "Bourboulenc 60%, Grenache blanc 20%, Roussanne 10%, Viognier 10%"
           }
         ]
@@ -152,7 +266,12 @@
           {
             "name": "Rocaille",
             "extraInfo": "AOP Languedoc La Clape",
-            "price": [{"name": "Bouteille","value": 24}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 24
+              }
+            ],
             "description": "Bourboulenc 40%, Marsanne 30%, Grenache blanc 20%, Roussanne 5%, Viognier 5%"
           }
         ]
@@ -163,7 +282,12 @@
           {
             "name": "Domaine de l'Aigle",
             "extraInfo": "AOP Limoux",
-            "price": [{"name": "Bouteille","value": 39}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 39
+              }
+            ],
             "description": "Chardonnay 100%"
           }
         ]
@@ -174,13 +298,23 @@
           {
             "name": "Douceur Bourboulenc",
             "extraInfo": "IGP d'Oc",
-            "price": [{"name": "Bouteille","value": 18}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 18
+              }
+            ],
             "description": "Bourboulenc 100%"
           },
           {
             "name": "Cuvée L'Estime",
             "extraInfo": "AOP La Clape",
-            "price": [{"name": "Bouteille","value": 19}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 19
+              }
+            ],
             "description": "Roussanne 30%, Marsanne 30%, Bourboulenc 40%"
           }
         ]
@@ -191,7 +325,12 @@
           {
             "name": "Les Amandiers",
             "extraInfo": "AOP Faugères",
-            "price": [{"name": "Bouteille","value": 41}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 41
+              }
+            ],
             "description": "Roussanne 40%, Grenache blanc 25%, Viognier 10%, Bourboulenc 10%, Marsanne 15%"
           }
         ]
@@ -206,7 +345,24 @@
         "items": [
           {
             "name": "Zéphyr",
-            "price": [{"name": "verre","value": 3.5}, {"name": "25cl","value": 6}, {"name": "50cl","value": 9}, {"name": "bouteille","value": 18}],
+            "price": [
+              {
+                "name": "verre",
+                "value": 3.5
+              },
+              {
+                "name": "25cl",
+                "value": 6
+              },
+              {
+                "name": "50cl",
+                "value": 9
+              },
+              {
+                "name": "bouteille",
+                "value": 18
+              }
+            ],
             "extraInfo": "AOP Languedoc",
             "description": "Grenache gris 50%, Cinsault 50%"
           }
@@ -218,7 +374,12 @@
           {
             "name": "Cuvée Les Pierres Blanches",
             "extraInfo": "AOP Languedoc",
-            "price": [{"name": "Bouteille","value": 17}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 17
+              }
+            ],
             "description": "Syrah 60%, Grenache 40%"
           }
         ]
@@ -229,7 +390,12 @@
           {
             "name": "Aurore Minervoise",
             "extraInfo": "AOP Languedoc",
-            "price": [{"name": "Bouteille","value": 20}],
+            "price": [
+              {
+                "name": "Bouteille",
+                "value": 20
+              }
+            ],
             "description": "Grenache 100%"
           }
         ]
@@ -241,22 +407,46 @@
     "items": [
       {
         "name": "Veuve Pelletier - Brut",
-        "price": [{"name": "Verre", "value": 10}, {"name": "Bouteille","value": 45}],
+        "price": [
+          {
+            "name": "Verre",
+            "value": 10
+          },
+          {
+            "name": "Bouteille",
+            "value": 45
+          }
+        ],
         "description": "Grenache gris 50%, Cinsault 50%"
       },
       {
         "name": "R de Ruinart - Brut",
-        "price": [{"name": "Bouteille","value": 110}],
+        "price": [
+          {
+            "name": "Bouteille",
+            "value": 110
+          }
+        ],
         "description": "Pinot noir 45%, Meunier 15%, Chardonnay 40%"
       },
       {
         "name": "Moët & Chandon - Rosé",
-        "price": [{"name": "Bouteille","value": 130}],
+        "price": [
+          {
+            "name": "Bouteille",
+            "value": 130
+          }
+        ],
         "description": "Pinot meunier 40%, Chardonnay 30%, Pinot noir 30%"
       },
       {
         "name": "Deutz - Blanc de Blanc",
-        "price": [{"name": "Bouteille","value": 180}],
+        "price": [
+          {
+            "name": "Bouteille",
+            "value": 180
+          }
+        ],
         "description": "Chardonnay 100%"
       }
     ]

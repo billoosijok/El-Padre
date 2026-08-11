@@ -325,9 +325,9 @@
     "es": "Brunch | El Padre Narbona"
   },
   "seo_brunch_description": {
-    "fr": "Découvrez notre brunch gourmand tous les jours de 8h à 11h30 chez El Padre Narbonne. Œufs Bénédicte, Avocado Toast, Pancakes maison et Mimosa.",
-    "en": "Discover our gourmet brunch every day from 8am to 11:30am at El Padre Narbonne. Eggs Benedict, Avocado Toast, homemade Pancakes, and Mimosa.",
-    "es": "Descubre nuestro brunch gourmet todos los días de 8h a 11h30 en El Padre Narbona. Huevos Benedictinos, Tostada de Aguacate, Pancakes caseros y Mimosa."
+    "fr": "Découvrez notre brunch gourmand tous les jours de 8H à 12H chez El Padre Narbonne. Œufs Bénédicte, Avocado Toast, Pancakes maison et Mimosa.",
+    "en": "Discover our gourmet brunch every day from 8H to 12H at El Padre Narbonne. Eggs Benedict, Avocado Toast, homemade Pancakes, and Mimosa.",
+    "es": "Descubre nuestro brunch gourmet todos los días de 8H a 12H en El Padre Narbona. Huevos Benedictinos, Tostada de Aguacate, Pancakes caseros y Mimosa."
   },
   "brunch_hero_tagline": {
     "fr": "Chaque matin mérite un brunch.",
@@ -335,9 +335,9 @@
     "es": "Cada mañana merece un brunch."
   },
   "brunch_hours_badge": {
-    "fr": "Tous les jours · 8h – 11h30",
-    "en": "Every day · 8am – 11:30am",
-    "es": "Todos los días · 8h – 11h30"
+    "fr": "Tous les jours · 8H - 12H",
+    "en": "Every day · 8H - 12H",
+    "es": "Todos los días · 8H - 12H"
   },
   "brunch_intro_kicker": {
     "fr": "Le rituel du matin",
@@ -385,9 +385,9 @@
     "es": "Reserve su mesa para el brunch"
   },
   "brunch_cta_subtitle": {
-    "fr": "Servi tous les jours de 8h à 11h30, en terrasse ou en salle.",
-    "en": "Served every day from 8am to 11:30am, on the terrace or indoors.",
-    "es": "Servido todos los días de 8h a 11h30, en la terraza o en el salón."
+    "fr": "Servi tous les jours de 8H à 12H, en terrasse ou en salle.",
+    "en": "Served every day from 8H to 12H, on the terrace or indoors.",
+    "es": "Servido todos los días de 8H a 12H, en la terraza o en el salón."
   },
   "brunch_dish_full_english": {
     "fr": "Full English Breakfast",
@@ -450,9 +450,9 @@
     "es": "Ir directamente al menú"
   },
   "selector_brunch_hours": {
-    "fr": "8H - 11H30",
-    "en": "8H - 11H30",
-    "es": "8H - 11H30"
+    "fr": "8H - 12H",
+    "en": "8H - 12H",
+    "es": "8H - 12H"
   },
   "selector_classic_hours": {
     "fr": "Lun - Ven : 12h - 15h | 18h - 23h",
@@ -480,9 +480,9 @@
     "es": "Sáb - Dom : 8h - 02h"
   },
   "footer_hours_brunch": {
-    "fr": "Brunch : 8h - 11h30",
-    "en": "Brunch : 8h - 11h30",
-    "es": "Brunch : 8h - 11h30"
+    "fr": "Brunch : 8H - 12H",
+    "en": "Brunch : 8H - 12H",
+    "es": "Brunch : 8H - 12H"
   },
   "breadcrumbs_contact": {
     "fr": "Contact",

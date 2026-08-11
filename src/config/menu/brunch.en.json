@@ -4,41 +4,43 @@
     "items": [
       {
         "name": "Full English Breakfast",
-        "image": { "thumb": "/assets/brunch/opt/fe-thumb.jpg", "full": "/assets/brunch/opt/fe-full.jpg" },
-        "price": 18,
+        "price": 20,
         "description": "2 sausages, 2 slices of bacon, 2 fried eggs, hash brown, grilled tomato, mushrooms, and baked beans in tomato sauce, served with sourdough bread."
       },
       {
-        "name": "Caesar Club Sandwich",
-        "price": 16,
-        "description": "Cream cheese, homemade grilled chicken, parmesan shavings, tomatoes, fried onions, romaine lettuce, Caesar sauce, served with crunchy fries.\n(extra › grilled bacon +3)"
-      },
-      {
-        "name": "Eggs Benedict",
-        "price": 14,
-        "description": "English muffin, avocado, poached eggs, smoked bacon, hollandaise sauce, served with fresh salad."
-      },
-      {
-        "name": "Savory Breakfast Pancakes",
+        "name": "Savory Homemade Breakfast Pancakes",
         "price": 14,
         "description": "Fluffy pancakes, 2 fried eggs, chives, crispy grilled bacon & maple syrup."
       },
       {
-        "name": "Avocado Toast",
-        "image": { "thumb": "/assets/brunch/opt/avo-thumb.jpg", "full": "/assets/brunch/opt/avo-full.jpg" },
+        "name": "Caesar Club Sandwich",
+        "price": 16,
+        "description": "Cream cheese, homemade grilled chicken, parmesan shavings, tomatoes, fried onions, romaine lettuce, Caesar sauce, served with crunchy fries. (extra > grilled bacon +3)"
+      },
+      {
+        "name": "Eggs Avocado Toast",
         "price": 13,
-        "description": "Avocado toast, cherry tomatoes, poached eggs, homemade beetroot puree, feta.\n(extra › grilled bacon +3)"
+        "description": "Avocado toast, cherry tomatoes, poached eggs, homemade beetroot puree, feta. (extra > grilled bacon +3 | smoked salmon +4)"
+      },
+      {
+        "name": "Salmon Avocado Toast",
+        "price": 15,
+        "description": "Avocado toast, smoked salmon, cherry tomatoes, homemade beetroot puree, feta. (extra > poached eggs +2 | smoked salmon +4)"
+      },
+      {
+        "name": "Eggs Benedict",
+        "price": 14,
+        "description": "English muffin, avocado, poached eggs, grilled bacon, hollandaise sauce, served with fresh salad."
       },
       {
         "name": "Cheese Omelette",
-        "image": { "thumb": "/assets/brunch/opt/om-thumb.jpg", "full": "/assets/brunch/opt/om-full.jpg" },
         "price": 10,
-        "description": "Cheese omelette, fresh salad, mozzarella, served with bread.\n(extra › grilled bacon +3)"
+        "description": "Omelette, mozzarella, fresh salad, served with bread. (extra > grilled bacon +3)"
       },
       {
         "name": "Plain Omelette",
         "price": 8,
-        "description": "Plain omelette, fresh salad, served with bread.\n(extra › grilled bacon +3)"
+        "description": "Plain omelette, fresh salad, served with bread. (extra > grilled bacon +3)"
       }
     ]
   },
@@ -46,26 +48,6 @@
     "category": "Extras",
     "layout": "compact",
     "items": [
-      {
-        "name": "Grilled bacon",
-        "price": 3
-      },
-      {
-        "name": "Sausage",
-        "price": 3
-      },
-      {
-        "name": "Fried or poached egg",
-        "price": 2
-      },
-      {
-        "name": "Hash brown",
-        "price": 1
-      },
-      {
-        "name": "Avocado",
-        "price": 3
-      },
       {
         "name": "Sautéed mushrooms",
         "price": 1
@@ -79,11 +61,31 @@
         "price": 2
       },
       {
-        "name": "Fried onions",
-        "price": 1
+        "name": "Homemade beetroot puree",
+        "price": 2
       },
       {
-        "name": "Homemade beetroot puree",
+        "name": "Avocado",
+        "price": 3
+      },
+      {
+        "name": "Grilled bacon",
+        "price": 3
+      },
+      {
+        "name": "Sausage",
+        "price": 3
+      },
+      {
+        "name": "Smoked salmon",
+        "price": 4
+      },
+      {
+        "name": "Fried or poached egg",
+        "price": 2
+      },
+      {
+        "name": "Hash brown",
         "price": 2
       }
     ]
@@ -93,19 +95,27 @@
     "items": [
       {
         "name": "Pancakes or French Toast Pistachio",
-        "image": { "thumb": "/assets/brunch/opt/ft-thumb.jpg", "full": "/assets/brunch/opt/ft-full.jpg" },
-        "price": 14,
-        "description": "Mascarpone, pistachio sauce, red berries, crushed pistachios & maple syrup."
+        "price": 15,
+        "description": "Mascarpone, pistachio sauce, fresh fruits, crushed pistachios, maple syrup."
+      },
+      {
+        "name": "Pancakes or French Toast Red Berries",
+        "price": 13,
+        "description": "Mascarpone, red berry sauce, red berries, maple syrup."
       },
       {
         "name": "Pancakes or French Toast Nutella",
-        "price": 13,
-        "description": "Mascarpone, Nutella, banana, milk chocolate chips, caramelized hazelnuts & maple syrup."
+        "price": 14,
+        "description": "Mascarpone, Nutella, banana, milk chocolate chips, caramelized hazelnuts, maple syrup."
       },
       {
         "name": "Homemade Granola",
         "price": 12,
-        "description": "Granola, Greek yogurt, fresh fruits, hazelnut praline, honey & crushed almonds."
+        "description": "Granola, Greek yogurt, fresh fruits, hazelnut praline, honey, crushed almonds."
+      },
+      {
+        "name": "Desserts of the Day",
+        "description": "Ask our team for our current suggestions"
       }
     ]
   },
@@ -113,6 +123,14 @@
     "category": "Special Drinks",
     "layout": "compact",
     "items": [
+      {
+        "name": "Homemade Lemonade",
+        "price": 7
+      },
+      {
+        "name": "Homemade Smoothie of the Moment",
+        "price": 8
+      },
       {
         "name": "Iced Latte",
         "price": 5
@@ -124,10 +142,6 @@
       {
         "name": "Affogato",
         "price": 4
-      },
-      {
-        "name": "Homemade Smoothie of the Moment",
-        "price": 8
       },
       {
         "name": "Fresh Squeezed Orange Juice",

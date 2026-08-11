@@ -233,14 +233,14 @@ const MenuSectionsContent = ({
             >
               <div className="flex flex-col gap-6">
                 {!item.isConsolidated && (
-                  <h2 className={`sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary ${
+                  <h2 className={`sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg [clip-path:inset(-15px_0px_-15px_0px)] mb-8 pl-4 ${
                     isLight ? "bg-[#faf7f2]/95" : "bg-[#1a1a1a]/95"
                   }`}>
                     {item.category}
                   </h2>
                 )}
                 {item.isConsolidated && (
-                  <div className="mb-8 pl-4 border-l-4 border-l-padre-primary">
+                  <div className="mb-8 pl-4">
                     <h2 className="text-3xl font-cormorant text-padre-primary uppercase tracking-widest">
                       {item.category}
                     </h2>
@@ -255,7 +255,7 @@ const MenuSectionsContent = ({
                             className={
                               item.customizations?.menuItemSubCategoryClasses
                                 ? item.customizations.menuItemSubCategoryClasses
-                                : `sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg mb-8 pl-4 border-l-4 border-l-padre-primary ${
+                                : `sticky top-[146px] z-40 backdrop-blur-sm py-3 text-2xl font-cormorant text-left border-b border-padre-primary/30 text-padre-primary uppercase tracking-widest shadow-lg [clip-path:inset(-15px_0px_-15px_0px)] mb-8 pl-4 ${
                                     isLight ? "bg-[#faf7f2]/95" : "bg-[#1a1a1a]/95"
                                   }`
                             }
@@ -533,13 +533,13 @@ const MenuItem = ({
             }
           >
             <MenuItemName item={item} />{" "}
-            {!isCompact && (
+            {!isCompact && item.price !== undefined && (
               <span className="font-light text-padre-primary normal-case text-xl">
                 - <MenuItemPrice price={item.price} />
               </span>
             )}
           </h3>
-          {isCompact && (
+          {isCompact && item.price !== undefined && (
             <span className={`font-semibold text-padre-primary bg-padre-primary/10 px-3 py-1 rounded-full text-xs md:text-sm whitespace-nowrap ml-3`}>
               <MenuItemPrice price={item.price} />
             </span>

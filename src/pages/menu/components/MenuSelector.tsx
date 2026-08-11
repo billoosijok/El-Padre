@@ -40,9 +40,7 @@ export const MenuSelector = ({
             {goodLabel("brunch")}
           </h2>
           <div className="flex flex-col items-center gap-1 mt-2 mb-4">
-            <span className="text-padre-primary font-bold text-[10px] md:text-xs uppercase tracking-[0.2em]">
-              {goodLabel("les horaires")}
-            </span>
+
             <span className="text-white text-xs md:text-sm font-medium tracking-wider">
               {goodLabel("selector_brunch_hours")}
             </span>
@@ -80,9 +78,7 @@ export const MenuSelector = ({
             {goodLabel("menu_tapas")}
           </h2>
           <div className="flex flex-col items-center gap-1 mt-2 mb-4">
-            <span className="text-padre-primary font-bold text-[10px] md:text-xs uppercase tracking-[0.2em]">
-              {goodLabel("les horaires")}
-            </span>
+
             <span className="text-white text-xs md:text-sm font-medium tracking-wider">
               {goodLabel("selector_classic_hours")}
             </span>

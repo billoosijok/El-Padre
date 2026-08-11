@@ -87,15 +87,9 @@ export const BrunchLanding = () => {
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-4 flex flex-col items-center gap-6">
-          <span className="text-white font-bold text-xs md:text-sm uppercase tracking-[0.3em]">
-            El Padre · Narbonne
-          </span>
           <h1 className="text-6xl md:text-8xl font-cormorant text-white uppercase tracking-wider font-bold">
             {goodLabel("brunch")}
           </h1>
-          <p className="text-xl md:text-2xl font-cormorant text-gray-200 italic max-w-xl">
-            {goodLabel("brunch_hero_tagline")}
-          </p>
           <span className="mt-1 inline-block text-white uppercase tracking-[0.2em] text-xs md:text-sm font-bold px-5 py-2">
             {goodLabel("brunch_hours_badge")}
           </span>
@@ -142,7 +136,7 @@ export const BrunchLanding = () => {
             </div>
             <div className="absolute -bottom-5 -right-5 hidden md:block border-2 border-padre-primary px-6 py-4 bg-[#faf7f2]">
               <span className="font-cormorant text-2xl text-padre-primary uppercase tracking-widest">
-                8h – 11h30
+                8H - 12H
               </span>
             </div>
           </motion.div>
