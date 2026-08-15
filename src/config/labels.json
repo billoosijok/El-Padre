@@ -764,6 +764,11 @@
     "en": "No times available for this date.",
     "es": "No hay horarios disponibles para esta fecha."
   },
+  "booking_notice_diners_only": {
+    "fr": "Ce soir-là, les réservations sont uniquement acceptées pour dîner. Les réservations pour boire un verre ne sont pas possibles.",
+    "en": "That evening, reservations are accepted for diners only. We can't take reservations for drinks alone.",
+    "es": "Esa noche, solo se aceptan reservas para cenar. No se aceptan reservas solo para tomar algo."
+  },
   "booking_success_details": {
     "fr": "Récapitulatif",
     "en": "Summary",

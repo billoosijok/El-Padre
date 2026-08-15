@@ -3,6 +3,7 @@ import { Input, Textarea } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/hooks/useTranslations";
+import labels from "@/config/labels.json";
 import {
   DISHTRIBUTER_API_BASE,
   dishtributerHeaders,
@@ -21,6 +22,22 @@ function getLeadMinutes(serviceName: string): number {
     ? BRUNCH_LEAD_MINUTES
     : DEFAULT_LEAD_MINUTES;
 }
+
+const SOIR_SERVICE_ID = "d6b2a753-d410-48e1-86b3-f3a9bc659cc0";
+
+// One-off evenings where only a fixed set of seatings is offered (Soir only).
+// `noticeKey` is a labels.json key shown as a warning once the date is picked.
+const SPECIAL_DATES: Record<
+  string,
+  { times: string[]; noticeKey?: keyof typeof labels }
+> = {
+  // Father's Day
+  "2026-06-21": { times: ["18:30", "19:00", "21:00"] },
+  "2026-08-22": {
+    times: ["18:00", "19:30", "21:00"],
+    noticeKey: "booking_notice_diners_only",
+  },
+};
 
 type Step = "form" | "preorder" | "success";
 
@@ -86,16 +103,14 @@ function buildServiceSlots(
   const leadMinutes = getLeadMinutes(service.name);
   const leadCutoff = now.getTime() + leadMinutes * 60 * 1000;
 
-  // Special override for Father's Day (June 21, 2026) to limit slots to 18:30, 19:00, 21:00
-  if (dateStr === "2026-06-21") {
+  // Special evenings replace the configured window with a fixed seating list.
+  const special = SPECIAL_DATES[dateStr];
+  if (special) {
     const isSoirService =
-      service.name.toLowerCase() === "soir" ||
-      service.id === "d6b2a753-d410-48e1-86b3-f3a9bc659cc0";
+      service.name.toLowerCase() === "soir" || service.id === SOIR_SERVICE_ID;
 
     if (isSoirService) {
-      const targetTimes = ["18:30", "19:00", "21:00"];
-
-      for (const time of targetTimes) {
+      for (const time of special.times) {
         const [sh, sm] = time.split(":").map(Number);
         const slotDate = new Date(y, mo - 1, d, sh, sm);
         if (slotDate.getTime() < now.getTime()) continue;
@@ -189,6 +204,9 @@ export function BookingForm() {
 
   const hasConfiguredServices = services.length > 0;
   const hasAnySlots = serviceSlots.length > 0;
+  const specialNoticeKey = form.date
+    ? SPECIAL_DATES[form.date]?.noticeKey
+    : undefined;
 
   const setField =
     (field: keyof FormData) =>
@@ -348,6 +366,29 @@ export function BookingForm() {
                 />
               </div>
             </div>
+
+            {specialNoticeKey && (
+              <div className="flex gap-3 items-start bg-padre-primary/10 border border-padre-primary/30 rounded-sm p-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 shrink-0 text-padre-primary mt-px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                  />
+                </svg>
+                <p className="font-lato text-sm text-padre-primary leading-relaxed">
+                  {goodLabel(specialNoticeKey)}
+                </p>
+              </div>
+            )}
 
             {/* Time slots, driven by the venue's bookingConfig */}
             {hasConfiguredServices && (
