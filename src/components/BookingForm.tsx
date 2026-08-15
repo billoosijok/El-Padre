@@ -103,22 +103,21 @@ function buildServiceSlots(
   const leadMinutes = getLeadMinutes(service.name);
   const leadCutoff = now.getTime() + leadMinutes * 60 * 1000;
 
-  // Special evenings replace the configured window with a fixed seating list.
+  // Special evenings replace Soir's configured window with a fixed seating
+  // list. Every other service (Brunch, Midi, ...) keeps its normal hours.
   const special = SPECIAL_DATES[dateStr];
-  if (special) {
-    const isSoirService =
-      service.name.toLowerCase() === "soir" || service.id === SOIR_SERVICE_ID;
+  const isSoirService =
+    service.name.toLowerCase() === "soir" || service.id === SOIR_SERVICE_ID;
 
-    if (isSoirService) {
-      for (const time of special.times) {
-        const [sh, sm] = time.split(":").map(Number);
-        const slotDate = new Date(y, mo - 1, d, sh, sm);
-        if (slotDate.getTime() < now.getTime()) continue;
-        slots.push({
-          time,
-          disabled: slotDate.getTime() < leadCutoff,
-        });
-      }
+  if (special && isSoirService) {
+    for (const time of special.times) {
+      const [sh, sm] = time.split(":").map(Number);
+      const slotDate = new Date(y, mo - 1, d, sh, sm);
+      if (slotDate.getTime() < now.getTime()) continue;
+      slots.push({
+        time,
+        disabled: slotDate.getTime() < leadCutoff,
+      });
     }
     return { serviceId: service.id, serviceName: service.name, slots };
   }
