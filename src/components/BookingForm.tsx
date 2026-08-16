@@ -33,6 +33,14 @@ const SPECIAL_DATES: Record<
 > = {
   // Father's Day
   "2026-06-21": { times: ["18:30", "19:00", "21:00"] },
+  "2026-08-20": {
+    times: ["18:00", "19:30", "21:00"],
+    noticeKey: "booking_notice_diners_only",
+  },
+  "2026-08-21": {
+    times: ["18:00", "19:30", "21:00"],
+    noticeKey: "booking_notice_diners_only",
+  },
   "2026-08-22": {
     times: ["18:00", "19:30", "21:00"],
     noticeKey: "booking_notice_diners_only",
