@@ -55,6 +55,7 @@ export default function ReviewsPage() {
   const [rating, setRating] = useState(0);
   const [hovered, setHovered] = useState(0);
   const [googleUrl, setGoogleUrl] = useState<string>("https://g.page/r/CfG_i_X8_g2JEBM/review");
+  const [tripAdvisorUrl, setTripAdvisorUrl] = useState<string | null>(null);
   const [isConfigLoading, setIsConfigLoading] = useState(true);
 
   const [text, setText] = useState("");
@@ -64,13 +65,15 @@ export default function ReviewsPage() {
 
   const currentStar = hovered || rating;
 
-  // Pre-fetch the Google review link on mount so a positive rating redirects instantly.
+  // Pre-fetch review links on mount so a positive rating redirects instantly.
   useEffect(() => {
     fetch(CONFIG_URL, { headers: dishtributerHeaders })
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         const url = data?.reviewsConfig?.googleReviewUrl;
         if (url) setGoogleUrl(url);
+        const taUrl = data?.reviewsConfig?.tripAdvisorReviewUrl;
+        if (taUrl) setTripAdvisorUrl(taUrl);
       })
       .catch((err) => {
         console.error("Failed to load config, using default redirect:", err);
@@ -80,10 +83,17 @@ export default function ReviewsPage() {
       });
   }, []);
 
+  const getRedirectUrl = () => {
+    if (tripAdvisorUrl && Math.random() < 0.1) {
+      return tripAdvisorUrl;
+    }
+    return googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
+  };
+
   const selectRating = (value: number) => {
     setRating(value);
     if (value >= POSITIVE_THRESHOLD) {
-      const urlToUse = googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
+      const urlToUse = getRedirectUrl();
       setStep("redirecting");
       setTimeout(() => window.location.assign(urlToUse), 900);
     }
@@ -91,7 +101,7 @@ export default function ReviewsPage() {
 
   const confirmRating = () => {
     if (rating >= POSITIVE_THRESHOLD) {
-      const urlToUse = googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
+      const urlToUse = getRedirectUrl();
       setStep("redirecting");
       setTimeout(() => window.location.assign(urlToUse), 900);
     } else if (rating > 0) {
