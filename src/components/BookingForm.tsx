@@ -27,9 +27,14 @@ const SOIR_SERVICE_ID = "d6b2a753-d410-48e1-86b3-f3a9bc659cc0";
 
 // One-off evenings where only a fixed set of seatings is offered (Soir only).
 // `noticeKey` is a labels.json key shown as a warning once the date is picked.
+// `slotNotices` maps specific times (e.g., "19:30") to a labels.json key shown when selected.
 const SPECIAL_DATES: Record<
   string,
-  { times: string[]; noticeKey?: keyof typeof labels }
+  {
+    times: string[];
+    noticeKey?: keyof typeof labels;
+    slotNotices?: Record<string, keyof typeof labels>;
+  }
 > = {
   // Father's Day
   "2026-06-21": { times: ["18:30", "19:00", "21:00"] },
@@ -40,6 +45,9 @@ const SPECIAL_DATES: Record<
   "2026-08-21": {
     times: ["18:00", "19:30", "21:00"],
     noticeKey: "booking_notice_diners_only",
+    slotNotices: {
+      "19:30": "booking_notice_inside_only_1930",
+    },
   },
   "2026-08-22": {
     times: ["18:00", "19:30", "21:00"],
@@ -214,6 +222,10 @@ export function BookingForm() {
   const specialNoticeKey = form.date
     ? SPECIAL_DATES[form.date]?.noticeKey
     : undefined;
+  const specialSlotNoticeKey =
+    form.date && selectedTime
+      ? SPECIAL_DATES[form.date]?.slotNotices?.[selectedTime]
+      : undefined;
 
   const setField =
     (field: keyof FormData) =>
@@ -454,6 +466,34 @@ export function BookingForm() {
                         </div>
                       </div>
                     ))}
+
+                    {specialSlotNoticeKey && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        className="flex gap-3 items-start bg-padre-primary/10 border border-padre-primary/30 rounded-sm p-3 mt-1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-5 h-5 shrink-0 text-padre-primary mt-px"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12v-.008z"
+                          />
+                        </svg>
+                        <p className="font-lato text-sm text-padre-primary leading-relaxed">
+                          {goodLabel(specialSlotNoticeKey)}
+                        </p>
+                      </motion.div>
+                    )}
                   </div>
                 )}
               </div>

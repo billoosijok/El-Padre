@@ -769,6 +769,11 @@
     "en": "That evening, reservations are accepted for diners only. We can't take reservations for drinks alone.",
     "es": "Esa noche, solo se aceptan reservas para cenar. No se aceptan reservas solo para tomar algo."
   },
+  "booking_notice_inside_only_1930": {
+    "fr": "Pour le créneau de 19h30, il ne reste que des places en intérieur.",
+    "en": "For the 19:30 timeslot, only indoor seating remains.",
+    "es": "Para el horario de las 19:30, solo quedan plazas en el interior."
+  },
   "booking_success_details": {
     "fr": "Récapitulatif",
     "en": "Summary",
