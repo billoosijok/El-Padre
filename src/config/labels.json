@@ -774,6 +774,11 @@
     "en": "For the 19:30 timeslot, only indoor seating remains.",
     "es": "Para el horario de las 19:30, solo quedan plazas en el interior."
   },
+  "booking_notice_inside_only_2100": {
+    "fr": "Pour le créneau de 21h00, il ne reste que des places en intérieur.",
+    "en": "For the 21:00 timeslot, only indoor seating remains.",
+    "es": "Para el horario de las 21:00, solo quedan plazas en el interior."
+  },
   "booking_success_details": {
     "fr": "Récapitulatif",
     "en": "Summary",

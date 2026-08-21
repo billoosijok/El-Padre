@@ -47,6 +47,7 @@ const SPECIAL_DATES: Record<
     noticeKey: "booking_notice_diners_only",
     slotNotices: {
       "19:30": "booking_notice_inside_only_1930",
+      "21:00": "booking_notice_inside_only_2100",
     },
   },
   "2026-08-22": {
