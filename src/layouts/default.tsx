@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useReservation } from "@/context/ReservationContext";
 
 import { useI18n } from "@/hooks/useTranslations";
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/components/logo";
 import {
   MenuIcon,
   CloseIcon,

@@ -19,7 +19,7 @@ import { Key, useCallback, useState } from "react";
 import { RightArrow } from "./icons";
 
 import { useI18n, type SupportedLanguages } from "@/hooks/useTranslations";
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/components/logo";
 import labels from "@/config/labels.json";
 import supported_languages from "@/config/supported_languages.json";
 

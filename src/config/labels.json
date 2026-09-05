@@ -764,6 +764,16 @@
     "en": "No times available for this date.",
     "es": "No hay horarios disponibles para esta fecha."
   },
+  "booking_notice_closed": {
+    "fr": "Nous sommes exceptionnellement fermés à cette date. Merci de choisir un autre jour.",
+    "en": "We are exceptionally closed on this date. Please pick another day.",
+    "es": "Estamos excepcionalmente cerrados en esta fecha. Por favor, elige otro día."
+  },
+  "booking_error_closed_date": {
+    "fr": "Nous sommes fermés à cette date. Veuillez choisir une autre date.",
+    "en": "We are closed on this date. Please choose another date.",
+    "es": "Estamos cerrados en esta fecha. Por favor, elija otra fecha."
+  },
   "booking_notice_diners_only": {
     "fr": "Ce soir-là, les réservations sont uniquement acceptées pour dîner. Les réservations pour boire un verre ne sont pas possibles.",
     "en": "That evening, reservations are accepted for diners only. We can't take reservations for drinks alone.",

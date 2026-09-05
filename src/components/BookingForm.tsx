@@ -25,6 +25,13 @@ function getLeadMinutes(serviceName: string): number {
 
 const SOIR_SERVICE_ID = "d6b2a753-d410-48e1-86b3-f3a9bc659cc0";
 
+// Dates the venue is exceptionally closed: no service is bookable and the form
+// refuses to submit. `noticeKey` overrides the default closure message.
+const CLOSED_DATES: Record<string, { noticeKey?: keyof typeof labels }> = {
+  // Tuesday 8 September 2026 — closed, no reservations.
+  "2026-09-08": {},
+};
+
 // One-off evenings where only a fixed set of seatings is offered (Soir only).
 // `noticeKey` is a labels.json key shown as a warning once the date is picked.
 // `slotNotices` maps specific times (e.g., "19:30") to a labels.json key shown when selected.
@@ -211,7 +218,8 @@ export function BookingForm() {
 
   // Recompute available slots whenever the chosen date (or config) changes.
   const serviceSlots = useMemo(() => {
-    if (!form.date || services.length === 0) return [];
+    if (!form.date || CLOSED_DATES[form.date] || services.length === 0)
+      return [];
     const now = new Date();
     return services
       .map((s) => buildServiceSlots(s, form.date, now))
@@ -220,6 +228,11 @@ export function BookingForm() {
 
   const hasConfiguredServices = services.length > 0;
   const hasAnySlots = serviceSlots.length > 0;
+  const closedDate = form.date ? CLOSED_DATES[form.date] : undefined;
+  const isClosedDate = Boolean(closedDate);
+  const closedNoticeKey: keyof typeof labels | undefined = closedDate
+    ? (closedDate.noticeKey ?? "booking_notice_closed")
+    : undefined;
   const specialNoticeKey = form.date
     ? SPECIAL_DATES[form.date]?.noticeKey
     : undefined;
@@ -249,6 +262,10 @@ export function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isClosedDate) {
+      setError(goodLabel("booking_error_closed_date"));
+      return;
+    }
     if (
       !form.name.trim() ||
       !form.date ||
@@ -387,6 +404,29 @@ export function BookingForm() {
               </div>
             </div>
 
+            {closedNoticeKey && (
+              <div className="flex gap-3 items-start bg-padre-primary/10 border border-padre-primary/30 rounded-sm p-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 shrink-0 text-padre-primary mt-px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                  />
+                </svg>
+                <p className="font-lato text-sm text-padre-primary leading-relaxed">
+                  {goodLabel(closedNoticeKey)}
+                </p>
+              </div>
+            )}
+
             {specialNoticeKey && (
               <div className="flex gap-3 items-start bg-padre-primary/10 border border-padre-primary/30 rounded-sm p-3">
                 <svg
@@ -411,7 +451,7 @@ export function BookingForm() {
             )}
 
             {/* Time slots, driven by the venue's bookingConfig */}
-            {hasConfiguredServices && (
+            {hasConfiguredServices && !isClosedDate && (
               <div className="flex flex-col gap-3">
                 <p className="text-gray-400 text-sm">
                   {goodLabel("booking_time_label")}
@@ -532,6 +572,7 @@ export function BookingForm() {
               type="submit"
               className="mt-1 h-12 bg-[#c59d5f] text-black font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:bg-white transition-colors"
               isLoading={submitting}
+              isDisabled={isClosedDate}
             >
               {submitting
                 ? goodLabel("booking_loading")

@@ -4,7 +4,7 @@ import { Input, Textarea } from "@heroui/input";
 import { Spinner } from "@heroui/spinner";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "@/components/SEO";
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/components/logo";
 import { useI18n } from "@/hooks/useTranslations";
 import {
   DISHTRIBUTER_API_BASE,

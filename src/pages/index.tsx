@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@heroui/button";
 import DefaultLayout from "@/layouts/default";
 import { useI18n } from "@/hooks/useTranslations";
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/components/logo";
 import { SEO } from "@/components/SEO";
 import { useReservation } from "@/context/ReservationContext";
 import { useEffect } from "react";
