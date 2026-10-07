@@ -85,7 +85,7 @@ export default function ReviewsPage() {
   }, []);
 
   const getRedirectUrl = () => {
-    if (tripAdvisorUrl && Math.random() < 0.1) {
+    if (tripAdvisorUrl && Math.random() < 0.2) {
       return tripAdvisorUrl;
     }
     return googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
