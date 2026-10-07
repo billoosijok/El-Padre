@@ -50,7 +50,7 @@ elpadre.aude@gmail.com
 | Lundi à Jeudi     | 08h00 – 15h00 \| 18h00 – 23h00 |
 | Vendredi          | 08h00 – 15h00 \| 18h00 – 02h00 |
 | Samedi & Dimanche | 08h00 – 02h00                  |
-| Brunch quotidien  | 08h00 – 11h30                  |
+| Brunch (Sam, Dim, Lun) | 08h00 – 12h00             |
 
 ### Découvrir
 

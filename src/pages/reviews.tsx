@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@heroui/button";
 import { Input, Textarea } from "@heroui/input";
 import { Spinner } from "@heroui/spinner";
@@ -61,6 +61,7 @@ export default function ReviewsPage() {
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [error, setError] = useState<string | null>(null);
 
   const currentStar = hovered || rating;
@@ -110,10 +111,12 @@ export default function ReviewsPage() {
   };
 
   const submitFeedback = async () => {
+    if (isSubmittingRef.current || submitting) return;
     if (!text.trim()) {
       setError(goodLabel("review_error_required"));
       return;
     }
+    isSubmittingRef.current = true;
     setSubmitting(true);
     setError(null);
     try {
@@ -136,6 +139,7 @@ export default function ReviewsPage() {
         err instanceof Error ? err.message : goodLabel("booking_error_generic")
       );
     } finally {
+      isSubmittingRef.current = false;
       setSubmitting(false);
     }
   };
@@ -313,6 +317,7 @@ export default function ReviewsPage() {
                 className="h-12 bg-[#c59d5f] text-black font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:bg-white transition-colors"
                 onPress={submitFeedback}
                 isLoading={submitting}
+                isDisabled={submitting}
               >
                 {submitting
                   ? goodLabel("review_feedback_sending")

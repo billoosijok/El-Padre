@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Input, Textarea } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -53,16 +53,22 @@ const SPECIAL_DATES: Record<
   "2026-08-22": {
     times: ["18:00", "19:30", "21:00"],
     noticeKey: "booking_notice_diners_only",
+    slotNotices: {
+      "19:30": "booking_notice_inside_only_1930",
+      "21:00": "booking_notice_inside_only_2100",
+    },
   },
 };
 
 type Step = "form" | "preorder" | "success";
+type SeatingPreference = "interieur" | "terrasse" | "";
 
 interface FormData {
   name: string;
   date: string;
   adultsCount: string;
   childrenCount: string;
+  seatingPreference: SeatingPreference;
   notes: string;
   phone: string;
   email: string;
@@ -176,12 +182,14 @@ export function BookingForm() {
   const { goodLabel, language } = useI18n();
   const [step, setStep] = useState<Step>("form");
   const [submitting, setSubmitting] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<FormData>({
     name: "",
     date: "",
     adultsCount: "2",
     childrenCount: "0",
+    seatingPreference: "",
     notes: "",
     phone: "",
     email: "",
@@ -228,6 +236,16 @@ export function BookingForm() {
       ? SPECIAL_DATES[form.date]?.slotNotices?.[selectedTime]
       : undefined;
 
+  const isInsideOnly = Boolean(
+    specialSlotNoticeKey && specialSlotNoticeKey.includes("inside_only"),
+  );
+
+  useEffect(() => {
+    if (isInsideOnly && form.seatingPreference === "terrasse") {
+      setForm((prev) => ({ ...prev, seatingPreference: "interieur" }));
+    }
+  }, [isInsideOnly, form.seatingPreference]);
+
   const setField =
     (field: keyof FormData) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -249,6 +267,7 @@ export function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmittingRef.current || submitting) return;
     if (
       !form.name.trim() ||
       !form.date ||
@@ -276,10 +295,21 @@ export function BookingForm() {
   };
 
   const submit = async (enablePreOrder: boolean) => {
+    if (isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
     setSubmitting(true);
     setError(null);
     const adults = Number(form.adultsCount) || 0;
     const children = Number(form.childrenCount) || 0;
+
+    const rawNotes = form.notes.trim();
+    let combinedNotes = rawNotes;
+    if (form.seatingPreference === "interieur") {
+      combinedNotes = rawNotes ? `[Intérieur] ${rawNotes}` : "[Intérieur]";
+    } else if (form.seatingPreference === "terrasse") {
+      combinedNotes = rawNotes ? `[Terrasse] ${rawNotes}` : "[Terrasse]";
+    }
+
     try {
       const res = await fetch(API_URL, {
         method: "POST",
@@ -289,7 +319,7 @@ export function BookingForm() {
           bookingDate: form.date,
           adultsCount: adults,
           childrenCount: children,
-          notes: form.notes.trim(),
+          notes: combinedNotes,
           phone: form.phone.trim(),
           email: form.email.trim(),
           ...(selectedTime && { bookingTime: selectedTime }),
@@ -307,6 +337,7 @@ export function BookingForm() {
         err instanceof Error ? err.message : goodLabel("booking_error_generic"),
       );
     } finally {
+      isSubmittingRef.current = false;
       setSubmitting(false);
     }
   };
@@ -500,6 +531,101 @@ export function BookingForm() {
               </div>
             )}
 
+            {/* Seating preference (Intérieur / Terrasse) */}
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <p className="text-gray-400 text-sm font-lato">
+                  {goodLabel("booking_seating_label")}
+                </p>
+                {form.seatingPreference && !isInsideOnly && (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setForm((prev) => ({ ...prev, seatingPreference: "" }))
+                    }
+                    className="text-xs text-neutral-400 hover:text-white transition-colors font-lato underline cursor-pointer"
+                  >
+                    {goodLabel("booking_seating_no_preference")}
+                  </button>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setForm((prev) => ({
+                      ...prev,
+                      seatingPreference:
+                        prev.seatingPreference === "interieur"
+                          ? ""
+                          : "interieur",
+                    }))
+                  }
+                  className={`flex items-center justify-center gap-2.5 py-3 px-4 rounded-sm border font-lato text-sm transition-all duration-200 cursor-pointer ${
+                    form.seatingPreference === "interieur"
+                      ? "bg-[#c59d5f] text-black border-[#c59d5f] font-bold shadow-md shadow-[#c59d5f]/10"
+                      : "bg-[#262626] text-white border-white/10 hover:border-padre-primary/50 hover:bg-[#2b2b2b]"
+                  }`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={
+                      form.seatingPreference === "interieur" ? 2 : 1.5
+                    }
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                    />
+                  </svg>
+                  <span>{goodLabel("booking_seating_interieur")}</span>
+                </button>
+
+                <button
+                  type="button"
+                  disabled={isInsideOnly}
+                  onClick={() =>
+                    setForm((prev) => ({
+                      ...prev,
+                      seatingPreference:
+                        prev.seatingPreference === "terrasse" ? "" : "terrasse",
+                    }))
+                  }
+                  className={`flex items-center justify-center gap-2.5 py-3 px-4 rounded-sm border font-lato text-sm transition-all duration-200 ${
+                    isInsideOnly
+                      ? "bg-transparent text-neutral-600 border-white/5 line-through cursor-not-allowed opacity-50"
+                      : form.seatingPreference === "terrasse"
+                        ? "bg-[#c59d5f] text-black border-[#c59d5f] font-bold shadow-md shadow-[#c59d5f]/10 cursor-pointer"
+                        : "bg-[#262626] text-white border-white/10 hover:border-padre-primary/50 hover:bg-[#2b2b2b] cursor-pointer"
+                  }`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={
+                      form.seatingPreference === "terrasse" ? 2 : 1.5
+                    }
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                    />
+                  </svg>
+                  <span>{goodLabel("booking_seating_terrasse")}</span>
+                </button>
+              </div>
+            </div>
+
             <Input
               label={goodLabel("booking_phone_label")}
               type="tel"
@@ -532,6 +658,7 @@ export function BookingForm() {
               type="submit"
               className="mt-1 h-12 bg-[#c59d5f] text-black font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:bg-white transition-colors"
               isLoading={submitting}
+              isDisabled={submitting}
             >
               {submitting
                 ? goodLabel("booking_loading")
@@ -582,6 +709,7 @@ export function BookingForm() {
                 className="h-12 bg-[#c59d5f] text-black font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:bg-white transition-colors"
                 onPress={() => submit(true)}
                 isLoading={submitting}
+                isDisabled={submitting}
               >
                 {goodLabel("booking_preorder_yes")}
               </Button>
@@ -676,6 +804,19 @@ export function BookingForm() {
                         key: "children",
                         label: goodLabel("booking_children_label"),
                         value: form.childrenCount,
+                      },
+                    ]
+                  : []),
+                ...(form.seatingPreference
+                  ? [
+                      {
+                        key: "seating",
+                        label: goodLabel("booking_seating_label"),
+                        value: goodLabel(
+                          form.seatingPreference === "interieur"
+                            ? "booking_seating_interieur"
+                            : "booking_seating_terrasse",
+                        ),
                       },
                     ]
                   : []),
