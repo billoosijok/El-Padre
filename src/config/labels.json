@@ -724,6 +724,11 @@
     "en": "No preference",
     "es": "Sin preferencia"
   },
+  "booking_seating_hint": {
+    "fr": "Non garanti : sous réserve de disponibilité, notre équipe fera son maximum pour respecter votre préférence.",
+    "en": "Not guaranteed: subject to availability, our team will do their best to accommodate your preference.",
+    "es": "No garantizado: sujeto a disponibilidad, nuestro equipo hará todo lo posible para respetar su preferencia."
+  },
   "booking_notes_label": {
     "fr": "Demandes particulières / Notes",
     "en": "Special requests / Notes",

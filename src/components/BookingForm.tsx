@@ -624,6 +624,10 @@ export function BookingForm() {
                   <span>{goodLabel("booking_seating_terrasse")}</span>
                 </button>
               </div>
+
+              <p className="text-neutral-500 text-xs font-lato italic leading-relaxed pt-0.5">
+                {goodLabel("booking_seating_hint")}
+              </p>
             </div>
 
             <Input
