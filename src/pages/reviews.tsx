@@ -28,7 +28,13 @@ const inputClass = {
   input: "placeholder:text-neutral-500",
 };
 
-function Star({ filled, isFiveStar }: { filled: boolean; isFiveStar?: boolean }) {
+function Star({
+  filled,
+  isFiveStar,
+}: {
+  filled: boolean;
+  isFiveStar?: boolean;
+}) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -54,7 +60,9 @@ export default function ReviewsPage() {
   const [step, setStep] = useState<Step>("rate");
   const [rating, setRating] = useState(0);
   const [hovered, setHovered] = useState(0);
-  const [googleUrl, setGoogleUrl] = useState<string>("https://g.page/r/CfG_i_X8_g2JEBM/review");
+  const [googleUrl, setGoogleUrl] = useState<string>(
+    "https://g.page/r/CfG_i_X8_g2JEBM/review",
+  );
   const [tripAdvisorUrl, setTripAdvisorUrl] = useState<string | null>(null);
   const [isConfigLoading, setIsConfigLoading] = useState(true);
 
@@ -85,7 +93,7 @@ export default function ReviewsPage() {
   }, []);
 
   const getRedirectUrl = () => {
-    if (tripAdvisorUrl && Math.random() < 0.2) {
+    if (tripAdvisorUrl && Math.random() < 0.51) {
       return tripAdvisorUrl;
     }
     return googleUrl || "https://g.page/r/CfG_i_X8_g2JEBM/review";
@@ -136,7 +144,7 @@ export default function ReviewsPage() {
       setStep("thanks");
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : goodLabel("booking_error_generic")
+        err instanceof Error ? err.message : goodLabel("booking_error_generic"),
       );
     } finally {
       isSubmittingRef.current = false;
